@@ -1,5 +1,5 @@
 import React from 'react';
-import './Components/Navbar/Navbar.css';
+import './components/Navbar/Navbar.css';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 
@@ -8,19 +8,21 @@ function Navbar () {
   	<Router>
   		<div>
   			<div>
-  				<img src='' className='' alt='' >
+  				<img src='' className='' alt=''/>
   				<h1>Find your Cocktail</h1>
   			</div>
   			
-    		<nav className='Navbar'>
-  				<ul className='NavLinkContainer'>
-  					<li className='NavLink'><Link to="/">Home</Link></li>
-  					<li className='NavLink'><Link to="/">Cocktail Finder</Link></li>
-  					<li className='NavLink'><Link to="/">All Cocktails</Link></li>
-  					<li className='NavLink'><Link to="/">Guest Book</Link></li>
-  					<li className='NavLink'><Link to="/">Quizz</Link></li>
-      			</ul>
-    		</nav>
+        <div className='NavbarContainer'>
+    		  <nav className='Navbar'>
+  				  <ul className='NavLinkContainer'>
+  					  <li className='NavLink'><Link to="/">Home</Link></li>
+  					  <li className='NavLink'><Link to="/">Cocktail Finder</Link></li>
+  					  <li className='NavLink'><Link to="/">All Cocktails</Link></li>
+  					  <li className='NavLink'><Link to="/">Guest Book</Link></li>
+  					  <li className='NavLink'><Link to="/">Quizz</Link></li>
+      			  </ul>
+    		  </nav>
+        </div>
 
     		<Switch>
           		<Route exact path="/"><Home /></Route>
