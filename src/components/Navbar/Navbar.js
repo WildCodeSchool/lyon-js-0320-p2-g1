@@ -1,5 +1,9 @@
 import React from 'react';
-import './components/Navbar/Navbar.css';
+import './Navbar.css';
+import FindYourCocktail from './src/components/FindYourCocktail/FindYourCocktail.js';
+import AllCocktails from './src/components/AllCocktails/AllCocktails.js';
+import GuestBook from './src/components/GuestBook/GuestBook.js';
+import Quizz from './src/components/Quizz/Quizz.js';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import './src/images/logo.jpg';
