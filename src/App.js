@@ -1,11 +1,12 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Navbar from './components/Navbar/Navbar';
 
-function App() {
+function App () {
   return (
-    <div className="App">
-      <h1>Cocktail Finder</h1>
+    <div className='App'>
+      <Navbar />
     </div>
   );
 }
