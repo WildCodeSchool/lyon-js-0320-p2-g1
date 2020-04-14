@@ -1,11 +1,11 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import FindYourCocktail from './components/find-your-cocktail/FindYourCocktail';
 
-function App() {
+function App () {
   return (
-    <div className="App">
+    <div className='App'>
       <h1>Cocktail Finder</h1>
+      <FindYourCocktail />
     </div>
   );
 }
