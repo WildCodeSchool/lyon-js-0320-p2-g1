@@ -1,11 +1,13 @@
-.test {
-  color: red;
+
+/*
+font-family: 'Playfair Display', serif;
+font-family: 'Lato', sans-serif;
+*/
+
+main {
+  font-family: 'Lato', sans-serif;
 }
 
-.desktop {
-  display: flex;
-}
-
-.bar {
-  height: 100%;
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
 }
