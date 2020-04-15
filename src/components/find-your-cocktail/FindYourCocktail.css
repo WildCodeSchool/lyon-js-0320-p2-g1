@@ -11,3 +11,22 @@ main {
 h1, h2, h3 {
   font-family: 'Playfair Display', serif;
 }
+
+img.bar {
+  height: 100vh;
+  width: 100%;
+}
+
+h1.text-center.m-5 {
+  font-weight: bold;
+}
+
+h3.text-center {
+  font-weight: 600;
+}
+
+.search {
+  margin: 50px auto 50px;
+  color: white;
+  background-color: #232323;
+}

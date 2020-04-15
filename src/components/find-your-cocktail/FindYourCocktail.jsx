@@ -9,20 +9,20 @@ class FindYourCocktail extends React.Component {
 
         <aside className='col-4 p-0 d-none d-lg-block'>
           <figure>
-            <img className='img-fluid' src={Bar} alt='bar' />
+            <img className='bar' src={Bar} alt='bar' />
           </figure>
         </aside>
 
         <section className='col-8'>
 
           <article>
-            <h1 className='text-center p-4'>Find Your Cocktail</h1>
-            <p>What do you have in your fridge ? For sure there is a cocktail that matches it !</p>
-            <p>Let's try our faboulous tools to tell you what cocktail you can do with your home ingredients</p>
+            <h1 className='text-center m-5'>Find Your Cocktail</h1>
+            <p className='px-4 text-center'>What do you have in your fridge ? For sure there is a cocktail that matches it !</p>
+            <p className='px-4 text-center'>Let's try our faboulous tools to tell you what cocktail you can do with your home ingredients.</p>
           </article>
 
-          <article>
-            <h2 className='m-3 p-4'>Search by ingredient</h2>
+          <article className='search'>
+            <h3 className='m-3 p-4'>Search by ingredient</h3>
           </article>
 
           <article>
@@ -40,7 +40,7 @@ class FindYourCocktail extends React.Component {
             <hr />
             <ul>
               <li>Orange</li>
-              <li>Ananas</li> 
+              <li>Ananas</li>
               <li>Strawberry</li>
               <li>Passion fruit</li>
             </ul>
@@ -56,7 +56,7 @@ class FindYourCocktail extends React.Component {
             <button>Find My Cocktails</button>
 
           </article>
-          
+
         </section>
       </main>
     );
