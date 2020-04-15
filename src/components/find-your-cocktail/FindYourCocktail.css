@@ -1,3 +1,11 @@
 .test {
   color: red;
 }
+
+.desktop {
+  display: flex;
+}
+
+.bar {
+  height: 100%;
+}
