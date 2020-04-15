@@ -1,0 +1,15 @@
+.Main{
+    margin: 0px;
+    padding: 0px;
+}
+
+.Main video{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.Main-text{
+    position: relative;
+    color: #fff;
+}
