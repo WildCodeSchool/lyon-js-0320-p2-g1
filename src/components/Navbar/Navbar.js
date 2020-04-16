@@ -18,13 +18,13 @@ function Navbar () {
             <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarColor01' aria-controls='navbarColor01' aria-expanded='false' aria-label='Toggle navigation'>
             <span class='navbar-toggler-icon'></span>
             </button>
-            <div className='collapse navbar-collapse' id='navbarColor01'>
-				      <ul className='navbar-nav mr-auto'>
-					      <li className='nav-item active'><Link to='/Home.js' className='nav-link float-right'>Home</Link></li>
-					      <li className='nav-item'><Link to='/Find-your-cocktail' className='nav-link float-right'>Find your cocktail</Link></li>
-					      <li className='nav-item'><Link to='/All-Cocktails' className='nav-link float-right'>All Cocktails</Link></li>
-					      <li className='nav-item'><Link to='/Guest-Book' className='nav-link float-right'>Guest Book</Link></li>
-					      <li className='nav-item'><Link to='/Quizz' className='nav-link float-right'>Quizz</Link></li>
+            <div className='collapse navbar-collapse justify-content-end' id='navbarColor01'>
+				      <ul className='navbar-nav text-right'>
+					      <li className='nav-item active'><Link to='/Home.js' className='nav-link'>Home</Link></li>
+					      <li className='nav-item'><Link to='/Find-your-cocktail' className='nav-link'>Find your cocktail</Link></li>
+					      <li className='nav-item'><Link to='/All-Cocktails' className='nav-link'>All Cocktails</Link></li>
+					      <li className='nav-item'><Link to='/Guest-Book' className='nav-link'>Guest Book</Link></li>
+					      <li className='nav-item'><Link to='/Quizz' className='nav-link'>Quizz</Link></li>
 			      </ul>
               </div>
 		        </nav>
