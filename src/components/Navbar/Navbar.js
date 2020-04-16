@@ -12,7 +12,7 @@ function Navbar () {
     <Router>
       <div>
 		    <nav className='navbar navbar-expand-lg navbar-dark bg-primary'>
-          <a id='navbar-brand' href='#'><img src={Logo} id='logo' alt='logo'/> </a>
+          <a id='navbar-brand' href='./components/Home/Home.js'><img src={Logo} id='logo' alt='logo'/> </a>
             <h1 className='navbar-brand'>Cocktail Finder</h1>
               {/* C'est le bouton burger (navbar-toggler) */}
             <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarColor01' aria-controls='navbarColor01' aria-expanded='false' aria-label='Toggle navigation'>
