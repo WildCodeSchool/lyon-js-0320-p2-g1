@@ -1,10 +1,12 @@
 import React from 'react';
-import './App.css';
+import FindYourCocktail from './components/find-your-cocktail/FindYourCocktail';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App () {
   return (
     <div className='App'>
-      <h1>Cocktail Finder</h1>
+      <FindYourCocktail />
     </div>
   );
 }
