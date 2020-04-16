@@ -19,8 +19,8 @@ function Navbar () {
             <span class='navbar-toggler-icon'></span>
             </button>
             <div className='collapse navbar-collapse' id='navbarColor01'>
-				      <ul className='navbar-nav mr-auto '>
-					      <li className='nav-item active'><Link to='/' className='nav-link float-right'>Home</Link></li>
+				      <ul className='navbar-nav mr-auto'>
+					      <li className='nav-item active'><Link to='/Home.js' className='nav-link float-right'>Home</Link></li>
 					      <li className='nav-item'><Link to='/Find-your-cocktail' className='nav-link float-right'>Find your cocktail</Link></li>
 					      <li className='nav-item'><Link to='/All-Cocktails' className='nav-link float-right'>All Cocktails</Link></li>
 					      <li className='nav-item'><Link to='/Guest-Book' className='nav-link float-right'>Guest Book</Link></li>
@@ -30,11 +30,11 @@ function Navbar () {
 		        </nav>
 
         <Switch>
-		      <Route exact path='/'><Home /></Route>
-		      <Route path='/Find-your-cocktail' component={FindYourCocktail} />
-		      <Route path='/All-Cocktails' component={AllCocktails} />
-		      <Route path='/Guest-Book' component={GuestBook} />
-		      <Route path='/Quizz' component={Quizz} />
+		      <Route exact path='/Home.js'><Home /></Route>
+		      <Route exact path='/Find-your-cocktail' component={FindYourCocktail} />
+		      <Route exact path='/All-Cocktails' component={AllCocktails} />
+		      <Route exact path='/Guest-Book' component={GuestBook} />
+		      <Route exact path='/Quizz' component={Quizz} />
         </Switch>
       </div>
     </Router>
