@@ -2,6 +2,7 @@
     margin: 0px;
     padding: 0px;
     height: auto;
+    font-family: 'Lato', sans-serif;
 }
 
 h2{
@@ -26,8 +27,33 @@ h5{
 .Video h1{
     position: absolute;
     color: #fff;
-    top: 40%;
-    right: 2%;
+    top: 35%;
+    right: 3%;
     transform: translateY(-50%);
+    margin-top: 30px;
+    font-size: 30px;
        
+}
+
+.Video h6{
+    position: absolute;
+    color: #fff;
+    top: 60%;
+    right: 4%;
+    transform: translateY(-50%);
+    margin-top: 30px;
+       
+}
+
+.main-image{
+    display: flex;
+    width: 60%;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 60px;
+}
+
+.text-cod{
+    margin: 60px;
+    text-align: justify;
 }
