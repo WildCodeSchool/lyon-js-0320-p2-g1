@@ -6,12 +6,6 @@
   border-radius: 20%;
 }
 
-#subTitleImg{
-  height: 30px;
-  width: auto;
-  margin-top: -10px;
-}
-
 .navbar-collapse.collapse.in {
   display: block!important;
 }
