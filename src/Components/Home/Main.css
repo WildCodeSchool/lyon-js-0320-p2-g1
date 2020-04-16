@@ -1,0 +1,33 @@
+.Main{
+    margin: 0px;
+    padding: 0px;
+    height: auto;
+}
+
+h2{
+    color:#CC2A49;
+    margin-top: 25px;
+    font-style: italic;
+    text-decoration: underline;
+}
+
+h5{
+    color: #000;
+    margin-top: -10px;
+}
+
+.Video{
+    position: relative;
+    top: 0;
+    left: 0;
+    display: flex;    
+}
+
+.Video h1{
+    position: absolute;
+    color: #fff;
+    top: 40%;
+    right: 2%;
+    transform: translateY(-50%);
+       
+}
