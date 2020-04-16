@@ -1,66 +1,101 @@
-.test {
-    background-color: black;
-    color:white;
-    vertical-align:bottom;
-    height: 200px;
+
+
+
+    
+.bloc_page
+{
     width: 100%;
-    flex-wrap: wrap;
-    
-}
-
-
-.copyright {
-    justify-content: right;
-    text-align: right;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 8px;
-    font-weight:bold;
-    line-height:1.3em;
-}
-
-section.button {
-    justify-content: right;
-    text-align: right;
-    float:center;
-    text-align: right;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 8px;
-    
-}
-
-.consomation{
+    margin: auto;
     display: flex;
-    width: 100px;
-    height: 100px;
-    margin: 30px auto;
-    padding: 30px;
-    float:left;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 8px;
-    font-weight:bold; 
-    line-height:1.3em;
-}
-
-
-.user{
-    justify-content: right;
-    text-align: right;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 8px;
-    font-weight:bold; 
-    line-height:1.3em;
-    color: blueviolet;
+    padding-top: 25px;
+    color: rgb(1, 1, 49);
+    background-image: url("https://static.vecteezy.com/system/resources/previews/000/115/493/non_2x/free-vector-colored-degraded-background.jpg");
 }
 
 .summer {
     background-image: url("https://hdfondsdecran.com/image/201609/2213/rayon-orange-arriere-plan-flou.jpg");
-    color:black;
+    color:rgb(0, 0, 0);
 }
+
+div
+{
+    border: 1px solid #181818;
+margin-right: 2px;
+}
+
+.boissons{
+background-image:url("https://pngimage.net/wp-content/uploads/2018/06/logo-cocktail-png-6.png");
+background-position-x: initial;
+background-size: 20em;
+}
+
+.bouton_rouge
+{
+    height: 25px;
+    right: 5px;
+    bottom: 5px;
+    background: url('https://us.123rf.com/450wm/carla720/carla7201007/carla720100700038/7380384-fond-d%C3%A9grad%C3%A9-rouge-avec-des-courbes-de-gradation-diff%C3%A9rents.jpg?ver=6') repeat-x;
+    border: 1px solid #760001;
+    border-radius: 5px;
+    font-size: 1.2em;
+    text-align: center;
+    padding: 3px 8px 0px 8px;
+    color: white;
+    text-decoration: none;
+}
+
+.reseau-sociau {
+    width: 170px;
+    height: 50px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
 
 @media screen and (min-width: 740px){
 
+
+    .bloc_page
+{
+    width: auto;
+    display: flex;
+    padding-top: 25px;
+    color: rgb(1, 1, 49);
+    background-image: url("https://static.vecteezy.com/system/resources/previews/000/115/493/non_2x/free-vector-colored-degraded-background.jpg");
 }
+
+div
+{   width: auto;
+    border: 1px solid #181818;
+margin-right: 2px;
+}
+
+.boissons{
+width: auto;
+}
+
+.bouton_rouge
+{
+    height: 25px;
+    right: 5px;
+    bottom: 5px;
+    background: url('https://us.123rf.com/450wm/carla720/carla7201007/carla720100700038/7380384-fond-d%C3%A9grad%C3%A9-rouge-avec-des-courbes-de-gradation-diff%C3%A9rents.jpg?ver=6') repeat-x;
+    border: 1px solid #760001;
+    border-radius: 5px;
+    font-size: 1.2em;
+    text-align: center;
+    padding: 3px 8px 0px 8px;
+    color: white;
+    text-decoration: none;
+}
+
+.reseau-sociau {
+    width: 170px;
+    height: 50px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+
+
+}
+
+
