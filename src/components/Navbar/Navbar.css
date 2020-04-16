@@ -10,3 +10,10 @@
   display: block!important;
 }
 
+.navbar-brand{
+  font-family: 'Lato', sans-serif;
+}
+
+.nav-link{
+  font-family: 'Lato', sans-serif;
+}
