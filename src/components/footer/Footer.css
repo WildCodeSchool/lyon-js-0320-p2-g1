@@ -1,5 +1,4 @@
-.bloc_page
-{
+.bloc_page {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -21,7 +20,6 @@
     background-repeat: no-repeat;
     
 }
-
 
 .contact{
     width: 80%;
@@ -47,10 +45,4 @@
     .bloc_page{
         flex-direction: row;
     }
-
 }
-
-
-
-
- 
