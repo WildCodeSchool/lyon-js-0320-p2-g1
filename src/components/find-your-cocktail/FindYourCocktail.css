@@ -12,9 +12,9 @@ h1, h2, h3 {
   font-family: 'Playfair Display', serif;
 }
 
-img.bar {
-  height: 100vh;
-  width: 100%;
+.bar {
+  height: 100%;
+  width: 70vh;
 }
 
 h1.text-center.m-5 {
@@ -28,5 +28,29 @@ h3.text-center {
 .search {
   margin: 50px auto 50px;
   color: white;
-  background-color: #232323;
+  background-color: black;
+}
+
+.section-title{
+  color:White;
+}
+
+.buttonContainer{
+  display: flex;
+  justify-content: center;
+  margin: 5%;
+  font-size: 20px;
+}
+
+button{
+  background-color: black;
+  color: white;
+  border: none;
+}
+
+@media only screen and (max-width: 987px){
+  main{
+    display: flex;
+    justify-content: center;
+  }
 }
