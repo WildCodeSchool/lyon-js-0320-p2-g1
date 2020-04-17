@@ -6,6 +6,11 @@
     align-items: center;
     background-image: url("https://img-19.ccm2.net/ZeQkiteGKjO6zz-Tdw14V7oMaTc=/b2ed7415e2fb4014a48eec62c760e700/ccm-ugc/p-black-light-dark-figures-2560x1440.png");
     color: white;
+    font-family: 'Lato', sans-serif;
+}
+
+.bloc_page h1{
+    font-family: 'Playfair Display', serif;
 }
 
 .com{
@@ -20,6 +25,8 @@
 
 .contact{
     width: 80%;
+    display: flex;
+    flex-direction: column;
 }
 .contact button{
     width: 100px;
