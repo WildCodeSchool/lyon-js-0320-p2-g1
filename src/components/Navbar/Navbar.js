@@ -5,6 +5,7 @@ import AllCocktails from '../AllCocktails/AllCocktails';
 import GuestBook from '../GuestBook/GuestBook';
 import Quizz from '../Quizz/Quizz';
 import Logo from '../../Images/logo.jpg';
+import Home from '../Home/Home.js';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 
 function Navbar () {
@@ -39,10 +40,6 @@ function Navbar () {
       </div>
     </Router>
   );
-}
-
-function Home () {
-  return <h2>Home</h2>;
 }
 
 export default Navbar;
