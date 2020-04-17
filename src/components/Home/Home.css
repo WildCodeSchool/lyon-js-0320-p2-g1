@@ -1,0 +1,143 @@
+.Main{
+    margin: 0px;
+    padding: 0px;
+    height: auto;
+    font-family: 'Lato', sans-serif;
+}
+
+.cod{
+    color:#CC2A49;
+    margin-top: 25px;
+    font-style: italic;
+    text-decoration: underline;
+    text-align: center;
+}
+
+.date{
+    color: #000;
+    margin-top: 10px;
+    text-align: center;
+}
+
+#recipe{
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+#recipe button{
+    background-color: rgb(172, 9, 42);
+    font-size: 17px;
+    border-radius: 5px;
+    padding: 5px 25px;
+    margin-bottom: 5px;
+    color: rgb(240, 235, 235);
+    font-weight: bold;
+    width: 100px;
+    text-align: center;
+    
+}
+
+.title-cod{
+    text-align: center;
+}
+
+.Main-image img{
+    margin: 0 auto;
+}
+
+.Video{
+    position: relative;
+    top: 0;
+    left: 0;
+    display: flex;    
+}
+
+.Video h1{
+    position: absolute;
+    color: #fff;
+    top: 35%;
+    right: 3%;
+    transform: translateY(-50%);
+    margin-top: 30px;
+    font-size: 30px;
+    text-align: center;
+       
+}
+
+.Video h6{
+    position: absolute;
+    color: #fff;
+    top: 60%;
+    right: 4%;
+    transform: translateY(-50%);
+    margin-top: 40px;
+    font-size: 15px;
+    text-align: right;
+        
+}
+
+.Main-image{
+    display: flex;
+    width: 65%;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 60px;
+}
+
+.text-cod{
+    margin: 60px;
+    text-align: justify;
+}
+
+.main1{
+    text-align: center;
+} 
+
+.main2{
+    margin-top: 100px;
+} 
+
+.panel {
+    margin:  30px;
+    padding: 10px;
+    border-radius: 5px ;
+    box-shadow: 2px 1px 3px #9c9c9c;
+    
+}
+
+.panel p{
+    font-size: 18px;
+    font-style: italic;
+}
+
+
+.panel h4 {
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.imageIngredient{
+    width: 40%;
+    height: auto;
+}
+
+.panel-body {
+    padding: 10px;
+}
+
+.panel-footer button {
+    background-color: rgb(172, 9, 42);
+    font-size: 17px;
+    border-radius: 5px;
+    padding: 5px 25px;
+    margin-bottom: 5px;
+    color: rgb(240, 235, 235);
+    font-weight: bold;
+}
+.panel-footer .btn:hover {
+    background-color: rgb(146, 1, 30);
+    color: rgb(240, 235, 235);
+    transition-duration: 0.2s;
+}
+
