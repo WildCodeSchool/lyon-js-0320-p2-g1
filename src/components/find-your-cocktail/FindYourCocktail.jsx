@@ -8,9 +8,7 @@ class FindYourCocktail extends React.Component {
       <main className='d-flex'>
 
         <aside className='col-4 p-0 d-none d-lg-block'>
-          <figure>
-            <img className='bar' src={Bar} alt='bar' />
-          </figure>
+          <img className='bar' src={Bar} alt='bar' />
         </aside>
 
         <section className='col-8'>
@@ -22,7 +20,7 @@ class FindYourCocktail extends React.Component {
           </article>
 
           <article className='search'>
-            <h3 className='m-3 p-4'>Search by ingredient</h3>
+            <h3 className='m-3 p-4 section-title'>Search by ingredient</h3>
           </article>
 
           <article>
@@ -53,8 +51,9 @@ class FindYourCocktail extends React.Component {
               <li>Coca-Cola</li>
             </ul>
 
-            <button>Find My Cocktails</button>
-
+            <div className='buttonContainer'>
+              <button>Find My Cocktails</button>
+            </div>
           </article>
 
         </section>
