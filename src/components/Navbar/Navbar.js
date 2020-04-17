@@ -4,7 +4,7 @@ import FindYourCocktail from '../find-your-cocktail/FindYourCocktail';
 import AllCocktails from '../AllCocktails/AllCocktails';
 import GuestBook from '../GuestBook/GuestBook';
 import Quizz from '../Quizz/Quizz';
-import Logo from '../../images/logo.jpg';
+import Logo from '../../Images/logo.jpg';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 
 function Navbar () {
