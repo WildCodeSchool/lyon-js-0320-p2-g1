@@ -1,111 +1,49 @@
-
-
-
-    
 .bloc_page
 {
     width: 100%;
-    margin: auto;
     display: flex;
-    padding-top: 50px;
+    flex-direction: column;
+    align-items: center;
     background-image: url("https://img-19.ccm2.net/ZeQkiteGKjO6zz-Tdw14V7oMaTc=/b2ed7415e2fb4014a48eec62c760e700/ccm-ugc/p-black-light-dark-figures-2560x1440.png");
-    color:rgb(243, 32, 138);
+    color: white;
 }
 
-.contact{
-    width: 33%;
-    background-position-x: initial;
-background-size: 20em;
-margin: 30px;
-
-
-}
-div
-{
-    width: 200px;
-
-margin-right: 2px;
-}
-
-.boissons{
-    width: 33%;
-background-image:url("https://pngimage.net/wp-content/uploads/2018/06/logo-cocktail-png-6.png");
-background-position-x: initial;
-background-size: 20em;
-margin: 30px;
-}
-
-.copiright{
-    width: 33%;
-    margin: 30px;
-background-size: 20em;
+.com{
+    width: 80%;
+    background-image:url("https://pngimage.net/wp-content/uploads/2018/06/logo-cocktail-png-6.png");
+    background-size: cover;
+    background-size: 100px;
+    background-repeat: no-repeat;
     
 }
 
-.bouton_rouge
-{
-    height: 25px;
-    right: 5px;
-    bottom: 5px;
-   /* background: url('https://us.123rf.com/450wm/carla720/carla7201007/carla720100700038/7380384-fond-d%C3%A9grad%C3%A9-rouge-avec-des-courbes-de-gradation-diff%C3%A9rents.jpg?ver=6') repeat-x;*/
-    border: 1px solid #760001;
-    border-radius: 5px;
-    font-size: 1.2em;
-    text-align: center;
-    padding: 3px 8px 0px 8px;
-    color: white;
-    text-decoration: none;
+
+.contact{
+    width: 80%;
+}
+.contact button{
+    width: 100px;
+    background-color: tomato;
+    margin: auto;
+}
+.contact img{
+    width: 150px;
+    margin: auto;
+    line-height:60px;
 }
 
-.reseau-sociau {
-    width: 170px;
-    height: 50px;
-    cursor: pointer;
-    margin-top: 10px;
-  }
+.copiright{
+    width: 80%;
+}
 
 @media screen and (min-width: 740px){
-
-
     .bloc_page{
-    width: auto;
-    display: flex;
-    padding-top: 25px;
-    background-image: url("https://img-19.ccm2.net/ZeQkiteGKjO6zz-Tdw14V7oMaTc=/b2ed7415e2fb4014a48eec62c760e700/ccm-ugc/p-black-light-dark-figures-2560x1440.png");
-}
-
-div
-{   width: auto;
-margin-right: 2px;
-}
-
-.boissons{
-width: auto;
-}
-
-.bouton_rouge
-{
-    height: 25px;
-    right: 5px;
-    bottom: 5px;
-    background: url('https://us.123rf.com/450wm/carla720/carla7201007/carla720100700038/7380384-fond-d%C3%A9grad%C3%A9-rouge-avec-des-courbes-de-gradation-diff%C3%A9rents.jpg?ver=6') repeat-x;
-    border: 1px solid #760001;
-    border-radius: 5px;
-    font-size: 1.2em;
-    text-align: center;
-    padding: 3px 8px 0px 8px;
-    color: white;
-    text-decoration: none;
-}
-
-.reseau-sociau {
-    width: 170px;
-    height: 50px;
-    cursor: pointer;
-    margin-top: 10px;
-  }
-
+        flex-direction: row;
+    }
 
 }
 
 
+
+
+ 
