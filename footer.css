@@ -1,45 +1,28 @@
-
-
-
-    
 .bloc_page
 {
     width: 100%;
     margin: auto;
     display: flex;
-    padding-top: 50px;
-    background-image: url("https://img-19.ccm2.net/ZeQkiteGKjO6zz-Tdw14V7oMaTc=/b2ed7415e2fb4014a48eec62c760e700/ccm-ugc/p-black-light-dark-figures-2560x1440.png");
-    color:rgb(243, 32, 138);
+    padding-top: 25px;
+    color: rgb(1, 1, 49);
+    background-image: url("https://static.vecteezy.com/system/resources/previews/000/115/493/non_2x/free-vector-colored-degraded-background.jpg");
 }
 
-.contact{
-    width: 33%;
-    background-position-x: initial;
-background-size: 20em;
-margin: 30px;
-
-
+.summer {
+    background-image: url("https://hdfondsdecran.com/image/201609/2213/rayon-orange-arriere-plan-flou.jpg");
+    color:rgb(0, 0, 0);
 }
+
 div
 {
-    width: 200px;
-
+    border: 1px solid #181818;
 margin-right: 2px;
 }
 
 .boissons{
-    width: 33%;
 background-image:url("https://pngimage.net/wp-content/uploads/2018/06/logo-cocktail-png-6.png");
 background-position-x: initial;
 background-size: 20em;
-margin: 30px;
-}
-
-.copiright{
-    width: 33%;
-    margin: 30px;
-background-size: 20em;
-    
 }
 
 .bouton_rouge
@@ -47,7 +30,7 @@ background-size: 20em;
     height: 25px;
     right: 5px;
     bottom: 5px;
-   /* background: url('https://us.123rf.com/450wm/carla720/carla7201007/carla720100700038/7380384-fond-d%C3%A9grad%C3%A9-rouge-avec-des-courbes-de-gradation-diff%C3%A9rents.jpg?ver=6') repeat-x;*/
+    background: url('https://us.123rf.com/450wm/carla720/carla7201007/carla720100700038/7380384-fond-d%C3%A9grad%C3%A9-rouge-avec-des-courbes-de-gradation-diff%C3%A9rents.jpg?ver=6') repeat-x;
     border: 1px solid #760001;
     border-radius: 5px;
     font-size: 1.2em;
@@ -67,15 +50,18 @@ background-size: 20em;
 @media screen and (min-width: 740px){
 
 
-    .bloc_page{
+    .bloc_page
+{
     width: auto;
     display: flex;
     padding-top: 25px;
-    background-image: url("https://img-19.ccm2.net/ZeQkiteGKjO6zz-Tdw14V7oMaTc=/b2ed7415e2fb4014a48eec62c760e700/ccm-ugc/p-black-light-dark-figures-2560x1440.png");
+    color: rgb(1, 1, 49);
+    background-image: url("https://static.vecteezy.com/system/resources/previews/000/115/493/non_2x/free-vector-colored-degraded-background.jpg");
 }
 
 div
 {   width: auto;
+    border: 1px solid #181818;
 margin-right: 2px;
 }
 
@@ -107,5 +93,6 @@ width: auto;
 
 
 }
+
 
 

@@ -7,12 +7,29 @@ class Footer extends React.Component {
             
 <footer className='bloc_page'>
     <div className='boissons'>
+                    <h1>Mes boissons préfére</h1>
+                    <div id="listes_amis">
+                        <ul>
+                            <li><a href="#">tequila</a></li>
+                            <li><a href="#">pasoa</a></li>
+                            <li><a href="#">redbulli</a></li>
+                            <li><a href="#">mojito</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#">whiskycoka</a></li>
+                            <li><a href="#"></a>passionflower</li>
+                            <li><a href="#">periquoa</a></li>
+                            <li><a href="#">capina</a></li>
+                        </ul>
+                    </div>
+    </div>
+    <div >
                     <h1> commentaire</h1>
                     <p>tes derniers commentaires</p>
                     <p>cette boisson est top</p>
                     <p>le 14 avril2020</p>
     </div>
-    <div className='contact'>
+    <div>
                     <h1>contact</h1>
                     <p className='bouton_rouge'>nous contacter</p>
                     <img className="reseau-sociau" src="https://miro.medium.com/max/621/1*XyvBPSfQebxwD652YQOtqw.png" alt="Nos réseaux sociaux" title="Nos réseaux sociaux"></img>
