@@ -1,0 +1,53 @@
+
+.main1{
+    text-align: center;
+} 
+
+.main2{
+    margin-top: 100px;
+} 
+
+.panel {
+    margin:  30px;
+    padding: 10px;
+    border-radius: 5px ;
+    box-shadow: 2px 1px 3px #9c9c9c;
+    
+}
+
+.panel p{
+    font-size: 18px;
+    font-style: italic;
+}
+
+
+.panel h4 {
+    font-weight: bold;
+    font-size: 22px;
+}
+
+img{
+    width: 40%;
+    height: auto;
+}
+
+.panel-body {
+    padding: 10px;
+}
+
+
+.panel-footer button {
+    background-color: rgb(172, 9, 42);
+    font-size: 17px;
+    border-radius: 5px;
+    padding: 5px 25px;
+    margin-bottom: 5px;
+    color: rgb(240, 235, 235);
+    font-weight: bold;
+}
+.panel-footer .btn:hover {
+    background-color: rgb(146, 1, 30);
+    color: rgb(240, 235, 235);
+    transition-duration: 0.2s;
+}
+
