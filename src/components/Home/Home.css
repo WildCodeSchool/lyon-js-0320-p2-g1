@@ -1,4 +1,4 @@
-.Main{
+.HomeMain{
     margin: 0px;
     padding: 0px;
     height: auto;
@@ -7,16 +7,20 @@
 
 .cod{
     color:#CC2A49;
-    margin-top: 25px;
+    margin-top: 40px;
     font-style: italic;
     text-decoration: underline;
     text-align: center;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-size: 25px;
 }
 
 .date{
     color: #000;
-    margin-top: 10px;
+    margin-top: 5px;
     text-align: center;
+    font-size: 13px;
 }
 
 #recipe{
@@ -40,6 +44,10 @@
 
 .title-cod{
     text-align: center;
+    font-size: 15px;
+    font-family: 'Playfair Display', serif;
+    margin-top: 30px;
+    font-weight: 700;
 }
 
 .Main-image img{
@@ -60,9 +68,12 @@
     right: 3%;
     transform: translateY(-50%);
     margin-top: 30px;
-    font-size: 30px;
+    font-size: 25px;
     text-align: center;
-       
+    font-family: 'Playfair Display', serif;
+    animation-name: videotitle;
+    animation-duration: 1s;
+    animation-fill-mode: both;
 }
 
 .Video h6{
@@ -72,9 +83,22 @@
     right: 4%;
     transform: translateY(-50%);
     margin-top: 40px;
-    font-size: 15px;
+    font-size: 12px;
     text-align: right;
-        
+    font-family: 'Lato', sans-serif;
+    animation-name: videotext;
+    animation-duration: 2s;
+    animation-fill-mode: both;
+}
+
+@keyframes videotext {
+    from { transform: translateX(-350%)}
+    to { transform: translateX(0%)}
+}
+
+@keyframes videotitle {
+    from { transform: translateX(150%)}
+    to { transform: translateX(0%)}
 }
 
 .Main-image{

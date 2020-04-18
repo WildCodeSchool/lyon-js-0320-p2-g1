@@ -5,6 +5,7 @@ import AllCocktails from '../AllCocktails/AllCocktails';
 import GuestBook from '../GuestBook/GuestBook';
 import Quizz from '../Quizz/Quizz';
 import Logo from '../../images/logo.jpg';
+import 'bootswatch/dist/lux/bootstrap.min.css';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 
 function Navbar () {
