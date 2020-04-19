@@ -8,41 +8,42 @@
     font-family: 'Lato', sans-serif;
 }
 
-.bloc_page h1{
+.bloc_page h1 {
     font-family: 'Playfair Display', serif;
 }
 
-.com{
+.com {
     width: 80%;
     background-image:url("https://pngimage.net/wp-content/uploads/2018/06/logo-cocktail-png-6.png");
     background-size: cover;
     background-size: 100px;
     background-repeat: no-repeat;
-    
 }
 
-.contact{
+.contact {
     width: 80%;
     display: flex;
     flex-direction: column;
 }
-.contact button{
+
+.contact button {
     width: 100px;
     background-color: tomato;
     margin: auto;
 }
-.contact img{
+
+.contact img {
     width: 150px;
     margin: auto;
     line-height:60px;
 }
 
-.copiright{
+.copiright {
     width: 80%;
 }
 
-@media screen and (min-width: 740px){
-    .bloc_page{
+@media screen and (min-width: 740px) {
+    .bloc_page {
         flex-direction: row;
     }
 }
