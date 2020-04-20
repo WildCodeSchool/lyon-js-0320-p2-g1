@@ -23,9 +23,9 @@ function Navbar () {
             <ul className='navbar-nav text-right'>
               <li className='nav-item active'><Link to='/' className='nav-link'>Home</Link></li>
               <li className='nav-item'><Link to='/find-your-cocktail' className='nav-link'>Find your cocktail</Link></li>
-              <li className='nav-item'><Link to='/All-Cocktails' className='nav-link'>All Cocktails</Link></li>
-              <li className='nav-item'><Link to='/Guest-Book' className='nav-link'>Guest Book</Link></li>
-              <li className='nav-item'><Link to='/Quizz' className='nav-link'>Quizz</Link></li>
+              <li className='nav-item'><Link to='/all-cocktails' className='nav-link'>All Cocktails</Link></li>
+              <li className='nav-item'><Link to='/guest-book' className='nav-link'>Guest Book</Link></li>
+              <li className='nav-item'><Link to='/quizz' className='nav-link'>Quizz</Link></li>
             </ul>
           </div>
         </nav>
@@ -33,9 +33,9 @@ function Navbar () {
         <Switch>
           <Route exact path='/'><Home /></Route>
           <Route path='/find-your-cocktail' component={FindYourCocktail} />
-          <Route path='/All-Cocktails' component={AllCocktails} />
-          <Route path='/Guest-Book' component={GuestBook} />
-          <Route path='/Quizz' component={Quizz} />
+          <Route path='/all-cocktails' component={AllCocktails} />
+          <Route path='/guest-book' component={GuestBook} />
+          <Route path='/quizz' component={Quizz} />
         </Switch>
       </div>
     </Router>
