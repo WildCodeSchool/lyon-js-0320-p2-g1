@@ -1,5 +1,6 @@
 import React from 'react';
 import './Navbar.css';
+import Home from '../home/Home';
 import FindYourCocktail from '../find-your-cocktail/FindYourCocktail';
 import AllCocktails from '../all-cocktails/AllCocktails';
 import GuestBook from '../guestbook/GuestBook';
@@ -20,7 +21,7 @@ function Navbar () {
           </button>
           <div className='collapse navbar-collapse justify-content-end' id='navbarColor01'>
             <ul className='navbar-nav text-right'>
-              <li className='nav-item active'><Link to='/Home.js' className='nav-link'>Home</Link></li>
+              <li className='nav-item active'><Link to='/' className='nav-link'>Home</Link></li>
               <li className='nav-item'><Link to='/Find-your-cocktail' className='nav-link'>Find your cocktail</Link></li>
               <li className='nav-item'><Link to='/All-Cocktails' className='nav-link'>All Cocktails</Link></li>
               <li className='nav-item'><Link to='/Guest-Book' className='nav-link'>Guest Book</Link></li>
@@ -30,19 +31,15 @@ function Navbar () {
         </nav>
 
         <Switch>
-          <Route exact path='/Home.js'><Home /></Route>
-          <Route exact path='/Find-your-cocktail' component={FindYourCocktail} />
-          <Route exact path='/All-Cocktails' component={AllCocktails} />
-          <Route exact path='/Guest-Book' component={GuestBook} />
-          <Route exact path='/Quizz' component={Quizz} />
+          <Route exact path='/'><Home /></Route>
+          <Route path='/Find-your-cocktail' component={FindYourCocktail} />
+          <Route path='/All-Cocktails' component={AllCocktails} />
+          <Route path='/Guest-Book' component={GuestBook} />
+          <Route path='/Quizz' component={Quizz} />
         </Switch>
       </div>
     </Router>
   );
-}
-
-function Home () {
-  return <h2>Home</h2>;
 }
 
 export default Navbar;
