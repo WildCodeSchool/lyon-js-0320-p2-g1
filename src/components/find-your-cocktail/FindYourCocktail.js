@@ -1,8 +1,27 @@
 import React from 'react';
 import './FindYourCocktail.css';
 import Bar from '../../images/bar.jpg';
+import axios from 'axios';
 
 class FindYourCocktail extends React.Component {
+  constructor (props) {
+    super(props);
+    this.state = {
+      ingredients: ''
+    };
+  }
+
+  getIngredients () {
+    axios
+      .get('https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list')
+      .then(response => response.data)
+      .then(data => {
+        this.setState({
+          ingredients: data
+        });
+      });
+  }
+
   render () {
     return (
       <main className='d-flex'>
