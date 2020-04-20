@@ -55,6 +55,7 @@
 
 .Main-image img{
     margin: 0 auto;
+    width: 65%;
 }
 
 .Video{
@@ -109,7 +110,7 @@
 
 .Main-image{
     display: flex;
-    width: 65%;
+    
     height: auto;
     margin: 0 auto;
     margin-top: 60px;
