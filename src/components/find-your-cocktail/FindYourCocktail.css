@@ -14,7 +14,7 @@ h1, h2, h3 {
 
 .bar {
   height: 100%;
-  width: 70vh;
+  width: 100%;
 }
 
 h1.text-center.m-5 {
