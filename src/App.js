@@ -1,6 +1,6 @@
 import React from 'react';
-import Home from './components/Home/Home.js';
-import Navbar from './components/Navbar/Navbar.js';
+import Home from './components/home/Home.js';
+import Navbar from './components/navbar/Navbar.js';
 import 'bootswatch/dist/lux/bootstrap.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import './FindYourCocktail.css';
-import Bar from '../../img/bar.jpg';
+import Bar from '../../images/bar.jpg';
 
 class FindYourCocktail extends React.Component {
   render () {
