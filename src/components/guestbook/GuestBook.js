@@ -4,12 +4,14 @@ import './GuestBook.css';
 function GuestBook () {
   return (
     <main className='mainGuestbook'>
-      <h1>Guestbook</h1>
-      <p>If you need any informations or if you have some suggestions, feel free to leave a comment !</p>
+      <div className='pageDescription'>
+        <h1>Guestbook</h1>
+        <p>If you need any informations or if you have some suggestions, feel free to leave a comment !</p>
+      </div>
       <form className='GuestbookForm'>
         <label for='commentArea'>Your comments</label>
-        <textarea id='message' name='user_message' placeholder='Type your message here'></textarea>
-        <input type="submit" value="Send" />
+        <textarea id='message' name='user_message' placeholder='Type your message here' />
+        <input type='submit' value='Send' />
       </form>
       <div className='commentList'>
         <h2>Last comments</h2>

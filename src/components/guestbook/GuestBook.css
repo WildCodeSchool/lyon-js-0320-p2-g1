@@ -6,8 +6,15 @@ font-family: 'Lato', sans-serif;
 
 .mainGuestbook{
   font-family: 'Lato', sans-serif;
+  display: flex;
 }
 
 .mainGuestbook h1 h2 h3{
   font-family: 'Playfair Display', serif;
+}
+
+.pageDescription{
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
 }
