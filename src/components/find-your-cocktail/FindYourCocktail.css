@@ -21,12 +21,16 @@ h1.text-center.m-5 {
   font-weight: bold;
 }
 
+.search {
+  margin: 50px auto 50px;
+  background-color: #232323;
+}
+
+.search h3 {
+  color: white;
+}
+
 h3.text-center {
   font-weight: 600;
 }
 
-.search {
-  margin: 50px auto 50px;
-  color: white;
-  background-color: #232323;
-}
