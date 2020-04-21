@@ -6,14 +6,15 @@ class Footer extends React.Component {
         return(     
             <footer className='bloc_page'>
                 <div className='com'>
-                    <h1>GuestBook</h1>
+                <img src="https://pngimage.net/wp-content/uploads/2018/06/logo-cocktail-png-6.png" alt="logo" title="logo"></img>
+                    <h3>GuestBook</h3>
                     <p>The last comment :</p>
                     <p>"This cocktail was Great"</p>
                     <p>14 april 2020</p> {/*ajouter l'aplication date  */}
                 </div>
                 <div className='contact'>
-                    <h1>Contact</h1>
-                    <button>Contact us</button>
+                    <h3>Contact</h3>
+                    <button href="mailto:adresse@serveur.com">Contact us</button>
                     <img src="https://miro.medium.com/max/621/1*XyvBPSfQebxwD652YQOtqw.png" alt="Nos réseaux sociaux" title="Nos réseaux sociaux"></img>
                 </div>
                 <div className='copiright'>

@@ -1,0 +1,70 @@
+.contact_page {
+    width: 100%;
+    align-items: center;
+    color: white;
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+    background: no-repeat center/100%  url('https://us.123rf.com/450wm/goinyk/goinyk1209/goinyk120900051/15094172-cocktail-color%C3%A9-sur-le-fond-noir.jpg?ver=6');
+
+}
+.title {
+    color: violet;
+    margin: 10px;
+}
+
+.element {
+    display: flex;
+    text-align: center;
+    flex-direction:row;
+    align-content: center;
+    margin: 20px;
+    padding-right: 10px;
+}
+
+.Name {
+    width: 33%;
+    border: 2px solid white;
+    margin: 10px;
+}
+
+.email {
+    width: 33%;
+    border: 2px solid white;
+    margin: 10px;
+}
+
+.phone {
+    width: 33%;
+    border: 2px solid white;
+    margin: 10px;
+}
+
+.message {
+    border: 2px solid white;
+    align-items: center;
+    margin: 40px;
+}
+
+.submit {
+    width: 100%;
+    text-align: center;
+    margin: 10px;
+}
+
+.submit button {
+    width: 100px;
+    background-color:orange;
+    border: 2px soliD orange;
+    margin: 10px;
+    border-radius: 10em;
+    -webkit-border-radius: 10em;
+    -moz-border-radius: 10em;
+    -ms-border-radius: 10em;
+    -o-border-radius: 10em;
+}
+
+@media screen and (min-width: 740px) {
+    .contact_page {
+        flex-direction: row;
+    }
+}
