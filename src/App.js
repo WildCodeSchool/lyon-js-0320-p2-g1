@@ -1,6 +1,5 @@
 import React from 'react';
 import Navbar from './components/Navbar/Navbar.js';
-import 'bootswatch/dist/lux/bootstrap.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App () {
