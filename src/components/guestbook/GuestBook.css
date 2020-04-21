@@ -18,3 +18,46 @@ font-family: 'Lato', sans-serif;
   justify-content: flex-end;
   flex-direction: column;
 }
+.GuestbookForm{
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+}
+
+.pageDescription{
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+}
+
+.textareaContainer{
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+}
+
+#message{
+  height: 7rem;
+  width: 20rem;
+}
+
+.btnContainer{
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+@media screen and (max-width: 991px){
+  .textareaContainer{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .btnContainer{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+}
