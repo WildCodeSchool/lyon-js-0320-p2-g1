@@ -7,18 +7,17 @@ class FindYourCocktail extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      ingredients: ''
+      drinks: []
     };
   }
 
-  getIngredients () {
+  componentDidMount () {
     axios
       .get('https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list')
-      .then(response => response.data)
-      .then(data => {
-        this.setState({
-          ingredients: data
-        });
+      .then((response) => {
+        this.setState({ drinks: response.data.drinks });
+      }, (error) => {
+        console.log(error);
       });
   }
 
@@ -49,10 +48,7 @@ class FindYourCocktail extends React.Component {
             <h3 className='text-center'>Alcohol</h3>
             <hr />
             <ul>
-              <li>Rhum</li>
-              <li>Gin</li>
-              <li>Whisky</li>
-              <li>Vodka</li>
+              {this.state.drinks.map(ingredient => <li key={ingredient.strIngredient1}>{ingredient.strIngredient1}</li>)}
             </ul>
 
             <h3 className='text-center'>Fruits</h3>
