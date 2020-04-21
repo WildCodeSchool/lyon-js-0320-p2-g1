@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import Image from '../Images/cocktail.png';
+import Image from '../images/cocktail.png';
 import './Home.css';
 
 
