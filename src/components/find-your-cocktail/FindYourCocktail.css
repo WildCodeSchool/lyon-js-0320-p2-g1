@@ -28,7 +28,7 @@ h1.text-center.m-5 {
 
 .search {
   margin: 50px auto 50px;
-  background-color: #232323;
+  background-color: #373737;
 }
 
 .search h3 {
@@ -39,3 +39,11 @@ h3.text-center {
   font-weight: 600;
 }
 
+.alcohols, 
+.fruits,
+.others {
+  color: white;
+  background-color: #373737;
+  border-radius: 2px;
+  text-align: center;
+}

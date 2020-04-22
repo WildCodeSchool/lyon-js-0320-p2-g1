@@ -38,7 +38,7 @@ class FindYourCocktail extends React.Component {
     alcoholsList = alcoholsList.concat(this.state.drinks.slice(73, 76));
     alcoholsList = alcoholsList.concat(this.state.drinks.slice(84, 94));
     alcoholsList = alcoholsList.concat(this.state.drinks.slice(96, 100));
-    return alcoholsList.map(alcohol => <li key={alcohol.strIngredient1}>{alcohol.strIngredient1}</li>);
+    return alcoholsList.map(alcohol => <li className='alcohols col-4 m-1 col-lg-2 p-2' key={alcohol.strIngredient1}>{alcohol.strIngredient1}</li>);
   }
 
   filterFruits () {
@@ -51,7 +51,7 @@ class FindYourCocktail extends React.Component {
     fruitsList = fruitsList.concat(this.state.drinks.slice(71, 73));
     fruitsList = fruitsList.concat(this.state.drinks.slice(76, 77));
     fruitsList = fruitsList.concat(this.state.drinks.slice(79, 82));
-    return fruitsList.map(fruits => <li key={fruits.strIngredient1}>{fruits.strIngredient1}</li>);
+    return fruitsList.map(fruits => <li className='fruits col-4 m-1 col-lg-2 p-2' key={fruits.strIngredient1}>{fruits.strIngredient1}</li>);
   }
 
   filterOthers () {
@@ -69,7 +69,7 @@ class FindYourCocktail extends React.Component {
     othersList = othersList.concat(this.state.drinks.slice(77, 79));
     othersList = othersList.concat(this.state.drinks.slice(82, 84));
     othersList = othersList.concat(this.state.drinks.slice(94, 96));
-    return othersList.map(others => <li key={others.strIngredient1}>{others.strIngredient1}</li>);
+    return othersList.map(others => <li className='others col-4 m-1 col-lg-2 p-2' key={others.strIngredient1}>{others.strIngredient1}</li>);
   }
 
   render () {
@@ -98,19 +98,19 @@ class FindYourCocktail extends React.Component {
 
             <h3 className='text-center'>Alcohol</h3>
             <hr />
-            <ul>
+            <ul className='d-flex flex-wrap list-unstyled justify-content-center'>
               {this.filterAlcohols()}
             </ul>
 
             <h3 className='text-center'>Fruits</h3>
             <hr />
-            <ul>
+            <ul className='d-flex flex-wrap list-unstyled justify-content-center'>
               {this.filterFruits()}
             </ul>
 
             <h3 className='text-center'>Others</h3>
             <hr />
-            <ul>
+            <ul className='d-flex flex-wrap list-unstyled justify-content-center'>
               {this.filterOthers()}
             </ul>
 
