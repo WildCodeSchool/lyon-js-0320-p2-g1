@@ -20,8 +20,8 @@ class Footer extends React.Component {
                 <div className='copiright'>
                     <p>copyright by lens78inc2020</p>
                     <p>Application Cocktail Finder</p>
-                    <p>"Excessive drinking is </p>
-                    <p>dangerous for the health"</p>
+                    <p className='phrases'>"Excessive drinking is </p>
+                    <p className='phrases'>dangerous for the health"</p>
                     <p><strong>Our conditions...</strong></p>
                 </div>
             </footer>  

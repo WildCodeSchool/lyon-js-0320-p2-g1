@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #232323;
+    background-color: #0f0f0f;
     color: white;
     font-family: 'Lato', sans-serif;
 }
@@ -36,6 +36,11 @@
     width: 100px;
     background-color: tomato;
     margin: 20px;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
 }
 
 .contact img {
@@ -48,6 +53,13 @@
 .copiright {
     width: 50%;
     text-align: center;
+}
+
+.phrases {
+    font-family: 'Playfair Display SC Black Italic', arial;
+    font-size: 24px;
+    text-shadow: 1px 1px 1px white;
+    color:purple;
 }
 
 @media screen and (min-width: 740px) {
