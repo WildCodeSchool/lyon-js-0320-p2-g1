@@ -9,7 +9,7 @@ font-family: 'Lato', sans-serif;
   display: flex;
   color:white;
   background-color:black;
-  background-image:url(https://i.imgur.com/tC3SpjI.jpg);
+  background-image:url(https://i.imgur.com/J6kCYkO.jpg);
   background-size: cover;
 }
 
@@ -103,7 +103,7 @@ font-family: 'Lato', sans-serif;
 .commentsPara{
   margin-top: 1rem;
   margin-bottom: 1rem;
-  width: 29%;
+  width: 40%;
   height: auto;
 }
 
