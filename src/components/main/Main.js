@@ -4,7 +4,7 @@ import FindYourCocktail from '../find-your-cocktail/FindYourCocktail';
 import AllCocktails from '../all-cocktails/AllCocktails';
 import GuestBook from '../guestbook/GuestBook';
 import Quizz from '../quizz/Quizz';
-import Home from '../home/Home.js';
+import Home from '../Home/Home.js';
 import 'bootswatch/dist/lux/bootstrap.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 

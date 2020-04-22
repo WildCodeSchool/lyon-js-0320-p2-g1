@@ -1,0 +1,74 @@
+.bloc_page {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #0f0f0f;
+    color: white;
+    font-family: 'Lato', sans-serif;
+}
+
+.bloc_page h3 {
+    font-family: 'Playfair Display', serif;
+    color: white;
+}
+
+.com {
+    width: 50%;
+    text-align: center;
+}
+
+.com img {
+    width: 80px;
+    margin: auto;
+    line-height:60px;
+}
+
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 20px;
+}
+
+.contact a {
+    font-size: 22px;
+    width: 100px;
+    background-color: tomato;
+    height: 65px;
+    margin: 20px;
+    text-align: center;
+    color: white;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    align-content: center;
+}
+
+.contact img {
+    width: 150px;
+    margin: 1px;
+    line-height:60px;
+
+}
+
+.copiright {
+    width: 50%;
+    text-align: center;
+}
+
+.phrases {
+    font-family: 'Playfair Display SC Black Italic', arial;
+    font-size: 24px;
+    text-shadow: 1px 1px 1px white;
+    color:purple;
+}
+
+@media screen and (min-width: 740px) {
+    .bloc_page {
+        flex-direction: row;
+    }
+}
