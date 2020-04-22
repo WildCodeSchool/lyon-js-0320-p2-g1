@@ -33,9 +33,10 @@
 }
 
 .contact a {
+    font-size: 22px;
     width: 100px;
-    height: 40px;
     background-color: tomato;
+    height: 65px;
     margin: 20px;
     text-align: center;
     color: white;
@@ -44,6 +45,7 @@
     -moz-border-radius: 20px;
     -ms-border-radius: 20px;
     -o-border-radius: 20px;
+    align-content: center;
 }
 
 .contact img {
