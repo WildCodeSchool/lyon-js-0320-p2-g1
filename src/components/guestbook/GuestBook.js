@@ -19,7 +19,7 @@ function GuestBook () {
               <textarea id='message' className='user_message' placeholder='Type your message here' />
             </div>
             <div className='btnContainer'>
-              <input value='Send' type='button' className='btn btn-outline-dark' id='button'/>
+              <input value='Send' type='button' className='btn btn-outline-dark' id='button' />
             </div>
           </form>
 
@@ -28,17 +28,17 @@ function GuestBook () {
 
             <div className='comments'>
               <h3>Message from [User Name]:</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam diam neque, accumsan in sapien eget, scelerisque congue nulla. Vestibulum diam diam, lacinia a magna ut, dapibus hendrerit augue.</p>
+              <p className='commentsPara'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam diam neque, accumsan in sapien eget, scelerisque congue nulla. Vestibulum diam diam, lacinia a magna ut, dapibus hendrerit augue.</p>
             </div>
 
             <div className='comments'>
               <h3>Message from [User Name]:</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam diam neque, accumsan in sapien eget, scelerisque congue nulla. Vestibulum diam diam, lacinia a magna ut, dapibus hendrerit augue.</p>
+              <p className='commentsPara'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam diam neque, accumsan in sapien eget, scelerisque congue nulla. Vestibulum diam diam, lacinia a magna ut, dapibus hendrerit augue.</p>
             </div>
 
             <div className='comments'>
               <h3>Message from [User Name]:</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam diam neque, accumsan in sapien eget, scelerisque congue nulla. Vestibulum diam diam, lacinia a magna ut, dapibus hendrerit augue.</p>
+              <p className='commentsPara'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam diam neque, accumsan in sapien eget, scelerisque congue nulla. Vestibulum diam diam, lacinia a magna ut, dapibus hendrerit augue.</p>
             </div>
 
           </div>

@@ -13,10 +13,22 @@ font-family: 'Lato', sans-serif;
   font-family: 'Playfair Display', serif;
 }
 
+.commentList h2{
+  font-size: 28px;
+}
+
+.commentList h3{
+  font-size: 20px;
+}
+
 .pageDescription{
   display: flex;
   justify-content: flex-end;
   flex-direction: column;
+}
+
+.pageDescription p{
+  font-style: italic;
 }
 .GuestbookForm{
   display: flex;
@@ -28,6 +40,8 @@ font-family: 'Lato', sans-serif;
   display: flex;
   align-items: flex-end;
   flex-direction: column;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
 }
 
 .textareaContainer{
@@ -48,6 +62,29 @@ font-family: 'Lato', sans-serif;
   margin-top: 1rem;
 }
 
+.commentList{
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.comments{
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+}
+
+.commentsPara{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  width: 30%;
+  height: auto;
+}
+
 @media screen and (max-width: 991px){
   .textareaContainer{
     display: flex;
@@ -56,6 +93,31 @@ font-family: 'Lato', sans-serif;
   }
 
   .btnContainer{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .commentList{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .comments{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 40%;
+    height: auto;
+  }
+
+  .commentsPara{
+    width: 100%;
+    height: auto;
+  }
+  
+  .pageDescription{
     display: flex;
     align-items: center;
     flex-direction: column;
