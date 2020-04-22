@@ -49,8 +49,8 @@ class FindYourCocktail extends React.Component {
             <hr />
             <ul>
               {console.log(this.state.drinks)}
-              {this.state.drinks.map((ingredient, i) => {
-                return <li key={i}>{ingredient.strIngredient1}</li>
+              {this.state.drinks.slice(0, 20).map((ingredient, i) => {
+                return <li key={i}>{ingredient.strIngredient1}</li>;
               })}
 
               {/* {this.state.drinks.map(ingredient => <li key={ingredient.strIngredient1}>{ingredient.strIngredient1}</li>)} */}
