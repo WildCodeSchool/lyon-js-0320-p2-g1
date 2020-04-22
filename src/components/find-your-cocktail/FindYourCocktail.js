@@ -31,7 +31,7 @@ class FindYourCocktail extends React.Component {
           </figure>
         </aside>
 
-        <section className='col-8'>
+        <section className='content col-12 col-lg-8'>
 
           <article>
             <h1 className='text-center m-5'>Find Your Cocktail</h1>
@@ -48,7 +48,12 @@ class FindYourCocktail extends React.Component {
             <h3 className='text-center'>Alcohol</h3>
             <hr />
             <ul>
-              {this.state.drinks.map(ingredient => <li key={ingredient.strIngredient1}>{ingredient.strIngredient1}</li>)}
+              {console.log(this.state.drinks)}
+              {this.state.drinks.map((ingredient, i) => {
+                return <li key={i}>{ingredient.strIngredient1}</li>
+              })}
+
+              {/* {this.state.drinks.map(ingredient => <li key={ingredient.strIngredient1}>{ingredient.strIngredient1}</li>)} */}
             </ul>
 
             <h3 className='text-center'>Fruits</h3>

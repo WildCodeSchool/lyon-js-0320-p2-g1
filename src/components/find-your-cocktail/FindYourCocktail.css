@@ -17,6 +17,11 @@ img.bar {
   width: 100%;
 }
 
+.content {
+  height: 100vh;
+  overflow: auto;
+}
+
 h1.text-center.m-5 {
   font-weight: bold;
 }
