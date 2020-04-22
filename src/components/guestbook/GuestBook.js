@@ -15,7 +15,7 @@ function GuestBook () {
 
           <form className='GuestbookForm'>
             <div className='textareaContainer'>
-              <label for='commentArea' id='label'>Your comment :</label>
+              <label htmlFor='commentArea' id='label'>Your comment :</label>
               <textarea id='message' className='user_message' placeholder='Type your message here' />
             </div>
             <div className='btnContainer'>
