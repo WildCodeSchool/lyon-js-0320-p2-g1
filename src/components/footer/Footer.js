@@ -14,7 +14,7 @@ class Footer extends React.Component {
                 </div>
                 <div className='contact'>
                     <h3>Contact</h3>
-                    <button href="mailto:adresse@serveur.com">Contact us</button>
+                    <a href="mailto:cocktail.finder@outlook.fr">contacts us</a>
                     <img src="https://miro.medium.com/max/621/1*XyvBPSfQebxwD652YQOtqw.png" alt="Nos réseaux sociaux" title="Nos réseaux sociaux"></img>
                 </div>
                 <div className='copiright'>

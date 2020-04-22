@@ -32,10 +32,13 @@
     margin: 20px;
 }
 
-.contact button {
+.contact a {
     width: 100px;
+    height: 40px;
     background-color: tomato;
     margin: 20px;
+    text-align: center;
+    color: white;
     border-radius: 20px;
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
