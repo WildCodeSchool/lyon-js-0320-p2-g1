@@ -7,18 +7,32 @@ font-family: 'Lato', sans-serif;
 .mainGuestbook{
   font-family: 'Lato', sans-serif;
   display: flex;
+  color:white;
+  background-color:black;
+  background-image:url(https://i.imgur.com/tC3SpjI.jpg);
+  background-size: cover;
 }
 
 .mainGuestbook h1 h2 h3{
   font-family: 'Playfair Display', serif;
+  color:white;
+}
+.mainGuestbook h1{
+  color:white;
+}
+
+.allElementsContainer{
+  margin-left: 3rem;
 }
 
 .commentList h2{
   font-size: 28px;
+  color:white;
 }
 
 .commentList h3{
   font-size: 20px;
+  color:white;
 }
 
 .pageDescription{
@@ -34,6 +48,7 @@ font-family: 'Lato', sans-serif;
   display: flex;
   justify-content: flex-end;
   flex-direction: column;
+  margin-top: 7rem;
 }
 
 .pageDescription{
@@ -50,9 +65,16 @@ font-family: 'Lato', sans-serif;
   flex-direction: column;
 }
 
+#label{
+  margin-bottom: 2rem;
+}
+
 #message{
   height: 7rem;
-  width: 20rem;
+  width: 30rem;
+  background: transparent;
+  color: White;
+  border-color: transparent;
 }
 
 .btnContainer{
@@ -81,11 +103,21 @@ font-family: 'Lato', sans-serif;
 .commentsPara{
   margin-top: 1rem;
   margin-bottom: 1rem;
-  width: 30%;
+  width: 29%;
   height: auto;
 }
 
 @media screen and (max-width: 991px){
+  .mainGuestbook{
+    background-color:black;
+    background-image:url(https://i.imgur.com/UoBoHUo.jpg);
+    background-size: cover;
+  }
+
+  #background_opacity{
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+
   .textareaContainer{
     display: flex;
     align-items: center;
@@ -108,7 +140,7 @@ font-family: 'Lato', sans-serif;
     display: flex;
     align-items: center;
     flex-direction: column;
-    width: 40%;
+    width: 60%;
     height: auto;
   }
 

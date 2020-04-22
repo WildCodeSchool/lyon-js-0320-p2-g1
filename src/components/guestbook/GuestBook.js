@@ -3,8 +3,8 @@ import './GuestBook.css';
 
 function GuestBook () {
   return (
-    <main className='mainGuestbook'>
-      <div>
+    <main className='mainGuestbook' id='background_opacity'>
+      <div className='allElementsContainer'>
 
         <div className='pageDescription'>
           <h1>Guestbook</h1>
@@ -15,11 +15,11 @@ function GuestBook () {
 
           <form className='GuestbookForm'>
             <div className='textareaContainer'>
-              <label for='commentArea'>Your comments</label>
+              <label for='commentArea' id='label'>Your comment :</label>
               <textarea id='message' className='user_message' placeholder='Type your message here' />
             </div>
             <div className='btnContainer'>
-              <input value='Send' type='button' className='btn btn-outline-dark' id='button' />
+              <input value='Send' type='button' className='btn btn-dark' id='button' />
             </div>
           </form>
 
