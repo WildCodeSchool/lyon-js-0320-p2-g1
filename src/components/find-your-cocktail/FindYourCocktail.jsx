@@ -52,7 +52,7 @@ class FindYourCocktail extends React.Component {
             </ul>
 
             <div className='buttonContainer'>
-              <button>Find My Cocktails</button>
+              <button className='btn btn-dark'>Find My Cocktails</button>
             </div>
           </article>
 
