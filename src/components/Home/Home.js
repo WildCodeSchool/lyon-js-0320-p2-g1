@@ -2,10 +2,30 @@ import React, { Component } from 'react';
 import CompoCocktail from './CompoCocktail';
 import Quizz from './Quizz';
 import video from '../Images/Strawberries.mp4';
-import cuba from '../Images/cuba-libre.jpg';
 import './Home.css';
+import axios from 'axios';
 
 class Home extends Component {
+  constructor (props) {
+    super(props);
+    this.state = {
+      drinks: []
+    };
+  }
+
+  componentDidMount () {
+    axios
+      .get('https://www.thecocktaildb.com/api/json/v1/1/random.php')
+      .then((response) => {
+        this.setState({ drinks: response.data.drinks });
+        const random = Object.values(this.state.drinks[0]);
+        this.setState({ drinks: random });
+        console.log(this.state.drinks);
+      }, (error) => {
+        console.log(error);
+      });
+  }
+
   calendar () {
     const date = new Date();
     return (
@@ -26,18 +46,14 @@ class Home extends Component {
           </div>
           <h2 className='cod'>Cocktail of the day!</h2>
           <h5 className='date'>{this.calendar()}</h5>
-          <p className='title-cod'>Today, discover the cuba-libre</p>
+          <p className='title-cod'>{'Today, discover the ' + (this.state.drinks[1])}</p>
           <div className='Main-image'>
-            <img src={cuba} alt='cocktail of the day' />
+            <img src={this.state.drinks[20]} alt='cocktail of the day' />
           </div>
           <div id='recipe'>
             <button className='btn btn-lg'>Recipe</button>
           </div>
-          <p className='text-cod'>The cocktail originated in the early 20th century in Cuba,
-        after the country won independence in the Spanish–American War. It subsequently became popular across Cuba, the United States, and other countries. Its simple recipe and inexpensive, ubiquitous ingredients have made it one of the world's most popular alcoholic drinks.
-        Drink critics often consider the drink mediocre, but it has been noted for its historical significance.
-          </p>
-
+          <p className='text-cod'>{this.state.drinks[14]}</p>
         </div>
         <div className='main1'>
           <CompoCocktail
