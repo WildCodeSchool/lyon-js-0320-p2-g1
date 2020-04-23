@@ -68,7 +68,7 @@ h3.text-center {
 }
 .button {
   background-color: white;
-  border : 1px solid #131313;
+  border : 1px solid #373737;
   border-radius: 2px;
   padding: 0.5em 1em;
   margin: 2em auto 2em;
@@ -76,5 +76,5 @@ h3.text-center {
 
 .button:hover, .button:focus, .button:active, .button.active {
   color: white;
-  background-color: #131313;
+  background-color: #373737;
 }
