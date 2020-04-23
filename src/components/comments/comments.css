@@ -1,9 +1,9 @@
-/* *{
+*{
   background-color: rgb(65, 65, 65);
   color: white;
 }
 
-.titleH4{
+.titleH5{
   font-style: italic;
   margin: 10px 20px;
 }
@@ -18,17 +18,41 @@
   justify-content: center;
 }
 
-.comment{
+.comments{
   border: 1px solid rgb(161, 160, 160);
+  margin: 10px;
   padding: 10px;
-
+  display: flex;
+  flex-direction: column;
 }
+
+.calendar{
+  display: flex;
+  justify-content: center;
+  margin-left: 75%;
+  color: rgb(221, 221, 221);
+  font-style: italic;
+  font-size: 13px;
+}
+
 textarea{
   border: none;
   border-bottom: 1px solid rgb(161, 161, 161);
+  padding: 10px;
 }
 .panel{
   margin-left: 40%;
   padding: 10px 50px;
 }
- */
+
+.comment{
+background-color:  rgb(100, 100, 100);
+padding: 10px;
+border-radius: 10px 10px 0  0;
+}
+
+.loading{
+  display: flex;
+  justify-content: center;
+}
+

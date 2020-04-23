@@ -1,9 +1,7 @@
 import React from 'react';
 import Home from './components/home/Home'
-import { BrowserRouter, Switch, Route, Link} from "react-router-dom";
-import Comments from './components/ comments/Comments';
-
-
+import { BrowserRouter , Switch, Route, Link} from "react-router-dom";
+import Comments from './components/comments/Comments'
 
 function App() {
   return (
