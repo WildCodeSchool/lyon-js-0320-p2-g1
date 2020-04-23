@@ -39,11 +39,11 @@ class FindYourCocktail extends React.Component {
     alcoholsList = alcoholsList.concat(this.state.drinks.slice(73, 76));
     alcoholsList = alcoholsList.concat(this.state.drinks.slice(84, 94));
     alcoholsList = alcoholsList.concat(this.state.drinks.slice(96, 100));
-    return alcoholsList.map(alcohol =>
+    return alcoholsList.map((alcohol, index) =>
       <li
         className={this.state.isActive ? 'alcohols status-active col-4 m-1 col-lg-2 p-2' : 'alcohols status-inactive col-4 m-1 col-lg-2 p-2'}
-        key={alcohol.strIngredient1}
-        onClick={event => {
+        key={index}
+        onClick={() => {
           const currentState = !this.state.isActive;
           this.setState({ isActive: currentState });
         }}
@@ -107,26 +107,29 @@ class FindYourCocktail extends React.Component {
 
           <article>
 
-            <h3 className='text-center'>Alcohol</h3>
+            <h3 className=' mt-2 text-center'>Alcohol</h3>
             <hr />
             <ul className='d-flex flex-wrap list-unstyled justify-content-center'>
               {this.filterAlcohols()}
             </ul>
 
-            <h3 className='text-center'>Fruits</h3>
+            <h3 className='mt-6 text-center'>Fruits</h3>
             <hr />
             <ul className='d-flex flex-wrap list-unstyled justify-content-center'>
               {this.filterFruits()}
             </ul>
 
-            <h3 className='text-center'>Others</h3>
+            <h3 className='mt-6 text-center'>Others</h3>
             <hr />
             <ul className='d-flex flex-wrap list-unstyled justify-content-center'>
               {this.filterOthers()}
             </ul>
 
-            <button>Find My Cocktails</button>
+          </article>
 
+          <article className='content d-flex flex-column'>
+            <p className='mt-6 mx-auto'>Now click the button down below to get your matching recipe !</p>
+            <button type='button' className='button'>Find My Cocktails</button>
           </article>
 
         </section>
