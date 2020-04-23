@@ -46,4 +46,23 @@ h3.text-center {
   background-color: #373737;
   border-radius: 2px;
   text-align: center;
+  cursor: pointer;
+}
+
+.alcohols.status-active, 
+.fruits.status-active,
+.others.status-active {
+  color: red;
+  background-color: #373737;
+}
+
+.alcohols.status-inactive, 
+.fruits.status-inactive,
+.others.status-inactive {
+  color: white;
+  background-color: #373737;
+}
+
+.alcohols:hover {
+  color: red;
 }

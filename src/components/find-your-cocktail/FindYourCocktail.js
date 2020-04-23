@@ -7,7 +7,8 @@ class FindYourCocktail extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      drinks: []
+      drinks: [],
+      isActive: false
     };
     this.filterAlcohols = this.filterAlcohols.bind(this);
     this.filterFruits = this.filterFruits.bind(this);
@@ -38,7 +39,17 @@ class FindYourCocktail extends React.Component {
     alcoholsList = alcoholsList.concat(this.state.drinks.slice(73, 76));
     alcoholsList = alcoholsList.concat(this.state.drinks.slice(84, 94));
     alcoholsList = alcoholsList.concat(this.state.drinks.slice(96, 100));
-    return alcoholsList.map(alcohol => <li className='alcohols col-4 m-1 col-lg-2 p-2' key={alcohol.strIngredient1}>{alcohol.strIngredient1}</li>);
+    return alcoholsList.map(alcohol =>
+      <li
+        className={this.state.isActive ? 'alcohols status-active col-4 m-1 col-lg-2 p-2' : 'alcohols status-inactive col-4 m-1 col-lg-2 p-2'}
+        key={alcohol.strIngredient1}
+        onClick={event => {
+          const currentState = !this.state.isActive;
+          this.setState({ isActive: currentState });
+        }}
+      >
+        {alcohol.strIngredient1}
+      </li>);
   }
 
   filterFruits () {
