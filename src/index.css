@@ -8,9 +8,27 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/*  Attribut font-family pour les utiliser   */
+/*
+font-family: 'Lato', sans-serif;
+font-family: 'Playfair Display', serif;
+
+For light: font-weight : 100; Or font-weight : lighter;
+
+For normal: font-weight : 500; Or font-weight : normal;
+
+For bold: font-weight : 700; Or font-weight : bold;
+
+For more bolder: font-weight : 900; Or font-weight : bolder;
+*/
