@@ -44,7 +44,7 @@ class Home extends Component {
             <h1>Welcome to <br />Cocktail Finder</h1>
             <h6>Need some inspiration to make a cocktail?<br />Go try our amazing tool!</h6>
           </div>
-          <h2 className='cod'>Cocktail of the day!</h2>
+          <h2 className='cod'>Suggestions of the day!</h2>
           <h5 className='date'>{this.calendar()}</h5>
           <p className='title-cod'>{'Today, discover the ' + (this.state.drinks[1])}</p>
           <div className='Main-image'>
@@ -52,6 +52,7 @@ class Home extends Component {
           </div>
           <div id='recipe'>
             <button className='btn btn-lg'>Recipe</button>
+            <button className='btn btn-lg'>Other</button>
           </div>
           <p className='text-cod'>{this.state.drinks[14]}</p>
         </div>
