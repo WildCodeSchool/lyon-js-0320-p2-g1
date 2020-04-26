@@ -1,0 +1,50 @@
+
+/*
+font-family: 'Playfair Display', serif;
+font-family: 'Lato', sans-serif;
+*/
+
+main {
+  font-family: 'Lato', sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+}
+
+.bar {
+  height: 100%;
+  width: 100%;
+}
+
+h1.text-center.m-5 {
+  font-weight: bold;
+}
+
+h3.text-center {
+  font-weight: 600;
+}
+
+.search {
+  margin: 50px auto 50px;
+  color: white;
+  background-color: #232323;
+}
+
+.section-title{
+  color:White;
+}
+
+.buttonContainer{
+  display: flex;
+  justify-content: center;
+  margin: 5%;
+  font-size: 20px;
+}
+
+@media only screen and (max-width: 987px){
+  main{
+    display: flex;
+    justify-content: center;
+  }
+}
