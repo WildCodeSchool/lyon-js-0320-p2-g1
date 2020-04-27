@@ -1,402 +1,404 @@
 export const ingredientsRawData = [
   {
     name: 'Light rum',
-    categorie: 'Alcohol'
+    category: 'Alcohol'
   },
   {
     name: 'Applejack',
-    categorie: 'Alcohol'
+    category: 'Alcohol'
   },
   {
     name: 'Gin',
-    categorie: 'Alcohol'
+    category: 'Alcohol'
   },
   {
     name: 'Dark rum',
-    categorie: 'Alcohol'
+    category: 'Alcohol'
   },
   {
     name: 'Sweet Vermouth',
-    categorie: 'Alcohol'
+    category: 'Alcohol'
   },
   {
     name: 'Strawberry schnapps',
-    categorie: 'Alcohol'
+    category: 'Alcohol'
   },
   {
     name: 'Scotch',
-    categorie: 'Alcohol'
+    category: 'Alcohol'
   },
   {
     name: 'Apricot brandy',
-    categorie: 'Alcohol'
+    category: 'Alcohol'
   },
   {
     name: 'Triple sec',
-    categorie: 'Alcohol'
+    category: 'Alcohol'
   },
   {
     name: 'Southern Comfort',
-    categorie: 'Alcohol'
+    category: 'Alcohol'
   },
   {
     name: 'Orange bitters',
-    categorie: 'Alcohol'
+    category: 'Alcohol'
   },
   {
     name: 'Brandy',
-    categorie: 'Alcohol'
+    category: 'Alcohol'
   },
   {
     name: 'Lemon vodka',
-    categorie: 'Alcohol'
+    category: 'Alcohol'
   },
   {
     name: 'Blended whiskey',
-    categorie: 'Alcohol'
+    category: 'Alcohol'
   },
   {
     name: 'Dry Vermouth',
-    categorie: 'Alcohol'
+    category: 'Alcohol'
   },
   {
     name: 'Amaretto',
-    categorie: 'Alcohol'
+    category: 'Alcohol'
   },
   {
     name: 'Tea',
-    categorie: 'Other'
+    category: 'Other'
   },
   {
     name: 'Champagne',
-    categorie: 'Alcohol'
+    category: 'Alcohol'
   },
   {
     name: 'Coffee liqueur',
-    categorie: 'Alcohol'
+    category: 'Alcohol'
   },
   {
     name: 'Bourbon',
-    categorie: 'Alcohol'
+    category: 'Alcohol'
   },
   {
     name: 'Tequila',
-    categorie: 'Alcohol'
+    category: 'Alcohol'
   },
   {
     name: 'Vodka',
-    categorie: 'Alcohol'
+    category: 'Alcohol'
   },
   {
     name: 'Añejo rum',
-    categorie: 'Alcohol'
+    category: 'Alcohol'
   },
   {
     name: 'Bitters',
-    categorie: 'Alcohol'
+    category: 'Alcohol'
   },
   {
     name: 'Sugar',
-    categorie: 'Other'
+    category: 'Other'
   },
   {
     name: 'Kahlua',
-    categorie: 'Alcohol'
+    category: 'Alcohol'
   },
   {
     name: 'demerara Sugar',
-    categorie: 'Other'
+    category: 'Other'
   },
   {
     name: 'Dubonnet Rouge',
-    categorie: 'Alcohol'
+    category: 'Alcohol'
   },
   {
     name: 'Lime juice',
-    categorie: 'Fruit'
+    category: 'Fruit'
   },
   {
     name: 'Irish whiskey',
-    categorie: 'Alcohol'
+    category: 'Alcohol'
   },
   {
     name: 'Apple brandy',
-    categorie: 'Alcohol'
+    category: 'Alcohol'
   },
   {
     name: 'Carbonated water',
-    categorie: 'Other'
+    category: 'Other'
   },
   {
     name: 'Cherry brandy',
-    categorie: 'Alcohol'
+    category: 'Alcohol'
   },
   {
     name: 'Creme de Cacao',
-    categorie: 'Other'
+    category: 'Other'
   },
   {
     name: 'Grenadine',
-    categorie: 'Other'
+    category: 'Other'
   },
   {
     name: 'Port',
-    categorie: 'Alcohol'
+    category: 'Alcohol'
   },
   {
     name: 'Coffee brandy',
-    categorie: 'Alcohol'
+    category: 'Alcohol'
   },
   {
     name: 'Red wine',
-    categorie: 'Alcohol'
+    category: 'Alcohol'
   },
   {
     name: 'Rum',
-    categorie: 'Alcohol'
+    category: 'Alcohol'
   },
   {
     name: 'Grapefruit juice',
-    categorie: 'Fruit'
+    category: 'Fruit'
   },
   {
     name: 'Ricard',
-    categorie: 'Alcohol'
+    category: 'Alcohol'
   },
   {
     name: 'Sherry',
-    categorie: 'Alcohol'
+    category: 'Alcohol'
   },
   {
     name: 'Cognac',
-    categorie: 'Alcohol'
+    category: 'Alcohol'
   },
   {
     name: 'Sloe gin',
-    categorie: 'Alcohol'
+    category: 'Alcohol'
   },
   {
     name: 'Apple juice',
-    categorie: 'Fruit'
+    category: 'Fruit'
   },
   {
     name: 'Pineapple juice',
-    categorie: 'Fruit'
+    category: 'Fruit'
   },
   {
     name: 'Lemon juice',
-    categorie: 'Fruit'
+    category: 'Fruit'
   },
   {
     name: 'Sugar syrup',
-    categorie: 'Other'
+    category: 'Other'
   },
   {
     name: 'Milk',
-    categorie: 'Other'
+    category: 'Other'
   },
   {
     name: 'Strawberries',
-    categorie: 'Fruit'
+    category: 'Fruit'
   },
   {
     name: 'Chocolate syrup',
-    categorie: 'Other'
+    category: 'Other'
   },
   {
     name: 'Yoghurt',
-    categorie: 'Other'
+    category: 'Other'
   },
   {
     name: 'Mango',
-    categorie: 'Fruit'
+    category: 'Fruit'
   },
   {
     name: 'Ginger',
-    categorie: 'Other'
+    category: 'Other'
   },
   {
     name: 'Lime',
-    categorie: 'Fruit'
+    category: 'Fruit'
   },
   {
     name: 'Cantaloupe',
-    categorie: 'Fruit'
+    category: 'Fruit'
   },
   {
     name: 'Berries',
-    categorie: 'Fruit'
+    category: 'Fruit'
   },
   {
     name: 'Grapes',
-    categorie: 'Fruit'
+    category: 'Fruit'
   },
   {
     name: 'Kiwi',
-    categorie: 'Fruit'
+    category: 'Fruit'
   },
   {
     name: 'Tomato juice',
-    categorie: 'Fruit'
+    category: 'Fruit'
   },
   {
     name: 'Cocoa powder',
-    categorie: 'Fruit'
+    category: 'Fruit'
   },
   {
     name: 'Chocolate',
-    categorie: 'Other'
+    category: 'Other'
   },
   {
     name: 'Heavy cream',
-    categorie: 'Other'
+    category: 'Other'
   },
   {
     name: 'Galliano',
-    categorie: 'Alcohol'
+    category: 'Alcohol'
   },
   {
     name: 'Peach Vodka',
-    categorie: 'Alcohol'
+    category: 'Alcohol'
   },
   {
     name: 'Ouzo',
-    categorie: 'Alcohol'
+    category: 'Alcohol'
   },
   {
     name: 'Coffee',
-    categorie: 'Other'
+    category: 'Other'
   },
   {
     name: 'Spiced rum',
-    categorie: 'Alcohol'
+    category: 'Alcohol'
   },
   {
     name: 'Water',
-    categorie: 'Other'
+    category: 'Other'
   },
   {
     name: 'Espresso',
-    categorie: 'Other'
+    category: 'Other'
   },
   {
     name: 'Angelica root',
-    categorie: 'Other'
+    category: 'Other'
   },
   {
     name: 'Orange',
-    categorie: 'Fruit'
+    category: 'Fruit'
   },
   {
     name: 'Cranberries',
-    categorie: 'Fruit'
+    category: 'Fruit'
   },
   {
     name: 'Johnnie Walker',
-    categorie: 'Alcohol'
+    category: 'Alcohol'
   },
   {
     name: 'Apple cider',
-    categorie: 'Alcohol'
+    category: 'Alcohol'
   },
   {
     name: 'Everclear',
-    categorie: 'Alcohol'
+    category: 'Alcohol'
   },
   {
     name: 'Cranberry juice',
-    categorie: 'Fruit'
+    category: 'Fruit'
   },
   {
     name: 'Egg yolk',
-    categorie: 'Other'
+    category: 'Other'
   },
   {
     name: 'Egg',
-    categorie: 'Other'
+    category: 'Other'
   },
   {
     name: 'Grape juice',
-    categorie: 'Fruit'
+    category: 'Fruit'
   },
   {
     name: 'Peach nectar',
-    categorie: 'Fruit'
+    category: 'Fruit'
   },
   {
     name: 'Lemon',
-    categorie: 'Fruit'
+    category: 'Fruit'
   },
   {
     name: 'Firewater',
-    categorie: 'Other'
+    category: 'Other'
   },
   {
     name: 'Lemonade',
-    categorie: 'Other'
+    category: 'Other'
   },
   {
     name: 'Lager',
-    categorie: 'Alcohol'
+    category: 'Alcohol'
   },
   {
     name: 'Whiskey',
-    categorie: 'Alcohol'
+    category: 'Alcohol'
   },
   {
     name: 'Absolut Citron',
-    categorie: 'Alcohol'
+    category: 'Alcohol'
   },
   {
     name: 'Pisco',
-    categorie: 'Alcohol'
+    category: 'Alcohol'
   },
   {
     name: 'Irish cream',
-    categorie: 'Alcohol'
+    category: 'Alcohol'
   },
   {
     name: 'Ale',
-    categorie: 'Alcohol'
+    category: 'Alcohol'
   },
   {
     name: 'Chocolate liqueur',
-    categorie: 'Alcohol'
+    category: 'Alcohol'
   },
   {
     name: 'Midori melon liqueur',
-    categorie: 'Alcohol'
+    category: 'Alcohol'
   },
   {
     name: 'Sambuca',
-    categorie: 'Alcohol'
+    category: 'Alcohol'
   },
   {
     name: 'Cider',
-    categorie: 'Alcohol'
+    category: 'Alcohol'
   },
   {
     name: 'Sprite',
-    categorie: 'Other'
+    category: 'Other'
   },
   {
     name: '7-Up',
-    categorie: 'Other'
+    category: 'Other'
   },
   {
     name: 'Blackberry brandy',
-    categorie: 'Alcohol'
+    category: 'Alcohol'
   },
   {
     name: 'Peppermint schnapps',
-    categorie: 'Alcohol'
+    category: 'Alcohol'
   },
   {
     name: 'Creme de Cassis',
-    categorie: 'Alcohol'
+    category: 'Alcohol'
   },
   {
     name: 'Jack Daniels',
-    categorie: 'Alcohol'
+    category: 'Alcohol'
   }
 ];
+
+export default ingredientsRawData;
