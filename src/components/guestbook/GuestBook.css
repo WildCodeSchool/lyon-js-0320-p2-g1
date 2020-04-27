@@ -1,156 +1,130 @@
-/*
-font-family: 'Playfair Display', serif;
-font-family: 'Lato', sans-serif;
-*/
 
 .mainGuestbook{
   font-family: 'Lato', sans-serif;
+  padding: 10px;
   display: flex;
-  color:white;
-  background-color:black;
+  justify-content: flex-end;
+  color:rgb(214, 214, 214);
   background-image:url(https://i.imgur.com/J6kCYkO.jpg);
   background-size: cover;
+  background-attachment: fixed;
+  margin: 0 10px;
 }
 
-.mainGuestbook h1 h2 h3{
-  font-family: 'Playfair Display', serif;
-  color:white;
-}
 .mainGuestbook h1{
-  color:white;
+  font-family: 'Playfair Display', serif;
+  color:rgb(152, 204, 134);
+  font-size: 30px;
+}
+
+.mainGuestbook h6{
+  font-size: 15px;
+  margin-bottom : 30px ;
+  font-style: italic;
+}
+
+
+.pageDescription{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.titleH5{
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  color:rgb(139, 207, 117);
+  font-size: 19px;
+}
+
+.form-group{
+  display: flex;
+  flex-direction: column;
+}
+
+.panel-footer{
+  display: flex;
+  justify-content: center;
+}
+
+.panel-footer button {
+  background-color:rgb(146, 1, 30); 
+  border: none;
+  border-radius: 5px;
+  padding: 6px 7px;
+  color: rgb(214, 214, 214);
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.panel-footer .btn:hover {
+  opacity: 0.7;
+  color:  rgb(255, 255, 255);
+  transition: 0.3s;
+}
+
+
+.comments{
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 1px 3px #9c9c9c; 
+  background-color: rgba(0, 0, 0, 0.26);
+  margin: 10px 0; 
+  border-radius:  4px 0 4px;
+  font-size: 15px;
+}
+
+.date{
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  font-size: 12px;
+  }
+
+.date p{
+  display: flex;
+  justify-content: flex-end;
+  margin: 0;
+  color: rgb(172, 172, 172);
+}
+
+.form-group textarea, input{
+  border: none;
+  border-bottom:1px solid #9c9c9c; 
+  background-color:  rgba(0, 0, 0, 0.253);
+  color: rgb(214, 214, 214);
+  padding: 10px;
+  font-size: 14px;
+  margin: 10px 0;
 }
 
 .allElementsContainer{
-  margin-left: 3rem;
+  margin : 1rem;
 }
 
-.commentList h2{
-  font-size: 28px;
-  color:white;
-}
-
-.commentList h3{
-  font-size: 20px;
-  color:white;
-}
-
-.pageDescription{
+.loading{
   display: flex;
-  justify-content: flex-end;
-  flex-direction: column;
-}
+  justify-content: center;
+  margin-top: 10px;
 
-.pageDescription p{
-  font-style: italic;
-}
-.GuestbookForm{
-  display: flex;
-  justify-content: flex-end;
-  flex-direction: column;
-  margin-top: 7rem;
-}
-
-.pageDescription{
-  display: flex;
-  align-items: flex-end;
-  flex-direction: column;
-  margin-top: 3rem;
-  margin-bottom: 2rem;
-}
-
-.textareaContainer{
-  display: flex;
-  align-items: flex-end;
-  flex-direction: column;
-}
-
-#label{
-  margin-bottom: 2rem;
-}
-
-#message{
-  height: 7rem;
-  width: 30rem;
-  background: transparent;
-  color: White;
-  border-color: transparent;
-}
-
-.btnContainer{
-  display: flex;
-  align-items: flex-end;
-  flex-direction: column;
-  margin-top: 1rem;
-}
-
-.commentList{
-  display: flex;
-  align-items: flex-end;
-  flex-direction: column;
-  margin-top: 3rem;
-  margin-bottom: 3rem;
-}
-
-.comments{
-  display: flex;
-  align-items: flex-end;
-  flex-direction: column;
-  margin-top: 3rem;
-  margin-bottom: 2rem;
-}
-
-.commentsPara{
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  width: 40%;
-  height: auto;
 }
 
 @media screen and (max-width: 991px){
   .mainGuestbook{
-    background-color:black;
+    justify-content: center;
     background-image:url(https://i.imgur.com/UoBoHUo.jpg);
     background-size: cover;
-  }
+  }  
 
-  #background_opacity{
-    background-color: rgba(255, 255, 255, 0.5);
-  }
-
-  .textareaContainer{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-  }
-
-  .btnContainer{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-  }
-
-  .commentList{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+  .calendar {
+    justify-content: center;
+    font-size: 11px;
   }
 
   .comments{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    width: 60%;
-    height: auto;
-  }
-
-  .commentsPara{
-    width: 100%;
-    height: auto;
+    background-color: rgba(0, 0, 0, 0.445);
   }
   
-  .pageDescription{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-  }
 }
+

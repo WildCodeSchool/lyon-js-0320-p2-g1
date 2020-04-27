@@ -9,7 +9,7 @@ const CompoCocktail = (props) => {
     <Fragment>
       <div className="row">
         <div className="col-md-12 ">
-            <img className = "imageIngredient" src={Image} alt=""/>
+            <img className = "imageIngredient" src={Image} alt=''/>
         </div>
         <div className="col-md-12 ">
           <div className="panel panel-default text-center">

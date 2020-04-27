@@ -1,18 +1,12 @@
 import React from 'react';
-import GuestBoock from './components/guestbook/GuestBook';
-import Comments from './components/comments/Comments'
-import './components/guestbook/GuestBook.css'
+import GuestBook from './components/guestbook/GuestBook';
 
-
-
-function App () {
+function App() {
   return (
-    <div className='App'>
-      <GuestBoock />
-      <Comments />
+    <div className="App">
+      <GuestBook />
     </div>
   );
 }
 
 export default App;
-
