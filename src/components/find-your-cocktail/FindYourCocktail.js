@@ -54,7 +54,7 @@ class FindYourCocktail extends React.Component {
           </article>
 
           <article className='search'>
-            <h3 className='m-3 p-4'>Search by ingredient</h3>
+            <h3 className='m-3 p-4'>Choose your ingredient</h3>
           </article>
 
           <article>
