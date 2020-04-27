@@ -1,39 +1,37 @@
-import React, { Fragment } from 'react'
-import './Home.css'
+import React from 'react';
+import './Home.css';
 
 const Quizz = (props) => {
   return (
-    <Fragment>
-      <div className="row">
-        <div className="col-lg-6 col-md-12 ">
-          <div className="panel panel-default text-center">
-            <div className="panel-heading">
-              <h4>{props.firstPanelh4} </h4>
-            </div>
-            <div className="panel-body" >
-               <p>{props.firstPanelParagraphe}</p>
-            </div>
-            <div className="panel-footer">
-              <button className="btn btn-lg">Ingredients</button>
-            </div>
+    <div className='row'>
+      <div className='col-lg-6 col-md-12 '>
+        <div className='panel panel-default text-center'>
+          <div className='panel-heading'>
+            <h4>{props.firstPanelh4} </h4>
           </div>
-        </div>
-        <div className="col-lg-6  col-md-12 ">
-          <div className="panel panel-default text-center">
-            <div className="panel-heading">
-              <h4> {props.secondPanelh4}</h4>
-            </div>
-            <div className="panel-body">
-              <p> {props.seconPanelParagraphe}</p>
-            </div>
-            <div className="panel-footer">
-              <button className="btn btn-lg">All cocktails</button>
-            </div>
+          <div className='panel-body'>
+            <p>{props.firstPanelParagraphe}</p>
+          </div>
+          <div className='panel-footer'>
+            <button className='btn btn-lg'>Ingredients</button>
           </div>
         </div>
       </div>
-    </Fragment>
-  )
-}
+      <div className='col-lg-6  col-md-12 '>
+        <div className='panel panel-default text-center'>
+          <div className='panel-heading'>
+            <h4> {props.secondPanelh4}</h4>
+          </div>
+          <div className='panel-body'>
+            <p> {props.seconPanelParagraphe}</p>
+          </div>
+          <div className='panel-footer'>
+            <button className='btn btn-lg'>All cocktails</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 
-export default Quizz
+export default Quizz;

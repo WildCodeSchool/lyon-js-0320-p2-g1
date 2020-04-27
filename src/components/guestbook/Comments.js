@@ -2,7 +2,6 @@
 import React, { Component } from 'react';
 import ReactLoading from 'react-loading';
 import './Animation.css';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 class Comments extends Component {
 
@@ -76,7 +75,7 @@ class Comments extends Component {
       </div>
 
     const comments = Object.keys(this.state.comments).reverse().slice(0, 5).map(key => (
-      <CSSTransition classNames='fade' timeout={800} key={key}>
+      <div classNames='fade' timeout={800} key={key}>
         <div className='comments'>
           <p>{this.state.comments[key].comment}</p>
           <div className='date'>
@@ -84,7 +83,7 @@ class Comments extends Component {
             <p>Posted : {this.state.comments[key].date}</p>
           </div>
         </div>
-      </CSSTransition>
+      </div>
     ));
     
     return (
@@ -102,7 +101,7 @@ class Comments extends Component {
           {this.state.loading ? donload : null}
         </form>
         <h5 className='titleH5'>Last comments</h5>
-        <TransitionGroup >{comments}</TransitionGroup>
+        <div >{comments}</div>
       </div>
     )
   }
