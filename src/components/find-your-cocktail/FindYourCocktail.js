@@ -12,11 +12,11 @@ class FindYourCocktail extends React.Component {
     this.toogleSelectedItems = this.toogleSelectedItems.bind(this);
   }
 
-  toogleSelectedItems (item) {
-    if (this.state.activeIngredientsList.includes(item)) {
-      this.setState({ activeIngredientsList: this.state.activeIngredientsList.filter(elem => elem !== item) });
+  toogleSelectedItems (props) {
+    if (this.state.activeIngredientsList.includes(props)) {
+      this.setState({ activeIngredientsList: this.state.activeIngredientsList.filter(elem => elem !== props) });
     } else {
-      this.setState({ activeIngredientsList: [...this.state.activeIngredientsList, item] });
+      this.setState({ activeIngredientsList: [...this.state.activeIngredientsList, props] });
     }
   }
 
