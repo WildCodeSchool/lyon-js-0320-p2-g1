@@ -39,33 +39,36 @@ h3.text-center {
   font-weight: 600;
 }
 
+/*////////////// List of ingredients ///////////////*/
+
 .alcohols, 
 .fruits,
 .others {
-  color: white;
-  background-color: #373737;
-  border-radius: 2px;
   text-align: center;
   cursor: pointer;
+  box-shadow: 0px 0px 0px 0px #373737;
+  transition: box-shadow 0.2s linear;
+  margin: 0.5em;
 }
 
-.alcohols.status-active, 
-.fruits.status-active,
-.others.status-active {
-  color: red;
-  background-color: #373737;
+.alcohols:hover,
+.fruits:hover,
+.others:hover {
+  box-shadow: 0px 0px 0px 6px #373737;
 }
 
-.alcohols.status-inactive, 
-.fruits.status-inactive,
-.others.status-inactive {
+.status-active {
   color: white;
+  background-color: #855D5D;
+}
+
+.status-inactive {
+  color: #D1D1D1;
   background-color: #373737;
 }
 
-.alcohols:hover {
-  color: red;
-}
+/*////////////// Submit ingredients button ///////////////*/
+
 .button {
   background-color: white;
   border : 1px solid #373737;

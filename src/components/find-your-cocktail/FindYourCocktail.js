@@ -1,38 +1,23 @@
 import React from 'react';
 import './FindYourCocktail.css';
 import Bar from '../../images/bar.jpg';
-import ingredients from '../../data/ingredients';
-
-const alcoholsList = ({ name, category }) => {
-  if (category === 'Alcohol') {
-    return (
-      <li className='alcohols col-4 m-1 col-lg-2 p-2' key={name}>{name}</li>
-    );
-  }
-};
-
-const fruitsList = ({ name, category }) => {
-  if (category === 'Fruit') {
-    return (
-      <li className='fruits col-4 m-1 col-lg-2 p-2' key={name}>{name}</li>
-    );
-  }
-};
-
-const othersList = ({ name, category }) => {
-  if (category === 'Other') {
-    return (
-      <li className='others col-4 m-1 col-lg-2 p-2' key={name}>{name}</li>
-    );
-  }
-};
+import { alcoholsList, fruitsList, othersList } from '../../data/ingredients';
 
 class FindYourCocktail extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      isActive: false
+      activeIngredientsList: []
     };
+    this.toogleSelectedItems = this.toogleSelectedItems.bind(this);
+  }
+
+  toogleSelectedItems (item) {
+    if (this.state.activeIngredientsList.includes(item)) {
+      this.setState({ activeIngredientsList: this.state.activeIngredientsList.filter(elem => elem !== item) });
+    } else {
+      this.setState({ activeIngredientsList: [...this.state.activeIngredientsList, item] });
+    }
   }
 
   render () {
@@ -62,19 +47,46 @@ class FindYourCocktail extends React.Component {
             <h3 className=' mt-2 text-center'>Alcohol</h3>
             <hr />
             <ul className='d-flex flex-wrap list-unstyled justify-content-center'>
-              {ingredients.map(alcoholsList)}
+              {alcoholsList.map(alcohol =>
+                <li
+                  className={this.state.activeIngredientsList.includes(alcohol.name) ? 'alcohols status-active col-4 m-1 col-lg-2 p-2' : 'alcohols status-inactive col-4 m-1 col-lg-2 p-2'}
+                  key={alcohol.name}
+                  onClick={() => {
+                    this.toogleSelectedItems(alcohol.name);
+                  }}
+                >
+                  {alcohol.name}
+                </li>)}
             </ul>
 
             <h3 className='mt-6 text-center'>Fruits</h3>
             <hr />
             <ul className='d-flex flex-wrap list-unstyled justify-content-center'>
-              {ingredients.map(fruitsList)}
+              {fruitsList.map(fruit =>
+                <li
+                  className={this.state.activeIngredientsList.includes(fruit.name) ? 'fruits status-active col-4 m-1 col-lg-2 p-2' : 'fruits status-inactive col-4 m-1 col-lg-2 p-2'}
+                  key={fruit.name}
+                  onClick={() => {
+                    this.toogleSelectedItems(fruit.name);
+                  }}
+                >
+                  {fruit.name}
+                </li>)}
             </ul>
 
             <h3 className='mt-6 text-center'>Others</h3>
             <hr />
             <ul className='d-flex flex-wrap list-unstyled justify-content-center'>
-              {ingredients.map(othersList)}
+              {othersList.map(other =>
+                <li
+                  className={this.state.activeIngredientsList.includes(other.name) ? 'others status-active col-4 m-1 col-lg-2 p-2' : 'others status-inactive col-4 m-1 col-lg-2 p-2'}
+                  key={other.name}
+                  onClick={() => {
+                    this.toogleSelectedItems(other.name);
+                  }}
+                >
+                  {other.name}
+                </li>)}
             </ul>
 
           </article>
