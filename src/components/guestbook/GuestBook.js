@@ -19,7 +19,9 @@ class GuestBook extends Component {
 
   componentDidMount() {
     const comments = localStorage.getItem('comments')
-    this.setState({ comments: (JSON.parse(comments)) });
+    if (comments !== null) {
+      this.setState({ comments: (JSON.parse(comments)) });
+    }
     this.getDate();
   }
 
