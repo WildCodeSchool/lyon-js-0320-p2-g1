@@ -1,6 +1,7 @@
 import React from 'react';
 import './FindYourCocktail.css';
-import Bar from '../../images/bar.jpg';
+import Bar from '../../images/bar-2.jpg';
+import Banner from '../../images/banner-finder.jpg';
 import { alcoholsList, fruitsList, othersList } from '../../data/ingredients';
 
 class FindYourCocktail extends React.Component {
@@ -36,6 +37,7 @@ class FindYourCocktail extends React.Component {
             <h1 className='text-center m-5'>Find Your Cocktail</h1>
             <p className='px-4 text-center'>What do you have in your fridge ? For sure there is a cocktail that matches it !</p>
             <p className='px-4 text-center'>Let's try our faboulous tools to tell you what cocktail you can do with your home ingredients.</p>
+            <img className='banner d-lg-none d-block' src={Banner} alt='cockails' />
           </article>
 
           <article className='search'>
