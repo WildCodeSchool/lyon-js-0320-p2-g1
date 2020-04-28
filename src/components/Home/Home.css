@@ -51,6 +51,7 @@
     font-style: italic;
     margin-top: 30px;
     font-weight: 700;
+    text-align: center;
 }
 
 .Main-image img{
@@ -119,6 +120,55 @@
 .text-cod{
     margin: 60px;
     text-align: justify;
+}
+
+.signal{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.Alcoholic{
+    font-weight: 500;
+    color: #FF1A49;
+    font-size: 15px;
+    font-family: 'Lato', sans-serif;
+    line-height: 15px;
+    text-shadow: 0 0 5px #FF1A49;
+    
+}
+
+.Alcoholic-signal{
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    margin-right: 6px;
+    line-height: 15px;
+    background-color: #FF1A49;
+    vertical-align: middle;
+    box-shadow: 0 0 5px #FF1A49;
+}
+
+.Soft{
+    text-align: center;
+    font-weight: 500;
+    font-family: 'Lato', sans-serif;
+    color: #00a6c0;
+    font-size: 15px;
+    line-height: 15px;
+    text-shadow: 0 0 5px #00a6c0;
+}
+
+.Soft-signal{
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    margin-right: 6px;
+    line-height: 15px;
+    background-color: #00a6c0;
+    vertical-align: middle;
+    box-shadow: 0 0 5px #00a6c0;
 }
 
 .main1{

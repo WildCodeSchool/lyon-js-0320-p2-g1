@@ -9,21 +9,31 @@ class Home extends Component {
   constructor (props) {
     super(props);
     this.state = {
-      drinks: []
+      randomCocktail: null
     };
+    this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount () {
+    this.getNext();
+  }
+
+  getNext () {
     axios
       .get('https://www.thecocktaildb.com/api/json/v1/1/random.php')
-      .then((response) => {
-        this.setState({ drinks: response.data.drinks });
-        const random = Object.values(this.state.drinks[0]);
-        this.setState({ drinks: random });
-        console.log(this.state.drinks);
-      }, (error) => {
-        console.log(error);
+      .then(response => {
+        this.setState({ randomCocktail: response.data.drinks[0] });
+        console.log(response);
+      })
+      .catch(err => {
+        console.error(err);
       });
+  }
+
+  handleClick () {
+    this.setState(prevState => ({
+      randomCocktail: this.getNext()
+    }));
   }
 
   calendar () {
@@ -31,6 +41,24 @@ class Home extends Component {
     return (
       (date.getMonth() + 1) + '/' + date.getDate() + '/' + date.getFullYear()
     );
+  }
+
+  drinkType () {
+    if (this.state.randomCocktail && this.state.randomCocktail.strAlcoholic === 'Alcoholic') {
+      return (
+        <div className='signal'>
+          <div className='Alcoholic-signal'></div>
+          <p className='Alcoholic'>Alcoholic drink</p>
+        </div>
+      );
+    } else {
+      return (
+        <div className='signal'>
+          <div className='Soft-signal'></div>
+          <p className='Soft'>Soft drink</p>
+        </div>
+      );
+    }
   }
 
   render () {
@@ -46,15 +74,32 @@ class Home extends Component {
           </div>
           <h2 className='cod'>Suggestions of the day!</h2>
           <h5 className='date'>{this.calendar()}</h5>
-          <p className='title-cod'>{'Today, discover the ' + (this.state.drinks[1])}</p>
+          {
+            this.state.randomCocktail
+              ? (<p className='title-cod'>{'Today, discover the ' + this.state.randomCocktail.strDrink}</p>)
+              : (<p>loading</p>)
+          }
           <div className='Main-image'>
-            <img src={this.state.drinks[20]} alt='cocktail of the day' />
+            {
+              this.state.randomCocktail
+                ? (<img src={this.state.randomCocktail.strDrinkThumb} alt='cocktail of the day' />)
+                : (<p>Not found</p>)
+            }
+          </div>
+          <div className='type'>
+            {
+              this.drinkType()
+            }
           </div>
           <div id='recipe'>
-            <button className='btn btn-lg'>Recipe</button>
-            <button className='btn btn-lg'>Other</button>
+            <button className='btn btn-lg'>Recipe details</button>
+            <button className='btn btn-lg' type='button' onClick={this.handleClick}>Next</button>
           </div>
-          <p className='text-cod'>{this.state.drinks[14]}</p>
+          {
+            this.state.randomCocktail
+              ? (<p className='text-cod'> {this.state.randomCocktail.strInstructions}</p>)
+              : (<p>loading</p>)
+          }
         </div>
         <div className='main1'>
           <CompoCocktail
@@ -74,5 +119,4 @@ class Home extends Component {
     );
   }
 }
-
 export default Home;
