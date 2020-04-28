@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { Component } from 'react';
 import CompoCocktail from './CompoCocktail';
 import Quizz from './Quizz';
