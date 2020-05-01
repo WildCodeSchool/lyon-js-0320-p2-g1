@@ -40,6 +40,7 @@
     color: rgb(240, 235, 235);
     font-weight: bold;
     width: 100px;
+    height: 80px;
     text-align: center;
     
 }
@@ -102,6 +103,11 @@
     animation-fill-mode: both;
 }
 
+.CoktailDay{
+    display: flex;
+    flex-direction: column;
+}
+
 @keyframes videotext {
     from { transform: translateX(-350%)}
     to { transform: translateX(0%)}
@@ -115,9 +121,76 @@
         transform: scale3d(1, 1, 1);}
 }
 
+@media only screen and (min-width: 650px){
+    .Main-image img{
+        width: 50%;
+    }
+}
+
+@media only screen and (min-width: 900px){
+    .Main-image img{
+        width: 40%;
+    }
+}
+
+@media only screen and (min-width: 1000px){
+    .Main-image img{
+        width: 40%;
+    }
+
+    .CoktailDay{
+        flex-direction: row;
+    }
+
+    .Main-image{
+        width: 50%;
+    }
+
+    .cocktailDescription{
+        display: flex;
+        flex-direction: column-reverse;
+        margin: 0 auto;
+        margin-top: 0px;
+        width: 50%;
+    }
+
+    .instructions{
+        margin-top: 0;
+    }
+
+}
+
+@media only screen and (min-width: 600px){
+    .Video h1{
+        font-size: 30px;
+    } 
+    .Video h6{
+        font-size: 20px;
+    }
+}
+
+@media only screen and (min-width: 900px){
+    .Video h1{
+        font-size: 35px;
+    } 
+    .Video h6{
+        font-size: 25px;
+    }
+}
+
+@media only screen and (min-width: 1100px){
+    .Video h1{
+        font-size: 40px;
+    } 
+    .Video h6{
+        font-size: 30px;
+    }
+}
+
+
 .Main-image{
     display: flex;
-    
+    flex-direction: column;
     height: auto;
     margin: 0 auto;
     margin-top: 60px;

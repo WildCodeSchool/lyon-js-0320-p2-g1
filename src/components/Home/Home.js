@@ -79,27 +79,33 @@ class Home extends Component {
               ? (<p className='title-cod'>{'Today, discover the ' + this.state.randomCocktail.strDrink}</p>)
               : (<p>loading</p>)
           }
-          <div className='Main-image'>
-            {
-              this.state.randomCocktail
-                ? (<img src={this.state.randomCocktail.strDrinkThumb} alt='cocktail of the day' />)
-                : (<p>Not found</p>)
-            }
+          <div className='CoktailDay'>
+            <div className='Main-image'>
+              {
+                this.state.randomCocktail
+                  ? (<img src={this.state.randomCocktail.strDrinkThumb} alt='cocktail of the day' />)
+                  : (<p>Not found</p>)
+              }
+              <div className='type'>
+                {
+                  this.drinkType()
+                }
+              </div>
+            </div>
+            <div className='cocktailDescription'>
+              <div id='recipe'>
+                <button className='btn btn-lg'>Recipe details</button>
+                <button className='btn btn-lg' type='button' onClick={this.handleClick}>Next</button>
+              </div>
+              <div className='instructions'>
+                {
+                  this.state.randomCocktail
+                    ? (<p className='text-cod'> {this.state.randomCocktail.strInstructions}</p>)
+                    : (<p>loading</p>)
+                }
+              </div>
+            </div>
           </div>
-          <div className='type'>
-            {
-              this.drinkType()
-            }
-          </div>
-          <div id='recipe'>
-            <button className='btn btn-lg'>Recipe details</button>
-            <button className='btn btn-lg' type='button' onClick={this.handleClick}>Next</button>
-          </div>
-          {
-            this.state.randomCocktail
-              ? (<p className='text-cod'> {this.state.randomCocktail.strInstructions}</p>)
-              : (<p>loading</p>)
-          }
         </div>
         <div className='main1'>
           <CompoCocktail
