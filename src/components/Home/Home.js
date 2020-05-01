@@ -47,14 +47,14 @@ class Home extends Component {
     if (this.state.randomCocktail && this.state.randomCocktail.strAlcoholic === 'Alcoholic') {
       return (
         <div className='signal'>
-          <div className='Alcoholic-signal'></div>
+          <div className='Alcoholic-signal' />
           <p className='Alcoholic'>Alcoholic drink</p>
         </div>
       );
     } else {
       return (
         <div className='signal'>
-          <div className='Soft-signal'></div>
+          <div className='Soft-signal' />
           <p className='Soft'>Soft drink</p>
         </div>
       );
