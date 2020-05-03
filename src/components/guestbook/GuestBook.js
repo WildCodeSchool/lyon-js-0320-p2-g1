@@ -1,32 +1,25 @@
 import React, { Component } from 'react';
-import ReactLoading from 'react-loading';
 import './GuestBook.css';
 import './Animation.css';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
+
 
 class GuestBook extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      comments: {},
+      comments: [],
       name: '',
       comment: '',
-      date: new Date(),
-      loading: false
+      dateobj : new Date(),
     }
   }
 
   componentDidMount() {
     const comments = localStorage.getItem('comments')
-    if (comments !== null) {
-      this.setState({ comments: (JSON.parse(comments)) });
-    }
-    this.getDate();
-  }
-
-  componentDidUpdate() {
-    localStorage.setItem('comments', JSON.stringify(this.state.comments));
+    if (comments) 
+      this.setState({ comments: JSON.parse(comments) });
   }
 
   handleChangeComment = e => {
@@ -39,56 +32,40 @@ class GuestBook extends Component {
     this.setState({ name })
   }
 
-  handleClick = () => {
-    setTimeout(() => {
-      this.setState({ loading: false })
-    }, 800);
-
-    this.setState({ loading: true })
-  }
-
   handleSubmit = e => {
     e.preventDefault();
     setTimeout(() => {
       this.addComment();
-    }, 800);
-  }
-
-  getDate = () => {
-    const date = new Date();
-    this.setState({
-      date: `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`
-    });
+    }, 200);
   }
 
   addComment = () => {
-    const { name, comment, date } = this.state;
-    const nameComment = { name, comment, date };
-    const newComments = { ...this.state.comments };
-    newComments[`kayComment-${Date.now()}`] = nameComment;
-    this.setState({ comments: newComments });
+    const { name, comment, dateobj } = this.state;
+    const pad = n =>  n < 10 ? "0"+n : n;
+    const date = `${pad(dateobj.getDate())}/${pad(dateobj.getMonth()+1)}/${dateobj.getFullYear()}`;
+    const newComment = { name, comment, date };
+    const newComments = [...this.state.comments, newComment];
+
+    this.setState({ comments: newComments }, () => {
+      localStorage.setItem('comments', JSON.stringify(this.state.comments));
+    });
     // reset input value
-    this.setState({ comment: '', name: '' })
+    this.setState({ comment: '', name: ''  })
   }
 
   render() {
-    const donload =
-      <div className='loading' >
-        <ReactLoading type='spin' color='rgb(214, 214, 214)' height={'5%'} width={'5%'} />
-      </div>
 
-    const comments = Object.keys(this.state.comments).reverse().slice(0, 3).map(key => (
-      <CSSTransition classNames='fade' timeout={800} key={key}>
+    const comments = this.state.comments.reverse().slice(0, 2).map(comment => (
+      <CSSTransition classNames='fade' timeout={600} key={comment.name}>
         <div className='comments'>
-          <p>{this.state.comments[key].comment}</p>
+          <p>{comment.comment}</p>
           <div className='date'>
-            <p> Name : {this.state.comments[key].name}</p>
-            <p>Posted : {this.state.comments[key].date}</p>
+            <p> Name : {comment.name}</p>
+            <p>Posted : {comment.date}</p>
           </div>
         </div>
       </CSSTransition>
     ));
-
     return (
       <main className='mainGuestbook'>
         <div className='allElementsContainer'>
@@ -106,7 +83,6 @@ class GuestBook extends Component {
             <div className="panel-footer">
               <button className="btn btn-lg" onClick={this.handleClick}>Add comment</button>
             </div>
-            {this.state.loading ? donload : null}
           </form>
           <h5 className='titleH5'>Last comments</h5>
           <TransitionGroup >{comments}</TransitionGroup>
