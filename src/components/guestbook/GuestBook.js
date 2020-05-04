@@ -22,14 +22,10 @@ class GuestBook extends Component {
       this.setState({ comments: JSON.parse(comments) });
   }
 
-  handleChangeComment = e => {
-    const comment = e.target.value;
-    this.setState({ comment })
-  }
-
-  handleChangeName = e => {
-    const name = e.target.value;
-    this.setState({ name })
+  handleChange = e => {
+    this.setState({
+      [e.target.id]: e.target.value,
+    })
   }
 
   handleSubmit = e => {
@@ -76,9 +72,9 @@ class GuestBook extends Component {
           <h5 className='titleH5'>Your comments</h5>
           <form onSubmit={this.handleSubmit} >
             <div className="form-group">
-              <input type="text" placeholder="Username" aria-label="Username"
-                onChange={this.handleChangeName} value={this.state.name} required />
-              <textarea rows='2' placeholder='Your comment' onChange={this.handleChangeComment} value={this.state.comment} required />
+              <input id = 'name' type="text" placeholder="Username" aria-label="Username"
+                onChange={this.handleChange} value={this.state.name} required />
+              <textarea id = 'comment' rows='2' placeholder='Your comment' onChange={this.handleChange} value={this.state.comment} required />
             </div>
             <div className="panel-footer">
               <button className="btn btn-lg" onClick={this.handleClick}>Add comment</button>
