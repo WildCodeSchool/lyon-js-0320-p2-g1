@@ -3,22 +3,61 @@ import './FindYourCocktail.css';
 import Bar from '../../images/bar-2.jpg';
 import Banner from '../../images/banner-finder.jpg';
 import { alcoholsList, fruitsList, othersList } from '../../data/ingredients';
+import Axios from 'axios';
 
 class FindYourCocktail extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      activeIngredientsList: []
+      activeIngredientsList: [],
+      cocktailsByIngredient: [],
+      cocktailsIdsByIngredients: {}
     };
     this.toogleSelectedItems = this.toogleSelectedItems.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   toogleSelectedItems (props) {
     if (this.state.activeIngredientsList.includes(props)) {
-      this.setState({ activeIngredientsList: this.state.activeIngredientsList.filter(elem => elem !== props) });
+      this.setState({
+        activeIngredientsList: this.state.activeIngredientsList.filter(ingredient => ingredient !== props)
+      });
+      /*
+      Axios
+        .get(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${props}`)
+        .then(response => {
+          const data = response.data.drinks;
+          this.setState({
+            cocktailsByIngredient: this.state.cocktailsByIngredient.filter(cocktail => cocktail.includes(...data))
+          });
+        });
+      */
     } else {
       this.setState({ activeIngredientsList: [...this.state.activeIngredientsList, props] });
+      Axios
+        .get(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${props}`)
+        .then(response => {
+          this.setState({
+            cocktailsByIngredient: [...this.state.cocktailsByIngredient, ...response.data.drinks]
+          });
+        });
+      const ids = [];
+      this.state.cocktailsByIngredient.forEach(cocktail => {
+        Object.keys(cocktail).forEach(key => {
+          if (key === 'idDrink') {
+            ids.push(cocktail.idDrink);
+          }
+        });
+      });
+      console.log(ids);
+
+      // this.setState({cocktailIdsByIngredient: {...this.state.cocktailIdsByIngredient, [ingredientName]: ingredientIds})
+      // this.setState({ cocktailsIdsByIngredients: [...this.state.cocktailsIdsByIngredients, ...ids] });
     }
+  }
+
+  handleSubmit () {
+    // return all ids with _uniq lodash
   }
 
   render () {
@@ -95,7 +134,7 @@ class FindYourCocktail extends React.Component {
 
           <article className='d-flex flex-column'>
             <p className='mx-auto'>Now click the button down below to get your matching recipe !</p>
-            <button type='button' className='button'>Find My Cocktails</button>
+            <button type='button' className='button' onClick={this.handleSubmit}>Find My Cocktails</button>
           </article>
 
         </section>
