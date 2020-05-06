@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from '../../images/cocktail.png';
 import './Home.css';
+
 const CompoCocktail = (props) => {
   return (
     <div className='row'>
