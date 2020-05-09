@@ -10,7 +10,7 @@ class FindYourCocktail extends React.Component {
     super(props);
     this.state = {
       activeIngredientsList: [],
-      cocktailsIdsByIngredients: []
+      cocktailsIdsByIngredients: {}
     };
     this.toogleSelectedItems = this.toogleSelectedItems.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -18,28 +18,35 @@ class FindYourCocktail extends React.Component {
 
   toogleSelectedItems (selectedIngredient) {
     if (this.state.activeIngredientsList.includes(selectedIngredient)) {
-      this.setState({
-        activeIngredientsList: this.state.activeIngredientsList.filter(ingredient => ingredient !== selectedIngredient)
-      });
+      this.setState({ activeIngredientsList: this.state.activeIngredientsList.filter(ingredient => ingredient !== selectedIngredient) });
+      Axios
+        .get(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${selectedIngredient}`)
+        .then(response => {
+          const IngredientIds = [];
+          response.data.drinks.forEach(cocktail => {
+            Object.keys(cocktail).forEach(key => {
+              if (key === 'idDrink') {
+                IngredientIds.push(cocktail.idDrink);
+              }
+            });
+          });
+          this.setState({ cocktailsIdsByIngredients: { ...this.state.cocktailsIdsByIngredients, [selectedIngredient]: [] } });
+        });
     } else {
       this.setState({ activeIngredientsList: [...this.state.activeIngredientsList, selectedIngredient] });
       Axios
         .get(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${selectedIngredient}`)
         .then(response => {
-          const ids = [];
+          const IngredientIds = [];
           response.data.drinks.forEach(cocktail => {
             Object.keys(cocktail).forEach(key => {
               if (key === 'idDrink') {
-                ids.push(cocktail.idDrink);
+                IngredientIds.push(cocktail.idDrink);
               }
             });
           });
-          this.setState({ cocktailsIdsByIngredients: this.state.cocktailsIdsByIngredients.concat(ids) });
+          this.setState({ cocktailsIdsByIngredients: { ...this.state.cocktailsIdsByIngredients, [selectedIngredient]: IngredientIds } });
         });
-
-      // this.setState({cocktailIdsByIngredient: {...this.state.cocktailIdsByIngredient, [ingredientName]: ingredientIds})
-      // this.setState({cocktailIdsByIngredient: {...this.state.cocktailIdsByIngredient, [ingredientName]: [] })
-      // this.setState({ cocktailsIdsByIngredients: [...this.state.cocktailsIdsByIngredients, ...ids] });
     }
   }
 
