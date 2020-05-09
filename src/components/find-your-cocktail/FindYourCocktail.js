@@ -10,48 +10,35 @@ class FindYourCocktail extends React.Component {
     super(props);
     this.state = {
       activeIngredientsList: [],
-      cocktailsByIngredient: [],
-      cocktailsIdsByIngredients: {}
+      cocktailsIdsByIngredients: []
     };
     this.toogleSelectedItems = this.toogleSelectedItems.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  toogleSelectedItems (props) {
-    if (this.state.activeIngredientsList.includes(props)) {
+  toogleSelectedItems (selectedIngredient) {
+    if (this.state.activeIngredientsList.includes(selectedIngredient)) {
       this.setState({
-        activeIngredientsList: this.state.activeIngredientsList.filter(ingredient => ingredient !== props)
+        activeIngredientsList: this.state.activeIngredientsList.filter(ingredient => ingredient !== selectedIngredient)
       });
-      /*
-      Axios
-        .get(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${props}`)
-        .then(response => {
-          const data = response.data.drinks;
-          this.setState({
-            cocktailsByIngredient: this.state.cocktailsByIngredient.filter(cocktail => cocktail.includes(...data))
-          });
-        });
-      */
     } else {
-      this.setState({ activeIngredientsList: [...this.state.activeIngredientsList, props] });
+      this.setState({ activeIngredientsList: [...this.state.activeIngredientsList, selectedIngredient] });
       Axios
-        .get(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${props}`)
+        .get(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${selectedIngredient}`)
         .then(response => {
-          this.setState({
-            cocktailsByIngredient: [...this.state.cocktailsByIngredient, ...response.data.drinks]
+          const ids = [];
+          response.data.drinks.forEach(cocktail => {
+            Object.keys(cocktail).forEach(key => {
+              if (key === 'idDrink') {
+                ids.push(cocktail.idDrink);
+              }
+            });
           });
+          this.setState({ cocktailsIdsByIngredients: this.state.cocktailsIdsByIngredients.concat(ids) });
         });
-      const ids = [];
-      this.state.cocktailsByIngredient.forEach(cocktail => {
-        Object.keys(cocktail).forEach(key => {
-          if (key === 'idDrink') {
-            ids.push(cocktail.idDrink);
-          }
-        });
-      });
-      console.log(ids);
 
       // this.setState({cocktailIdsByIngredient: {...this.state.cocktailIdsByIngredient, [ingredientName]: ingredientIds})
+      // this.setState({cocktailIdsByIngredient: {...this.state.cocktailIdsByIngredient, [ingredientName]: [] })
       // this.setState({ cocktailsIdsByIngredients: [...this.state.cocktailsIdsByIngredients, ...ids] });
     }
   }

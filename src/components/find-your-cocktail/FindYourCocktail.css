@@ -45,7 +45,7 @@ h3.text-center {
 .others {
   text-align: center;
   cursor: pointer;
-  transition: box-shadow 0.3s linear;
+  transition: box-shadow 0.2s linear;
   margin: 0.5em;
 }
 
