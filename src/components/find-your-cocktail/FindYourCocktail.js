@@ -11,7 +11,8 @@ class FindYourCocktail extends React.Component {
     this.state = {
       activeIngredientsList: [],
       cocktailsIdsByIngredients: {},
-      showResults: false
+      showResults: false,
+      cocktailsResultsList: []
     };
     this.toogleSelectedItems = this.toogleSelectedItems.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -59,6 +60,13 @@ class FindYourCocktail extends React.Component {
     });
     resultIds = _.uniq(resultIds);
     this.setState({ showResults: true });
+    resultIds.forEach(cocktailId => {
+      Axios
+        .get(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${cocktailId}`)
+        .then(response => {
+          this.setState({ cocktailsResultsList: this.state.cocktailsResultsList.concat(response.data.drinks) });
+        });
+    });
   }
 
   render () {
@@ -141,7 +149,22 @@ class FindYourCocktail extends React.Component {
           </section>
 
           <section>
-            <p>Results</p>
+            <ul className='d-flex flex-wrap list-unstyled justify-content-center'>
+              {this.state.showResults
+                ? this.state.cocktailsResultsList.map(cocktail => {
+                  return (
+                    <li
+                      className='col-4 m-3 col-lg-2 p-2'
+                      key={cocktail.idDrink}
+                    >
+                      <p className='text-center'>{cocktail.strDrink}</p>
+                      <img className='img-fluid' src={cocktail.strDrinkThumb} alt={cocktail.idDrink} />
+                    </li>
+                  );
+                })
+                : ''}
+            </ul>
+
           </section>
 
         </article>
