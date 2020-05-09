@@ -10,7 +10,8 @@ class FindYourCocktail extends React.Component {
     super(props);
     this.state = {
       activeIngredientsList: [],
-      cocktailsIdsByIngredients: {}
+      cocktailsIdsByIngredients: {},
+      showResults: false
     };
     this.toogleSelectedItems = this.toogleSelectedItems.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -51,13 +52,13 @@ class FindYourCocktail extends React.Component {
   }
 
   handleSubmit () {
-    // return all ids with _uniq lodash
-    const resultIds = [];
+    const _ = require('lodash/array');
+    let resultIds = [];
     Object.keys(this.state.cocktailsIdsByIngredients).forEach(ingredient => {
       this.state.cocktailsIdsByIngredients[ingredient].forEach(id => resultIds.push(id));
     });
-    console.log(resultIds);
-    // ids = _.uniq(ids);
+    resultIds = _.uniq(resultIds);
+    this.setState({ showResults: true });
   }
 
   render () {
@@ -70,74 +71,80 @@ class FindYourCocktail extends React.Component {
           </figure>
         </aside>
 
-        <section className='content col-12 col-lg-8'>
+        <article className='content col-12 col-lg-8'>
 
-          <article>
+          <section>
             <h1 className='text-center m-5'>Find Your Cocktail</h1>
             <p className='px-4 text-center'>What do you have in your fridge ? For sure there is a cocktail that matches it !</p>
             <p className='px-4 text-center'>Let's try our faboulous tools to tell you what cocktail you can do with your home ingredients.</p>
             <img className='banner d-lg-none d-block' src={Banner} alt='cockails' />
-          </article>
+          </section>
 
-          <article className='search'>
+          <section className='search'>
             <h3 className='m-3 p-4'>Choose your ingredient</h3>
-          </article>
+          </section>
 
-          <article>
+          <section>
+            <div>
+              <h3 className=' mt-2 text-center'>Alcohol</h3>
+              <hr />
+              <ul className='d-flex flex-wrap list-unstyled justify-content-center'>
+                {alcoholsList.map(alcohol =>
+                  <li
+                    className={this.state.activeIngredientsList.includes(alcohol.name) ? 'alcohols status-active col-4 m-1 col-lg-2 p-2' : 'alcohols status-inactive col-4 m-1 col-lg-2 p-2'}
+                    key={alcohol.name}
+                    onClick={() => {
+                      this.toogleSelectedItems(alcohol.name);
+                    }}
+                  >
+                    {alcohol.name}
+                  </li>)}
+              </ul>
+            </div>
+            <div>
+              <h3 className='mt-6 text-center'>Fruits</h3>
+              <hr />
+              <ul className='d-flex flex-wrap list-unstyled justify-content-center'>
+                {fruitsList.map(fruit =>
+                  <li
+                    className={this.state.activeIngredientsList.includes(fruit.name) ? 'fruits status-active col-4 m-1 col-lg-2 p-2' : 'fruits status-inactive col-4 m-1 col-lg-2 p-2'}
+                    key={fruit.name}
+                    onClick={() => {
+                      this.toogleSelectedItems(fruit.name);
+                    }}
+                  >
+                    {fruit.name}
+                  </li>)}
+              </ul>
+            </div>
+            <div>
+              <h3 className='mt-6 text-center'>Others</h3>
+              <hr />
+              <ul className='d-flex flex-wrap list-unstyled justify-content-center'>
+                {othersList.map(other =>
+                  <li
+                    className={this.state.activeIngredientsList.includes(other.name) ? 'others status-active col-4 m-1 col-lg-2 p-2' : 'others status-inactive col-4 m-1 col-lg-2 p-2'}
+                    key={other.name}
+                    onClick={() => {
+                      this.toogleSelectedItems(other.name);
+                    }}
+                  >
+                    {other.name}
+                  </li>)}
+              </ul>
+            </div>
+          </section>
 
-            <h3 className=' mt-2 text-center'>Alcohol</h3>
-            <hr />
-            <ul className='d-flex flex-wrap list-unstyled justify-content-center'>
-              {alcoholsList.map(alcohol =>
-                <li
-                  className={this.state.activeIngredientsList.includes(alcohol.name) ? 'alcohols status-active col-4 m-1 col-lg-2 p-2' : 'alcohols status-inactive col-4 m-1 col-lg-2 p-2'}
-                  key={alcohol.name}
-                  onClick={() => {
-                    this.toogleSelectedItems(alcohol.name);
-                  }}
-                >
-                  {alcohol.name}
-                </li>)}
-            </ul>
-
-            <h3 className='mt-6 text-center'>Fruits</h3>
-            <hr />
-            <ul className='d-flex flex-wrap list-unstyled justify-content-center'>
-              {fruitsList.map(fruit =>
-                <li
-                  className={this.state.activeIngredientsList.includes(fruit.name) ? 'fruits status-active col-4 m-1 col-lg-2 p-2' : 'fruits status-inactive col-4 m-1 col-lg-2 p-2'}
-                  key={fruit.name}
-                  onClick={() => {
-                    this.toogleSelectedItems(fruit.name);
-                  }}
-                >
-                  {fruit.name}
-                </li>)}
-            </ul>
-
-            <h3 className='mt-6 text-center'>Others</h3>
-            <hr />
-            <ul className='d-flex flex-wrap list-unstyled justify-content-center'>
-              {othersList.map(other =>
-                <li
-                  className={this.state.activeIngredientsList.includes(other.name) ? 'others status-active col-4 m-1 col-lg-2 p-2' : 'others status-inactive col-4 m-1 col-lg-2 p-2'}
-                  key={other.name}
-                  onClick={() => {
-                    this.toogleSelectedItems(other.name);
-                  }}
-                >
-                  {other.name}
-                </li>)}
-            </ul>
-
-          </article>
-
-          <article className='d-flex flex-column'>
+          <section className='d-flex flex-column'>
             <p className='mx-auto'>Now click the button down below to get your matching recipe !</p>
             <button type='button' className='button' onClick={this.handleSubmit}>Find My Cocktails</button>
-          </article>
+          </section>
 
-        </section>
+          <section>
+            <p>Results</p>
+          </section>
+
+        </article>
       </main>
     );
   }
