@@ -52,6 +52,12 @@ class FindYourCocktail extends React.Component {
 
   handleSubmit () {
     // return all ids with _uniq lodash
+    const resultIds = [];
+    Object.keys(this.state.cocktailsIdsByIngredients).forEach(ingredient => {
+      this.state.cocktailsIdsByIngredients[ingredient].forEach(id => resultIds.push(id));
+    });
+    console.log(resultIds);
+    // ids = _.uniq(ids);
   }
 
   render () {
