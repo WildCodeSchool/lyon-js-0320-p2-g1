@@ -68,6 +68,24 @@ class FindYourCocktail extends React.Component {
         });
     });
   }
+  /*
+  showAllResults () {
+    const _ = require('lodash/array');
+    let allResultIds = [];
+    Object.keys(this.state.cocktailsIdsByIngredients).forEach(ingredient => {
+      this.state.cocktailsIdsByIngredients[ingredient].forEach(id => allResultIds.push(id));
+    });
+    allResultIds = _.uniq(allResultIds);
+    this.setState({ showResults: true });
+    allResultIds.forEach(cocktailId => {
+      Axios
+        .get(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${cocktailId}`)
+        .then(response => {
+          this.setState({ cocktailsResultsList: this.state.cocktailsResultsList.concat(response.data.drinks) });
+        });
+    });
+  }
+  */
 
   render () {
     return (
