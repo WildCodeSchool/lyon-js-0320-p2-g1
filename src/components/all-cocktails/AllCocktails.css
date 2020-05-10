@@ -1,0 +1,52 @@
+
+/*
+font-family: 'Playfair Display', serif;
+font-family: 'Lato', sans-serif;
+*/
+
+main {
+  font-family: 'Lato', sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+}
+
+h1.text-center.m-5 {
+  font-weight: bold;
+}
+
+h3.text-center {
+  font-weight: 600;
+}
+
+.introContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.search {
+  margin: 50px auto 50px;
+  color: white;
+  background-color: #232323;
+}
+
+.section-title{
+  color:White;
+}
+
+.globalContainer{
+  display: flex;
+  flex-direction: row;
+}
+
+.AllCocktail {
+  height: 100%;
+  width: 100%;
+}
+
+.cocktailNameContainer{
+  display: flex;
+  justify-content: flex-start;
+}
