@@ -11,14 +11,15 @@ class FindYourCocktail extends React.Component {
     this.state = {
       activeIngredientsList: [],
       cocktailsIdsByIngredients: {},
-      showResults: false,
+      toggleView: false,
       cocktailsResultsList: []
     };
-    this.toogleSelectedItems = this.toogleSelectedItems.bind(this);
+    this.toggleSelectedItems = this.toggleSelectedItems.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleBackButton = this.handleBackButton.bind(this);
   }
 
-  toogleSelectedItems (selectedIngredient) {
+  toggleSelectedItems (selectedIngredient) {
     if (this.state.activeIngredientsList.includes(selectedIngredient)) {
       this.setState({ activeIngredientsList: this.state.activeIngredientsList.filter(ingredient => ingredient !== selectedIngredient) });
       Axios
@@ -53,13 +54,13 @@ class FindYourCocktail extends React.Component {
   }
 
   handleSubmit () {
+    this.setState({ toggleView: true });
     const _ = require('lodash/array');
     let resultIds = [];
     Object.keys(this.state.cocktailsIdsByIngredients).forEach(ingredient => {
       this.state.cocktailsIdsByIngredients[ingredient].forEach(id => resultIds.push(id));
     });
     resultIds = _.uniq(resultIds);
-    this.setState({ showResults: true });
     resultIds.forEach(cocktailId => {
       Axios
         .get(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${cocktailId}`)
@@ -68,24 +69,138 @@ class FindYourCocktail extends React.Component {
         });
     });
   }
-  /*
-  showAllResults () {
-    const _ = require('lodash/array');
-    let allResultIds = [];
-    Object.keys(this.state.cocktailsIdsByIngredients).forEach(ingredient => {
-      this.state.cocktailsIdsByIngredients[ingredient].forEach(id => allResultIds.push(id));
-    });
-    allResultIds = _.uniq(allResultIds);
-    this.setState({ showResults: true });
-    allResultIds.forEach(cocktailId => {
-      Axios
-        .get(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${cocktailId}`)
-        .then(response => {
-          this.setState({ cocktailsResultsList: this.state.cocktailsResultsList.concat(response.data.drinks) });
-        });
-    });
+
+  showIngredients () {
+    return (
+      <article className='content col-12 col-lg-8'>
+
+        <section>
+          <h1 className='text-center m-4'>Find Your Cocktail</h1>
+          <img className='banner d-lg-none d-block' src={Banner} alt='cockails' />
+          <p className='px-4 text-center'>What do you have in your fridge ? For sure there is a cocktail that matches it !</p>
+          <p className='px-4 text-center'>Let's try our faboulous tools to tell you what cocktail you can do with your home ingredients.</p>
+        </section>
+
+        <section className='search'>
+          <h3 className='m-3 p-4'>Choose your ingredient</h3>
+        </section>
+
+        <section>
+          <div>
+            <h3 className=' mt-2 text-center'>Alcohol</h3>
+            <hr />
+            <ul className='d-flex flex-wrap list-unstyled justify-content-center'>
+              {alcoholsList.map(alcohol =>
+                <li
+                  className={this.state.activeIngredientsList.includes(alcohol.name) ? 'alcohols status-active col-4 m-1 col-lg-2 p-2' : 'alcohols status-inactive col-4 m-1 col-lg-2 p-2'}
+                  key={alcohol.name}
+                  onClick={() => {
+                    this.toggleSelectedItems(alcohol.name);
+                  }}
+                >
+                  {alcohol.name}
+                </li>)}
+            </ul>
+          </div>
+          <div>
+            <h3 className='mt-6 text-center'>Fruits</h3>
+            <hr />
+            <ul className='d-flex flex-wrap list-unstyled justify-content-center'>
+              {fruitsList.map(fruit =>
+                <li
+                  className={this.state.activeIngredientsList.includes(fruit.name) ? 'fruits status-active col-4 m-1 col-lg-2 p-2' : 'fruits status-inactive col-4 m-1 col-lg-2 p-2'}
+                  key={fruit.name}
+                  onClick={() => {
+                    this.toggleSelectedItems(fruit.name);
+                  }}
+                >
+                  {fruit.name}
+                </li>)}
+            </ul>
+          </div>
+          <div>
+            <h3 className='mt-6 text-center'>Others</h3>
+            <hr />
+            <ul className='d-flex flex-wrap list-unstyled justify-content-center'>
+              {othersList.map(other =>
+                <li
+                  className={this.state.activeIngredientsList.includes(other.name) ? 'others status-active col-4 m-1 col-lg-2 p-2' : 'others status-inactive col-4 m-1 col-lg-2 p-2'}
+                  key={other.name}
+                  onClick={() => {
+                    this.toggleSelectedItems(other.name);
+                  }}
+                >
+                  {other.name}
+                </li>)}
+            </ul>
+          </div>
+        </section>
+
+        <section className='d-flex flex-column'>
+          <p className='mx-auto'>Now click the button down below to get your matching recipe !</p>
+          <button type='button' className='button' onClick={this.handleSubmit}>Find My Cocktails</button>
+        </section>
+
+      </article>
+    );
   }
-  */
+
+  showResults () {
+    return (
+      <article className='content col-12 col-lg-8'>
+
+        <section>
+          <h1 className='text-center m-5'>Find Your Cocktail</h1>
+          <img className='banner d-lg-none d-block' src={Banner} alt='cockails' />
+          <h2 className='text-center m-3'>Results</h2>
+          <p className='px-4 text-center'>Find the perfect cocktail ! All recipes contains one of the previous selected ingredients :</p>
+          <ul className='list-group'>
+            {this.state.activeIngredientsList.map(ingredient => {
+              return (
+                <li
+                  className='list-group-item'
+                  key={ingredient}
+                >
+                  {ingredient}
+                </li>
+              );
+            })}
+          </ul>
+        </section>
+
+        <section>
+          <ul className='d-flex flex-wrap list-unstyled justify-content-center'>
+            {this.state.cocktailsResultsList.map(cocktail => {
+              return (
+                <li
+                  className='card col-4 m-1 col-lg-2 p-2'
+                  key={cocktail.idDrink}
+                >
+                  <img className='card-img-top' src={cocktail.strDrinkThumb} alt={cocktail.idDrink} />
+                  <div className='card-body'>
+                    <p className='card-title'>{cocktail.strDrink}</p>
+                  </div>
+                </li>
+              );
+            })}
+          </ul>
+        </section>
+
+        <section className='d-flex flex-column'>
+          <p className='mx-auto text-center'>Go back to ingredients list to make a new search !</p>
+          <button type='button' className='button' onClick={this.handleBackButton}>Back to ingredients</button>
+        </section>
+
+      </article>
+    );
+  }
+
+  handleBackButton () {
+    this.setState({ toggleView: false });
+    this.setState({ activeIngredientsList: [] });
+    this.setState({ cocktailsIdsByIngredients: {} });
+    this.setState({ cocktailsResultsList: [] });
+  }
 
   render () {
     return (
@@ -97,95 +212,8 @@ class FindYourCocktail extends React.Component {
           </figure>
         </aside>
 
-        <article className='content col-12 col-lg-8'>
+        {this.state.toggleView ? this.showResults() : this.showIngredients()}
 
-          <section>
-            <h1 className='text-center m-5'>Find Your Cocktail</h1>
-            <p className='px-4 text-center'>What do you have in your fridge ? For sure there is a cocktail that matches it !</p>
-            <p className='px-4 text-center'>Let's try our faboulous tools to tell you what cocktail you can do with your home ingredients.</p>
-            <img className='banner d-lg-none d-block' src={Banner} alt='cockails' />
-          </section>
-
-          <section className='search'>
-            <h3 className='m-3 p-4'>Choose your ingredient</h3>
-          </section>
-
-          <section>
-            <div>
-              <h3 className=' mt-2 text-center'>Alcohol</h3>
-              <hr />
-              <ul className='d-flex flex-wrap list-unstyled justify-content-center'>
-                {alcoholsList.map(alcohol =>
-                  <li
-                    className={this.state.activeIngredientsList.includes(alcohol.name) ? 'alcohols status-active col-4 m-1 col-lg-2 p-2' : 'alcohols status-inactive col-4 m-1 col-lg-2 p-2'}
-                    key={alcohol.name}
-                    onClick={() => {
-                      this.toogleSelectedItems(alcohol.name);
-                    }}
-                  >
-                    {alcohol.name}
-                  </li>)}
-              </ul>
-            </div>
-            <div>
-              <h3 className='mt-6 text-center'>Fruits</h3>
-              <hr />
-              <ul className='d-flex flex-wrap list-unstyled justify-content-center'>
-                {fruitsList.map(fruit =>
-                  <li
-                    className={this.state.activeIngredientsList.includes(fruit.name) ? 'fruits status-active col-4 m-1 col-lg-2 p-2' : 'fruits status-inactive col-4 m-1 col-lg-2 p-2'}
-                    key={fruit.name}
-                    onClick={() => {
-                      this.toogleSelectedItems(fruit.name);
-                    }}
-                  >
-                    {fruit.name}
-                  </li>)}
-              </ul>
-            </div>
-            <div>
-              <h3 className='mt-6 text-center'>Others</h3>
-              <hr />
-              <ul className='d-flex flex-wrap list-unstyled justify-content-center'>
-                {othersList.map(other =>
-                  <li
-                    className={this.state.activeIngredientsList.includes(other.name) ? 'others status-active col-4 m-1 col-lg-2 p-2' : 'others status-inactive col-4 m-1 col-lg-2 p-2'}
-                    key={other.name}
-                    onClick={() => {
-                      this.toogleSelectedItems(other.name);
-                    }}
-                  >
-                    {other.name}
-                  </li>)}
-              </ul>
-            </div>
-          </section>
-
-          <section className='d-flex flex-column'>
-            <p className='mx-auto'>Now click the button down below to get your matching recipe !</p>
-            <button type='button' className='button' onClick={this.handleSubmit}>Find My Cocktails</button>
-          </section>
-
-          <section>
-            <ul className='d-flex flex-wrap list-unstyled justify-content-center'>
-              {this.state.showResults
-                ? this.state.cocktailsResultsList.map(cocktail => {
-                  return (
-                    <li
-                      className='col-4 m-3 col-lg-2 p-2'
-                      key={cocktail.idDrink}
-                    >
-                      <p className='text-center'>{cocktail.strDrink}</p>
-                      <img className='img-fluid' src={cocktail.strDrinkThumb} alt={cocktail.idDrink} />
-                    </li>
-                  );
-                })
-                : ''}
-            </ul>
-
-          </section>
-
-        </article>
       </main>
     );
   }
