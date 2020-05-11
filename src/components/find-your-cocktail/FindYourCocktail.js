@@ -4,6 +4,7 @@ import Bar from '../../images/bar-finder.png';
 import Banner from '../../images/banner-finder.jpg';
 import { alcoholsList, fruitsList, othersList } from '../../data/ingredients';
 import Axios from 'axios';
+import { CircleArrow as ScrollUpButton } from 'react-scroll-up-button';
 
 class FindYourCocktail extends React.Component {
   constructor (props) {
@@ -99,7 +100,7 @@ class FindYourCocktail extends React.Component {
 
   showIngredients () {
     return (
-      <article className='content col-12 col-lg-8'>
+      <article className='col-12 col-lg-8'>
 
         <section>
           <h1 className='text-center m-4'>Find Your Cocktail</h1>
@@ -174,16 +175,14 @@ class FindYourCocktail extends React.Component {
 
   showResults () {
     return (
-      <article className='content col-12 col-lg-8'>
+      <article className='col-12 col-lg-8'>
 
         <section>
-          <h1 className='text-center m-5'>Find Your Cocktail</h1>
-          <img className='banner d-lg-none d-block' src={Banner} alt='cockails' />
           <h2 className='text-center m-3'>Results</h2>
-          <p className='m-3 text-center'>All recipes contains one of the previous selected ingredients. You can switch beetween ingredient to have recipes relative to one ingredient.</p>
+          <img className='banner d-lg-none d-block' src={Banner} alt='cockails' />
           <p className='m-3 text-center'>Let's find the perfect cocktail now ! </p>
           <ul className='result-ing'>
-            <li className={(this.state.activeResultTab === 'All') ? 'result-ing-item active' : 'result-ing-item'} onClick={this.handleGetAllResults}>All results</li>
+            <li className={(this.state.activeResultTab === 'All') ? 'result-ing-item active' : 'result-ing-item'} onClick={this.handleGetAllResults}>All ingredients results</li>
             {this.state.activeIngredientsList.map(ingredient => {
               return (
                 <li
@@ -200,7 +199,7 @@ class FindYourCocktail extends React.Component {
           </ul>
         </section>
 
-        <section>
+        <section className='results'>
           <ul className='d-flex flex-wrap list-unstyled justify-content-center'>
             {this.state.cocktailsResultsList.map(cocktail => {
               return (
@@ -222,6 +221,7 @@ class FindYourCocktail extends React.Component {
           <p className='mx-auto text-center'>Go back to ingredients list to make a new search !</p>
           <button type='button' className='button' onClick={this.handleBackButton}>Back to ingredients</button>
         </section>
+        <ScrollUpButton />
 
       </article>
     );
@@ -238,11 +238,8 @@ class FindYourCocktail extends React.Component {
   render () {
     return (
       <main className='d-flex'>
-
         <img className='bar d-none p-0 col-4 d-lg-block' src={Bar} alt='bar' />
-
         {this.state.toggleView ? this.showResults() : this.showIngredients()}
-
       </main>
     );
   }

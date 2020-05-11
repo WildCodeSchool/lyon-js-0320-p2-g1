@@ -14,8 +14,8 @@ h1, h2, h3 {
   height: 120vh;
 }
 
-.content {
-  height: 120vh;
+.results {
+  height: 80vh;
   overflow: auto;
 }
 
