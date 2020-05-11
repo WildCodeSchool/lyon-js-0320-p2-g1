@@ -9,14 +9,17 @@ class FindYourCocktail extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
+      toggleView: false,
       activeIngredientsList: [],
       cocktailsIdsByIngredients: {},
-      toggleView: false,
-      cocktailsResultsList: []
+      cocktailsResultsList: [],
+      activeResultTab: null
     };
     this.toggleSelectedItems = this.toggleSelectedItems.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleBackButton = this.handleBackButton.bind(this);
+    this.handleGetAllResults = this.handleGetAllResults.bind(this);
+    this.handleGetIngredientResults = this.handleGetIngredientResults.bind(this);
   }
 
   toggleSelectedItems (selectedIngredient) {
@@ -55,12 +58,36 @@ class FindYourCocktail extends React.Component {
 
   handleSubmit () {
     this.setState({ toggleView: true });
+    this.handleGetAllResults();
+  }
+
+  handleGetAllResults () {
+    this.setState({ activeResultTab: 'All' });
     const _ = require('lodash/array');
+    this.setState({ cocktailsResultsList: [] });
     let resultIds = [];
     Object.keys(this.state.cocktailsIdsByIngredients).forEach(ingredient => {
       this.state.cocktailsIdsByIngredients[ingredient].forEach(id => resultIds.push(id));
     });
     resultIds = _.uniq(resultIds);
+    resultIds.forEach(cocktailId => {
+      Axios
+        .get(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${cocktailId}`)
+        .then(response => {
+          this.setState({ cocktailsResultsList: this.state.cocktailsResultsList.concat(response.data.drinks) });
+        });
+    });
+  }
+
+  handleGetIngredientResults (selectedIngredient) {
+    this.setState({ activeResultTab: selectedIngredient });
+    this.setState({ cocktailsResultsList: [] });
+    const resultIds = [];
+    Object.keys(this.state.cocktailsIdsByIngredients).forEach(ingredient => {
+      if (ingredient === selectedIngredient) {
+        this.state.cocktailsIdsByIngredients[ingredient].forEach(id => resultIds.push(id));
+      }
+    });
     resultIds.forEach(cocktailId => {
       Axios
         .get(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${cocktailId}`)
@@ -153,13 +180,18 @@ class FindYourCocktail extends React.Component {
           <h1 className='text-center m-5'>Find Your Cocktail</h1>
           <img className='banner d-lg-none d-block' src={Banner} alt='cockails' />
           <h2 className='text-center m-3'>Results</h2>
-          <p className='px-4 text-center'>Find the perfect cocktail ! All recipes contains one of the previous selected ingredients :</p>
-          <ul className='list-group'>
+          <p className='m-3 px-4 text-center'>All recipes contains one of the previous selected ingredients. You can switch beetween ingredient to have recipes relative to one ingredient.</p>
+          <p className='m-3 px-4 text-center'>Let's find the perfect cocktail now ! </p>
+          <ul className='result-ing'>
+            <li className={(this.state.activeResultTab === 'All') ? 'result-ing-item active' : 'result-ing-item'} onClick={this.handleGetAllResults}>All results</li>
             {this.state.activeIngredientsList.map(ingredient => {
               return (
                 <li
-                  className='list-group-item'
+                  className={(this.state.activeResultTab === ingredient) ? 'result-ing-item active' : 'result-ing-item'}
                   key={ingredient}
+                  onClick={e => {
+                    this.handleGetIngredientResults(ingredient);
+                  }}
                 >
                   {ingredient}
                 </li>
@@ -173,7 +205,7 @@ class FindYourCocktail extends React.Component {
             {this.state.cocktailsResultsList.map(cocktail => {
               return (
                 <li
-                  className='card col-4 m-1 col-lg-2 p-2'
+                  className='card col-6 m-1 col-lg-2 p-2'
                   key={cocktail.idDrink}
                 >
                   <img className='card-img-top' src={cocktail.strDrinkThumb} alt={cocktail.idDrink} />
@@ -200,6 +232,7 @@ class FindYourCocktail extends React.Component {
     this.setState({ activeIngredientsList: [] });
     this.setState({ cocktailsIdsByIngredients: {} });
     this.setState({ cocktailsResultsList: [] });
+    this.setState({ activeResultTab: null });
   }
 
   render () {

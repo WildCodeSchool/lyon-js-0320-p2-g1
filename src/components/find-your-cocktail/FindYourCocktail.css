@@ -82,3 +82,29 @@ h3.text-center {
 }
 
 /*////////////// Results list ///////////////*/
+
+.result-ing {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  cursor: pointer;
+}
+
+.result-ing-item {
+  border: 1px solid #DEDEDE;
+  border-radius: 2px;
+  margin: 5px;
+  padding: 1em;
+  transition: box-shadow 0.2s;
+}
+
+.result-ing-item:hover {
+  background-color: #F1F1F1;
+  box-shadow: 0px 0px 0px 3px #DEDEDE;
+}
+
+li.result-ing-item.active {
+  color: white;
+  background-color: #855D5D;
+  border-color: #DEDEDE;
+}
