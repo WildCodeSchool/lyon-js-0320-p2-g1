@@ -72,7 +72,7 @@ class AllCocktails extends React.Component {
             const result = this.ingredients.map(el => {
               if (el.name != null || el.measure != null) {
                 return (
-                  <div>
+                  <div key={el.name}>
                     {(el.name + ' - ' + el.measure).toString().replace('- null', '')}<br />
                   </div>
                 );
@@ -105,13 +105,7 @@ class AllCocktails extends React.Component {
       this.setState({
         filterIng: this.setState.filterIng = this.filterIng,
         indexOfChoosenDrink: this.setState.indexOfChoosenDrink = this.selectDrink(selectedDrinkFromClick)
-      }
-      ,
-      () => {
-        console.log('Callback value ==========>', this.filterIng[this.selectDrink(selectedDrinkFromClick)],
-          'Selected index ==========>', this.selectDrink(selectedDrinkFromClick));
-      }
-      );
+      });
     } else {
       console.log('Error, could not setState.');
     }
