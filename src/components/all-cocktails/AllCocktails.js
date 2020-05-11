@@ -1,5 +1,9 @@
 import React from 'react';
 import axios from 'axios';
+import Allcocktail2 from '../../images/allcocktail2.jpg';
+import Card from 'react-bootstrap/Card';
+import ListGroup from 'react-bootstrap/ListGroup';
+import ListGroupItem from 'react-bootstrap/ListGroupItem';
 import './AllCocktails.css';
 
 class AllCocktails extends React.Component {
@@ -64,29 +68,24 @@ class AllCocktails extends React.Component {
           strDrinkThumb: c.strDrinkThumb,
           ingredients: cocktailIngredientList,
           strInstructions: c.strInstructions,
-          listIngredients: function(){
-
-            const result = this.ingredients.map(el => 
-            {
-              if(el.name != null || el.measure != null){
+          listIngredients: function () {
+            const result = this.ingredients.map(el => {
+              if (el.name != null || el.measure != null) {
                 return (
                   <div>
-                    {(el.name + ' - ' + el.measure).toString().replace('- null', '')}<br/>
+                    {(el.name + ' - ' + el.measure).toString().replace('- null', '')}<br />
                   </div>
-                )
-              }else{
-                return null
+                );
+              } else {
+                return null;
               }
-
             });
             return result;
-        }
-        };       
+          }
+        };
       });
     }
   }
-
-
 
   selectDrink (selectedDrink) {
     const recipeElement = this.state.drinks;
@@ -98,24 +97,24 @@ class AllCocktails extends React.Component {
   }
 
   // Fonction qui permet de faire les setState quand on clic dessus le cocktail désiré
-  handleClick(e){
+  handleClick (e) {
     const selectedDrinkFromClick = e.target.textContent;
     this.filterIngredients(selectedDrinkFromClick);
 
-            if (this.filterIngredients) {
-            this.setState({
-                filterIng : this.setState.filterIng = this.filterIng,
-                indexOfChoosenDrink: this.setState.indexOfChoosenDrink = this.selectDrink(selectedDrinkFromClick)
-            }
-            ,
-              () => {
-                console.log('Callback value ==========>', this.filterIng[this.selectDrink(selectedDrinkFromClick)],
-                            'Selected index ==========>', this.selectDrink(selectedDrinkFromClick))
-              }
-            );
-        }else{
-          console.log('Error, could not setState.');
-        }
+    if (this.filterIngredients) {
+      this.setState({
+        filterIng: this.setState.filterIng = this.filterIng,
+        indexOfChoosenDrink: this.setState.indexOfChoosenDrink = this.selectDrink(selectedDrinkFromClick)
+      }
+      ,
+      () => {
+        console.log('Callback value ==========>', this.filterIng[this.selectDrink(selectedDrinkFromClick)],
+          'Selected index ==========>', this.selectDrink(selectedDrinkFromClick));
+      }
+      );
+    } else {
+      console.log('Error, could not setState.');
+    }
   }
 
   // il permet de faire appel au clic à la fonction filterIngredients() qui affichera le contenu necessaire à la fabrication du cocktail.
@@ -125,62 +124,62 @@ class AllCocktails extends React.Component {
       return <p>No cocktails yet</p>; // s'il n'y a pas de cocktail correspondant à la lettre selectionnée on renvoie la chaine de caractère renseignée.
     } else { // dans le cas où il y a bien un ou des cocktails existants, on utilise map.
       return cocktailList.map(cocktail => // map nous permet de parcourir chaque objet du tableau cocktailList et pour chaque objet parcouru de créer un bouton.
-          <button
-            type='button'
-            className='btn btn-light'
-            key={cocktail.strDrink}
-            // onClick={(e) => { const selectedDrink = e.target.textContent; this.filterIngredients(selectedDrink); }}
-            onClick={this.handleClick}
-          >{cocktail.strDrink} 
-          </button>);
+        <button
+          type='button'
+          className='btn btn-light'
+          key={cocktail.strDrink}
+          // onClick={(e) => { const selectedDrink = e.target.textContent; this.filterIngredients(selectedDrink); }}
+          onClick={this.handleClick}
+        >{cocktail.strDrink}
+        </button>);
     }
   }
 
-  
-  renderObject(){   
+  renderObject () {
     if (this.filterIng) {
-
       if (this.state.filterIng.length > 0) {
         // console.log(this.state.filterIng[this.state.indexOfChoosenDrink].strDrink);
         return (
-          <div>            
-            <div><img alt={this.state.filterIng[this.state.indexOfChoosenDrink].strDrinkThumb} src={this.state.filterIng[this.state.indexOfChoosenDrink].strDrinkThumb}></img></div>
-            <div><h3>{this.state.filterIng[this.state.indexOfChoosenDrink].strDrink}</h3></div>
-            <div>{this.state.filterIng[this.state.indexOfChoosenDrink].listIngredients()}</div>
-            {/* Optimisation possible pour ingrédient, il faut juste faire une boucle ou eventuellement un filtre ou un startwith.. */}
-            <div>{'Instructions : '+this.state.filterIng[this.state.indexOfChoosenDrink].strInstructions}</div>
-          </div>
-          
-        )
+          <Card style={{ width: '20rem' }} className='cocktailCard' >
+            <Card.Img variant="top" alt={this.state.filterIng[this.state.indexOfChoosenDrink].strDrinkThumb} src={this.state.filterIng[this.state.indexOfChoosenDrink].strDrinkThumb} />
+              <Card.Body >
+                <Card.Title>{this.state.filterIng[this.state.indexOfChoosenDrink].strDrink}</Card.Title>
+              </Card.Body>
+              <ListGroup className="list-group-flush">
+                <ListGroupItem className='backgroundCard'>{this.state.filterIng[this.state.indexOfChoosenDrink].listIngredients()}</ListGroupItem>
+                {/* Optimisation possible pour ingrédient, il faut juste faire une boucle ou eventuellement un filtre ou un startwith.. */}
+                <ListGroupItem className='backgroundCard'>{this.state.filterIng[this.state.indexOfChoosenDrink].strInstructions}</ListGroupItem>
+              </ListGroup>
+          </Card>
+        );
       }
-
     } else {
-      return <div>Please select your drink</div>;
+      return <div className='askSelection'>Please select your drink</div>;
     }
-    
   }
 
   render () {
     return (
-      <main>
-
+      <main className='mainAllCocktails'>
         <div className='globalContainer'>
-          <div>
+
+          <img className='col-4 p-0 d-none d-lg-block cocktail' src={Allcocktail2} alt='cocktail' />
+          
             <section className='col-8'>
-              <section>
-                <article className='introContainer'>
-                    <h1 className='text-center m-5'>All our cocktails</h1>
+              
+                <div>
+                    <h1 className='text-center m-5 title'>All our cocktails</h1>
                     <p className='px-4 text-center'>You already have a cocktail in mind and you want to find it ? </p>
                     <p className='px-4 text-center'>Go ahead and find it by its first letter.</p>
-                </article>
+                </div>
 
-                <article>
+                <div className='sectionTitleContainer'>
+                  <h3 className='m-3 p-4 section-title search'>Search by first letter</h3>
+                </div>
+                  
 
-                  <article className='search'>
-                    <h3 className='m-3 p-4 section-title'>Search by first letter</h3>
-                  </article>
-
-                    <div className='btn-group'>
+                  <div className='callApiContainer'>
+                    <div className='btn-group alphaButton'>
                       <button className='lettreClass btn btn-dark' onClick={this.changeFilterLetter.bind(this)} value='a'>A</button>
                       <button className='lettreClass btn btn-dark' onClick={this.changeFilterLetter.bind(this)} value='b'>B</button>
                       <button className='lettreClass btn btn-dark' onClick={this.changeFilterLetter.bind(this)} value='c'>C</button>
@@ -207,19 +206,19 @@ class AllCocktails extends React.Component {
                       <button className='lettreClass btn btn-dark' onClick={this.changeFilterLetter.bind(this)} value='x'>X</button>
                       <button className='lettreClass btn btn-dark' onClick={this.changeFilterLetter.bind(this)} value='y'>Y</button>
                       <button className='lettreClass btn btn-dark' onClick={this.changeFilterLetter.bind(this)} value='z'>Z</button>
-                    </div><br/>
-                    <div className='btn-group-vertical cocktailNameContainer'>
-                      {this.filterCocktails()}                  
-                    </div>
-                    <div>
-                      {this.renderObject()}
-                    </div>
-                </article>
+                    </div><br />
 
-              </section>
-
+                      <div className='nameCardContainer'>
+                        <div className='btn-group-vertical'>
+                          {this.filterCocktails()}
+                        </div>
+                        <div className='cocktail-container'>
+                          {this.renderObject()}
+                        </div>
+                      </div>
+                  
+                  </div>
             </section>
-          </div>
         </div>
       </main>
     );
