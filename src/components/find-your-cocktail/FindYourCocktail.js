@@ -1,6 +1,6 @@
 import React from 'react';
 import './FindYourCocktail.css';
-import Bar from '../../images/bar-2.jpg';
+import Bar from '../../images/bar-finder.png';
 import Banner from '../../images/banner-finder.jpg';
 import { alcoholsList, fruitsList, othersList } from '../../data/ingredients';
 import Axios from 'axios';
@@ -12,7 +12,7 @@ class FindYourCocktail extends React.Component {
       toggleView: false,
       activeIngredientsList: [],
       cocktailsIdsByIngredients: {},
-      cocktailsResultsList: [],
+      cocktailsResultsList: null,
       activeResultTab: null
     };
     this.toggleSelectedItems = this.toggleSelectedItems.bind(this);
@@ -57,8 +57,8 @@ class FindYourCocktail extends React.Component {
   }
 
   handleSubmit () {
-    this.setState({ toggleView: true });
     this.handleGetAllResults();
+    this.setState({ toggleView: true });
   }
 
   handleGetAllResults () {
@@ -239,11 +239,7 @@ class FindYourCocktail extends React.Component {
     return (
       <main className='d-flex'>
 
-        <aside className='col-4 p-0 d-none d-lg-block'>
-          <figure>
-            <img className='bar' src={Bar} alt='bar' />
-          </figure>
-        </aside>
+        <img className='bar d-none p-0 col-4 d-lg-block' src={Bar} alt='bar' />
 
         {this.state.toggleView ? this.showResults() : this.showIngredients()}
 
