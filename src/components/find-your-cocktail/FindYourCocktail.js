@@ -103,13 +103,13 @@ class FindYourCocktail extends React.Component {
 
         <section>
           <h1 className='text-center m-4'>Find Your Cocktail</h1>
-          <img className='banner d-lg-none d-block' src={Banner} alt='cockails' />
-          <p className='px-4 text-center'>What do you have in your fridge ? For sure there is a cocktail that matches it !</p>
-          <p className='px-4 text-center'>Let's try our faboulous tools to tell you what cocktail you can do with your home ingredients.</p>
+          <img className='banner mb-4 d-lg-none d-block' src={Banner} alt='cockails' />
+          <p className='m-3 text-center'>What do you have in your fridge ? For sure there is a cocktail that matches it !</p>
+          <p className='m-2 text-center'>Let's try our faboulous tools to tell you what cocktail you can do with your home ingredients.</p>
         </section>
 
         <section className='search'>
-          <h3 className='m-3 p-4'>Choose your ingredient</h3>
+          <h3 className='m-2 p-4'>Choose your ingredient</h3>
         </section>
 
         <section>
@@ -180,8 +180,8 @@ class FindYourCocktail extends React.Component {
           <h1 className='text-center m-5'>Find Your Cocktail</h1>
           <img className='banner d-lg-none d-block' src={Banner} alt='cockails' />
           <h2 className='text-center m-3'>Results</h2>
-          <p className='m-3 px-4 text-center'>All recipes contains one of the previous selected ingredients. You can switch beetween ingredient to have recipes relative to one ingredient.</p>
-          <p className='m-3 px-4 text-center'>Let's find the perfect cocktail now ! </p>
+          <p className='m-3 text-center'>All recipes contains one of the previous selected ingredients. You can switch beetween ingredient to have recipes relative to one ingredient.</p>
+          <p className='m-3 text-center'>Let's find the perfect cocktail now ! </p>
           <ul className='result-ing'>
             <li className={(this.state.activeResultTab === 'All') ? 'result-ing-item active' : 'result-ing-item'} onClick={this.handleGetAllResults}>All results</li>
             {this.state.activeIngredientsList.map(ingredient => {
