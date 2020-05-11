@@ -201,19 +201,21 @@ class FindYourCocktail extends React.Component {
 
         <section className='results'>
           <ul className='d-flex flex-wrap list-unstyled justify-content-center'>
-            {this.state.cocktailsResultsList.map(cocktail => {
-              return (
-                <li
-                  className='card col-6 m-1 col-lg-2 p-2'
-                  key={cocktail.idDrink}
-                >
-                  <img className='card-img-top' src={cocktail.strDrinkThumb} alt={cocktail.idDrink} />
-                  <div className='card-body'>
-                    <p className='card-title'>{cocktail.strDrink}</p>
-                  </div>
-                </li>
-              );
-            })}
+            {(!this.state.activeIngredientsList.length)
+              ? <p>No ingredient selected before !</p>
+              : this.state.cocktailsResultsList.map(cocktail => {
+                return (
+                  <li
+                    className='card col-6 m-1 col-lg-2 p-2'
+                    key={cocktail.idDrink}
+                  >
+                    <img className='card-img-top' src={cocktail.strDrinkThumb} alt={cocktail.idDrink} />
+                    <div className='card-body'>
+                      <p className='card-title'>{cocktail.strDrink}</p>
+                    </div>
+                  </li>
+                );
+              })}
           </ul>
         </section>
 
@@ -231,7 +233,7 @@ class FindYourCocktail extends React.Component {
     this.setState({ toggleView: false });
     this.setState({ activeIngredientsList: [] });
     this.setState({ cocktailsIdsByIngredients: {} });
-    this.setState({ cocktailsResultsList: [] });
+    this.setState({ cocktailsResultsList: null });
     this.setState({ activeResultTab: null });
   }
 
