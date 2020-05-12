@@ -139,16 +139,16 @@ class AllCocktails extends React.Component {
       if (this.state.filterIng.length > 0) {
         // console.log(this.state.filterIng[this.state.indexOfChoosenDrink].strDrink);
         return (
-          <Card style={{ width: '20rem' }} className='cocktailCard' >
-            <Card.Img variant="top" alt={this.state.filterIng[this.state.indexOfChoosenDrink].strDrinkThumb} src={this.state.filterIng[this.state.indexOfChoosenDrink].strDrinkThumb} />
-              <Card.Body >
-                <Card.Title>{this.state.filterIng[this.state.indexOfChoosenDrink].strDrink}</Card.Title>
-              </Card.Body>
-              <ListGroup className="list-group-flush">
-                <ListGroupItem className='backgroundCard'>{this.state.filterIng[this.state.indexOfChoosenDrink].listIngredients()}</ListGroupItem>
-                {/* Optimisation possible pour ingrédient, il faut juste faire une boucle ou eventuellement un filtre ou un startwith.. */}
-                <ListGroupItem className='backgroundCard'>{this.state.filterIng[this.state.indexOfChoosenDrink].strInstructions}</ListGroupItem>
-              </ListGroup>
+          <Card style={{ width: '20rem' }} className='cocktailCard'>
+            <Card.Img variant='top' alt={this.state.filterIng[this.state.indexOfChoosenDrink].strDrinkThumb} src={this.state.filterIng[this.state.indexOfChoosenDrink].strDrinkThumb} />
+            <Card.Body>
+              <Card.Title>{this.state.filterIng[this.state.indexOfChoosenDrink].strDrink}</Card.Title>
+            </Card.Body>
+            <ListGroup className='list-group-flush'>
+              <ListGroupItem className='backgroundCard'>{this.state.filterIng[this.state.indexOfChoosenDrink].listIngredients()}</ListGroupItem>
+              {/* Optimisation possible pour ingrédient, il faut juste faire une boucle ou eventuellement un filtre ou un startwith.. */}
+              <ListGroupItem className='backgroundCard'>{this.state.filterIng[this.state.indexOfChoosenDrink].strInstructions}</ListGroupItem>
+            </ListGroup>
           </Card>
         );
       }
@@ -163,61 +163,60 @@ class AllCocktails extends React.Component {
         <div className='globalContainer'>
 
           <aside className='cocktail d-none col-4 d-lg-block' />
-          
-            <section className='col-8'>
-              
-                <div>
-                    <h1 className='text-center m-5 title'>All our cocktails</h1>
-                    <p className='px-4 text-center'>You already have a cocktail in mind and you want to find it ? </p>
-                    <p className='px-4 text-center'>Go ahead and find it by its first letter.</p>
+
+          <section className='col-8'>
+
+            <div>
+              <h1 className='text-center m-5 title'>All our cocktails</h1>
+              <p className='px-4 text-center'>You already have a cocktail in mind and you want to find it ? </p>
+              <p className='px-4 text-center'>Go ahead and find it by its first letter.</p>
+            </div>
+
+            <div className='sectionTitleContainer'>
+              <h3 className='m-3 p-4 section-title search'>Search by first letter</h3>
+            </div>
+
+            <div className='callApiContainer'>
+              <div className='btn-group alphaButton'>
+                <button className='lettreClass btn btn-dark' onClick={this.changeFilterLetter.bind(this)} value='a'>A</button>
+                <button className='lettreClass btn btn-dark' onClick={this.changeFilterLetter.bind(this)} value='b'>B</button>
+                <button className='lettreClass btn btn-dark' onClick={this.changeFilterLetter.bind(this)} value='c'>C</button>
+                <button className='lettreClass btn btn-dark' onClick={this.changeFilterLetter.bind(this)} value='d'>D</button>
+                <button className='lettreClass btn btn-dark' onClick={this.changeFilterLetter.bind(this)} value='e'>E</button>
+                <button className='lettreClass btn btn-dark' onClick={this.changeFilterLetter.bind(this)} value='f'>F</button>
+                <button className='lettreClass btn btn-dark' onClick={this.changeFilterLetter.bind(this)} value='g'>G</button>
+                <button className='lettreClass btn btn-dark' onClick={this.changeFilterLetter.bind(this)} value='h'>H</button>
+                <button className='lettreClass btn btn-dark' onClick={this.changeFilterLetter.bind(this)} value='i'>I</button>
+                <button className='lettreClass btn btn-dark' onClick={this.changeFilterLetter.bind(this)} value='j'>J</button>
+                <button className='lettreClass btn btn-dark' onClick={this.changeFilterLetter.bind(this)} value='k'>K</button>
+                <button className='lettreClass btn btn-dark' onClick={this.changeFilterLetter.bind(this)} value='l'>L</button>
+                <button className='lettreClass btn btn-dark' onClick={this.changeFilterLetter.bind(this)} value='m'>M</button>
+                <button className='lettreClass btn btn-dark' onClick={this.changeFilterLetter.bind(this)} value='n'>N</button>
+                <button className='lettreClass btn btn-dark' onClick={this.changeFilterLetter.bind(this)} value='o'>O</button>
+                <button className='lettreClass btn btn-dark' onClick={this.changeFilterLetter.bind(this)} value='p'>P</button>
+                <button className='lettreClass btn btn-dark' onClick={this.changeFilterLetter.bind(this)} value='q'>Q</button>
+                <button className='lettreClass btn btn-dark' onClick={this.changeFilterLetter.bind(this)} value='r'>R</button>
+                <button className='lettreClass btn btn-dark' onClick={this.changeFilterLetter.bind(this)} value='s'>S</button>
+                <button className='lettreClass btn btn-dark' onClick={this.changeFilterLetter.bind(this)} value='t'>T</button>
+                <button className='lettreClass btn btn-dark' onClick={this.changeFilterLetter.bind(this)} value='u'>U</button>
+                <button className='lettreClass btn btn-dark' onClick={this.changeFilterLetter.bind(this)} value='v'>V</button>
+                <button className='lettreClass btn btn-dark' onClick={this.changeFilterLetter.bind(this)} value='w'>W</button>
+                <button className='lettreClass btn btn-dark' onClick={this.changeFilterLetter.bind(this)} value='x'>X</button>
+                <button className='lettreClass btn btn-dark' onClick={this.changeFilterLetter.bind(this)} value='y'>Y</button>
+                <button className='lettreClass btn btn-dark' onClick={this.changeFilterLetter.bind(this)} value='z'>Z</button>
+              </div><br />
+
+              <div className='nameCardContainer'>
+                <div className='btn-group-vertical'>
+                  {this.filterCocktails()}
                 </div>
-
-                <div className='sectionTitleContainer'>
-                  <h3 className='m-3 p-4 section-title search'>Search by first letter</h3>
+                <div className='cocktail-container'>
+                  {this.renderObject()}
                 </div>
-                  
+              </div>
 
-                  <div className='callApiContainer'>
-                    <div className='btn-group alphaButton'>
-                      <button className='lettreClass btn btn-dark' onClick={this.changeFilterLetter.bind(this)} value='a'>A</button>
-                      <button className='lettreClass btn btn-dark' onClick={this.changeFilterLetter.bind(this)} value='b'>B</button>
-                      <button className='lettreClass btn btn-dark' onClick={this.changeFilterLetter.bind(this)} value='c'>C</button>
-                      <button className='lettreClass btn btn-dark' onClick={this.changeFilterLetter.bind(this)} value='d'>D</button>
-                      <button className='lettreClass btn btn-dark' onClick={this.changeFilterLetter.bind(this)} value='e'>E</button>
-                      <button className='lettreClass btn btn-dark' onClick={this.changeFilterLetter.bind(this)} value='f'>F</button>
-                      <button className='lettreClass btn btn-dark' onClick={this.changeFilterLetter.bind(this)} value='g'>G</button>
-                      <button className='lettreClass btn btn-dark' onClick={this.changeFilterLetter.bind(this)} value='h'>H</button>
-                      <button className='lettreClass btn btn-dark' onClick={this.changeFilterLetter.bind(this)} value='i'>I</button>
-                      <button className='lettreClass btn btn-dark' onClick={this.changeFilterLetter.bind(this)} value='j'>J</button>
-                      <button className='lettreClass btn btn-dark' onClick={this.changeFilterLetter.bind(this)} value='k'>K</button>
-                      <button className='lettreClass btn btn-dark' onClick={this.changeFilterLetter.bind(this)} value='l'>L</button>
-                      <button className='lettreClass btn btn-dark' onClick={this.changeFilterLetter.bind(this)} value='m'>M</button>
-                      <button className='lettreClass btn btn-dark' onClick={this.changeFilterLetter.bind(this)} value='n'>N</button>
-                      <button className='lettreClass btn btn-dark' onClick={this.changeFilterLetter.bind(this)} value='o'>O</button>
-                      <button className='lettreClass btn btn-dark' onClick={this.changeFilterLetter.bind(this)} value='p'>P</button>
-                      <button className='lettreClass btn btn-dark' onClick={this.changeFilterLetter.bind(this)} value='q'>Q</button>
-                      <button className='lettreClass btn btn-dark' onClick={this.changeFilterLetter.bind(this)} value='r'>R</button>
-                      <button className='lettreClass btn btn-dark' onClick={this.changeFilterLetter.bind(this)} value='s'>S</button>
-                      <button className='lettreClass btn btn-dark' onClick={this.changeFilterLetter.bind(this)} value='t'>T</button>
-                      <button className='lettreClass btn btn-dark' onClick={this.changeFilterLetter.bind(this)} value='u'>U</button>
-                      <button className='lettreClass btn btn-dark' onClick={this.changeFilterLetter.bind(this)} value='v'>V</button>
-                      <button className='lettreClass btn btn-dark' onClick={this.changeFilterLetter.bind(this)} value='w'>W</button>
-                      <button className='lettreClass btn btn-dark' onClick={this.changeFilterLetter.bind(this)} value='x'>X</button>
-                      <button className='lettreClass btn btn-dark' onClick={this.changeFilterLetter.bind(this)} value='y'>Y</button>
-                      <button className='lettreClass btn btn-dark' onClick={this.changeFilterLetter.bind(this)} value='z'>Z</button>
-                    </div><br />
-
-                      <div className='nameCardContainer'>
-                        <div className='btn-group-vertical'>
-                          {this.filterCocktails()}
-                        </div>
-                        <div className='cocktail-container'>
-                          {this.renderObject()}
-                        </div>
-                      </div>
-                  
-                  </div>
-            </section>
+            </div>
+          </section>
         </div>
       </main>
     );
