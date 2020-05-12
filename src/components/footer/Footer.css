@@ -12,17 +12,17 @@
     color: #edeae1;
 }
 
-p{
+.contactText{
   font-family: 'Playfair Display SC Black Italic', arial;
   font-size: 20px;
 }
-a {
+.lienFooter {
   color: white;
   text-decoration: none; 
   font-weight: bold;
 }
 
-a:hover {
+.lienFooter:hover {
   color:grey;
   text-decoration: none;
 }

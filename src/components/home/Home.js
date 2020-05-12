@@ -1,13 +1,8 @@
 import React, { Component } from 'react';
 import CompoCocktail from './CompoCocktail';
 import Quizz from './Quizz';
-<<<<<<< HEAD
-import video from '../Images/Strawberries.mp4';
-import cuba from '../Images/cuba-libre.jpg';
-=======
 import video from '../../images/Strawberries.mp4';
 import cuba from '../../images/cuba-libre.jpg';
->>>>>>> 1d6443404af2eab28e7ac784d84961dade24106b
 import './Home.css';
 
 class Home extends Component {
