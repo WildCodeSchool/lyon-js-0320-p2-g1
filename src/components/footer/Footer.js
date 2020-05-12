@@ -6,7 +6,7 @@ class Footer extends React.Component {
     return (
       <footer className='bloc_page'>
         <div className='contact'>
-          <a href='mailto:cocktail.finder@outlook.fr'>Contact us</a>
+          <p>Contact us by sending an <a href='mailto:cocktail.finder@outlook.fr'>email</a></p>
         </div>
         <div className='warning-container'>
           <p className='warning'>Excessive drinking is dangerous for the health</p>
