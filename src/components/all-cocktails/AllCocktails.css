@@ -1,0 +1,128 @@
+
+/*
+font-family: 'Playfair Display', serif;
+font-family: 'Lato', sans-serif;
+*/
+
+main {
+  font-family: 'Lato', sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+}
+
+.search {
+  color: white;
+  background-color: #232323;
+}
+
+.sectionTitleContainer{
+  padding-right: 10px;
+}
+
+.section-title{
+  color:White;
+}
+
+.globalContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 160vh;
+}
+
+img{
+  height: 20rem;
+  width: auto;
+}
+
+.cocktailCard{
+  margin-top: 3px;
+  background: transparent !important;
+}
+
+.backgroundCard{
+  background: transparent !important;
+}
+
+.cocktail{
+  height: auto;
+  width: 100%;
+  margin-right: 50px;
+}
+
+.callApiContainer{
+  margin-bottom: 20px;
+  margin-left: 20px;
+  display: block;
+  justify-self: center;
+}
+
+.nameCardContainer{
+  display: flex;
+  flex-direction: row;
+}
+
+.askSelection{
+  font-weight: Bold;
+  font-size: 20px;
+}
+
+
+@media screen and (min-width: 1000px){
+  .cocktail-container{
+    margin-left:200px;
+    margin-top:50px;
+    
+  }
+}
+
+@media screen and (max-width: 1500px){
+  .alphaButton{
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 991px){
+
+  .globalContainer{
+    height: 200vh;
+  }
+  
+  .mainAllCocktails{
+    background-color:black;
+    background-image:url(https://i.imgur.com/VFZCckd.jpg);
+    background-size: cover;
+  }
+
+  .backgroundCard{
+    color: white;
+  }
+
+  .text-center{
+    color: white;
+  }
+
+  .cocktailCard{
+    color: white;
+  }
+
+  .askSelection{
+    color: white;
+    font-weight: Bold;
+    font-size: 20px;
+  }
+
+  .title{
+    color: white;
+  }
+
+  .alphaButton{
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+
