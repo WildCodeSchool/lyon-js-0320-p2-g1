@@ -33,11 +33,12 @@ h1, h2, h3 {
 
 .cocktailCard{
   margin-top: 3px;
-  background: transparent !important;
+  background-color: rgba(0, 0, 0, 0.50) !important;
+  font-weight: bold;
 }
 
 .backgroundCard{
-  background: transparent !important;
+  background-color: transparent !important;
 }
 
 .cocktail{
