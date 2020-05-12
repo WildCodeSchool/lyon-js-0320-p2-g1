@@ -33,7 +33,7 @@ h1, h2, h3 {
 
 .cocktailCard{
   margin-top: 3px;
-  background-color: rgba(0, 0, 0, 0.50) !important;
+  background-color: transparent !important;
   font-weight: bold;
 }
 
@@ -86,6 +86,10 @@ h1, h2, h3 {
     background-color:black;
     background-image:url(https://i.imgur.com/VFZCckd.jpg);
     background-size: cover;
+  }
+
+  .cocktailCard{
+    background-color: rgba(0, 0, 0, 0.50) !important;
   }
 
   .backgroundCard{
