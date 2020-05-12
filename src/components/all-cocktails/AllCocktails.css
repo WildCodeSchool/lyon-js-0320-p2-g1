@@ -25,10 +25,14 @@ h1, h2, h3 {
   color:White;
 }
 
-.globalContainer{
+.mainAllCocktails{
   display: flex;
   flex-direction: row;
   justify-content: center;
+}
+
+.col-8{
+  margin-right: 1em;
 }
 
 .cocktailCard{
@@ -41,6 +45,10 @@ h1, h2, h3 {
   background-color: transparent !important;
 }
 
+.alphaButton{
+  margin-right: 1em;
+}
+
 .cocktail{
   background-image: url('../../images/allcocktails.jpg');
   background-size: cover;
@@ -49,8 +57,8 @@ h1, h2, h3 {
 
 .callApiContainer{
   margin-bottom: 20px;
-  margin-left: 20px;
-  display: block;
+  display: flex;
+  flex-direction: column;
   justify-self: center;
 }
 
@@ -64,11 +72,10 @@ h1, h2, h3 {
   font-size: 20px;
 }
 
-
 @media screen and (min-width: 1000px){
   .cocktail-container{
-    margin-left:200px;
-    margin-top:50px;
+    margin-left:2em;
+    margin-top:2em;
     
   }
 }
@@ -117,6 +124,12 @@ h1, h2, h3 {
   .alphaButton{
     display: flex;
     flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 600px){
+  .nameCardContainer{
+    flex-direction: column-reverse;
   }
 }
 
