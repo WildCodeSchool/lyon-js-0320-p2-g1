@@ -1,13 +1,13 @@
 import React from 'react';
 import './Navbar.css';
 import Logo from '../../images/logo.jpg';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 
 export default function NavBar () {
   return (
     <div>
       <nav className='navbar navbar-expand-lg navbar-dark'>
-        <a id='navbar-brand' href='./components/Home/Home.js'><img src={Logo} id='logo' alt='logo' /> </a>
+      <Link to={'/'} id='navbar-brand'><img src={Logo} id='logo' alt='logo' /></Link>
         <h1 className='navbar-brand'>Cocktail Finder</h1>
         {/* C'est le bouton burger (navbar-toggler) */}
         <button className='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarColor01' aria-controls='navbarColor01' aria-expanded='false' aria-label='Toggle navigation'>

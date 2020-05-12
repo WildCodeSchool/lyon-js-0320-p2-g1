@@ -152,44 +152,44 @@ class AllCocktails extends React.Component {
   }
 
   render () {
-    const letters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+    const letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
     return (
       <main className='mainAllCocktails'>
-        
-          <aside className='cocktail d-none col-4 d-lg-block' />
 
-          <article className='col-8 '>
+        <aside className='cocktail d-none col-4 d-lg-block' />
 
-            <section>
-              <h1 className='text-center m-5 title'>All our cocktails</h1>
-              <p className='px-4 text-center'>You already have a cocktail in mind and you want to find it ? </p>
-              <p className='px-4 text-center'>Go ahead and find it by its first letter.</p>
-            </section>
+        <article className='col-8 '>
 
-            <section className='sectionTitleContainer'>
-              <h3 className='my-3 p-4 section-title search'>Search by first letter</h3>
-            </section>
+          <section>
+            <h1 className='text-center m-5 title'>All our cocktails</h1>
+            <p className='px-4 text-center'>You already have a cocktail in mind and you want to find it ? </p>
+            <p className='px-4 text-center'>Go ahead and find it by its first letter.</p>
+          </section>
 
-            <section className='callApiContainer'>
-              <div className='btn-group alphaButton'>
-                {letters.map( letter => {
-                  return (
-                    <button className='lettreClass btn btn-dark' onClick={this.changeFilterLetter.bind(this)} value= {letter} key= {letter}>{letter.toUpperCase()}</button>
-                  )
-                })}
-              </div><br />
+          <section className='sectionTitleContainer'>
+            <h3 className='my-3 p-4 section-title search'>Search by first letter</h3>
+          </section>
 
-              <div className='nameCardContainer'>
-                <div className='btn-group-vertical'>
-                  {this.filterCocktails()}
-                </div>
-                <div className='cocktail-container'>
-                  {this.renderObject()}
-                </div>
+          <section className='callApiContainer'>
+            <div className='btn-group alphaButton'>
+              {letters.map(letter => {
+                return (
+                  <button className='lettreClass btn btn-dark' onClick={this.changeFilterLetter.bind(this)} value={letter} key={letter}>{letter.toUpperCase()}</button>
+                );
+              })}
+            </div><br />
+
+            <div className='nameCardContainer'>
+              <div className='btn-group-vertical'>
+                {this.filterCocktails()}
               </div>
+              <div className='cocktail-container'>
+                {this.renderObject()}
+              </div>
+            </div>
 
-            </section>
-          </article>
+          </section>
+        </article>
       </main>
     );
   }
