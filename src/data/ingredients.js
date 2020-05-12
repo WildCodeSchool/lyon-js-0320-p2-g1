@@ -1,0 +1,6 @@
+export const alcoholsList = [{ name: 'Amaretto' }, { name: 'Bourbon' }, { name: 'Champagne' }, { name: 'Cider' }, { name: 'Coffee liqueur' }, { name: 'Cognac' }, { name: 'Creme de Cassis' }, { name: 'Dark rum' }, { name: 'Gin' }, { name: 'Jack Daniels' }, { name: 'Lager' }, { name: 'Light rum' }, { name: 'Port' }, { name: 'Red wine' }, { name: 'Rum' }, { name: 'Sambuca' }, { name: 'Scotch' }, { name: 'Tequila' }, { name: 'Triple sec' }, { name: 'Vodka' }
+];
+export const fruitsList = [{ name: 'Apple juice' }, { name: 'Cocoa powder' }, { name: 'Cranberry juice' }, { name: 'Grapefruit juice' }, { name: 'Ginger' }, { name: 'Lemon juice' }, { name: 'Lime juice' }, { name: 'Orange' }, { name: 'Peach nectar' }, { name: 'Pineapple juice' }, { name: 'Strawberries' }, { name: 'Tomato juice' }
+];
+export const othersList = [{ name: '7-Up' }, { name: 'Carbonated water' }, { name: 'Chocolate' }, { name: 'Chocolate syrup' }, { name: 'Creme de Cacao' }, { name: 'Coffee' }, { name: 'Espresso' }, { name: 'Egg' }, { name: 'Grenadine' }, { name: 'Heavy cream' }, { name: 'Lemonade' }, { name: 'Milk' }, { name: 'Sprite' }, { name: 'Sugar' }, { name: 'Sugar syrup' }, { name: 'Tea' }, { name: 'Water' }, { name: 'Yoghurt' }
+];
