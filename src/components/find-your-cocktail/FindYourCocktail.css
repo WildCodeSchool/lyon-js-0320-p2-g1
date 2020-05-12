@@ -16,6 +16,8 @@ h1, h2, h3 {
 }
 
 .results {
+  margin-left: 10%;
+  max-width: 80%;
   height: 80vh;
   overflow: auto;
 }
