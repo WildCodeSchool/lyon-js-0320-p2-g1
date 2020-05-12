@@ -1,24 +1,25 @@
 .bloc_page {
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     background-color: #0f0f0f;
     color: white;
     font-family: 'Lato', sans-serif;
-    padding: 10px;
+    padding: 13px;
 }
 .warning {
     font-family: 'Playfair Display SC Black Italic', arial;
     font-size: 20px;
     font-style: italic;
-    color: #a62639;
+    color: #edeae1;
 }
 
+p{
+  font-family: 'Playfair Display SC Black Italic', arial;
+  font-size: 20px;
+}
 a {
   color: white;
   text-decoration: none; 
-  font-size: 20px;
+  font-weight: bold;
 }
 
 a:hover {
