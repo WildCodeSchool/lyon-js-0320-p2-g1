@@ -6,23 +6,20 @@ h1, h2, h3 {
   font-family: 'Playfair Display', serif;
 }
 
-.bar {
-  width: 100%;
-  height: 100vh;
-}
-
 .banner {
-  max-width: 100%;
-  height: auto;
+  width: 100%;
 }
 
-.content {
-  height: 100vh;
+.bar {
+  background-image: url('../../images/bar-finder.png');
+  background-size: cover;
+}
+
+.results {
+  margin-left: 10%;
+  max-width: 80%;
+  height: 80vh;
   overflow: auto;
-}
-
-h1.text-center.m-5 {
-  font-weight: bold;
 }
 
 .search {
@@ -34,10 +31,6 @@ h1.text-center.m-5 {
   color: white;
 }
 
-h3.text-center {
-  font-weight: 600;
-}
-
 /*////////////// List of ingredients ///////////////*/
 
 .alcohols, 
@@ -45,7 +38,7 @@ h3.text-center {
 .others {
   text-align: center;
   cursor: pointer;
-  transition: box-shadow 0.3s linear;
+  transition: box-shadow 0.2s linear;
   margin: 0.5em;
 }
 
@@ -79,4 +72,50 @@ h3.text-center {
   color: white;
   background-color: #373737;
   box-shadow: 0px 0px 0px 5px #373737;
+}
+
+/*////////////// Results list ///////////////*/
+
+.result-ing {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  cursor: pointer;
+}
+
+.result-ing-item {
+  border: 1px solid #DEDEDE;
+  border-radius: 2px;
+  margin: 5px;
+  padding: 1em;
+  transition: box-shadow 0.2s;
+}
+
+.result-ing-item:hover {
+  background-color: #F1F1F1;
+  box-shadow: 0px 0px 0px 3px #DEDEDE;
+}
+
+li.result-ing-item.active {
+  color: white;
+  background-color: #855D5D;
+  border-color: #DEDEDE;
+}
+
+.go-back-ing-list {
+  border: 1px solid #DEDEDE;
+  border-radius: 2px;
+  margin: 5px;
+  padding: 1em;
+  transition: box-shadow 0.2s;
+}
+
+.go-back-ing-list:hover {
+  background-color: #5e5e5e;
+  color: white;
+  box-shadow: 0px 0px 0px 3px #DEDEDE;
+}
+
+.card {
+  cursor: pointer;
 }
