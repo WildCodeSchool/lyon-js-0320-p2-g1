@@ -7,7 +7,7 @@ export default function NavBar () {
   return (
     <div>
       <nav className='navbar navbar-expand-lg navbar-dark'>
-      <Link to={'/'} id='navbar-brand'><img src={Logo} id='logo' alt='logo' /></Link>
+        <Link to='/' id='navbar-brand'><img src={Logo} id='logo' alt='logo' /></Link>
         <h1 className='navbar-brand'>Cocktail Finder</h1>
         {/* C'est le bouton burger (navbar-toggler) */}
         <button className='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarColor01' aria-controls='navbarColor01' aria-expanded='false' aria-label='Toggle navigation'>

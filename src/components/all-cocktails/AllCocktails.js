@@ -161,9 +161,9 @@ class AllCocktails extends React.Component {
         <article className='col-8 '>
 
           <section>
-            <h1 className='text-center m-5 title'>All our cocktails</h1>
-            <p className='px-4 text-center'>You already have a cocktail in mind and you want to find it ? </p>
-            <p className='px-4 text-center'>Go ahead and find it by its first letter.</p>
+            <h1 className='text-center m-5 title pageInfos'>All our cocktails</h1>
+            <p className='px-4 text-center pageInfos'>You already have a cocktail in mind and you want to find it ? </p>
+            <p className='px-4 text-center pageInfos'>Go ahead and find it by its first letter.</p>
           </section>
 
           <section className='sectionTitleContainer'>
