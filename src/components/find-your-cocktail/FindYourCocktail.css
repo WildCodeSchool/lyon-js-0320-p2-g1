@@ -11,7 +11,8 @@ h1, h2, h3 {
 }
 
 .bar {
-  height: 120vh;
+  background-image: url('../../images/bar-finder.png');
+  background-size: cover;
 }
 
 .results {
@@ -97,4 +98,22 @@ li.result-ing-item.active {
   color: white;
   background-color: #855D5D;
   border-color: #DEDEDE;
+}
+
+.go-back-ing-list {
+  border: 1px solid #DEDEDE;
+  border-radius: 2px;
+  margin: 5px;
+  padding: 1em;
+  transition: box-shadow 0.2s;
+}
+
+.go-back-ing-list:hover {
+  background-color: #5e5e5e;
+  color: white;
+  box-shadow: 0px 0px 0px 3px #DEDEDE;
+}
+
+.card {
+  cursor: pointer;
 }

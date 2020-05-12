@@ -1,6 +1,6 @@
 import React from 'react';
 import './FindYourCocktail.css';
-import Bar from '../../images/bar-finder.png';
+// import Bar from '../../images/bar-finder.png';
 import Banner from '../../images/banner-finder.jpg';
 import { alcoholsList, fruitsList, othersList } from '../../data/ingredients';
 import Axios from 'axios';
@@ -120,7 +120,7 @@ class FindYourCocktail extends React.Component {
             <ul className='d-flex flex-wrap list-unstyled justify-content-center'>
               {alcoholsList.map(alcohol =>
                 <li
-                  className={this.state.activeIngredientsList.includes(alcohol.name) ? 'alcohols status-active col-4 m-1 col-lg-2 p-2' : 'alcohols status-inactive col-4 m-1 col-lg-2 p-2'}
+                  className={this.state.activeIngredientsList.includes(alcohol.name) ? 'alcohols status-active col-9 col-md-4 col-lg-2 m-1 p-2' : 'alcohols status-inactive col-9 col-md-4 col-lg-2 m-1 p-2'}
                   key={alcohol.name}
                   onClick={() => {
                     this.toggleSelectedItems(alcohol.name);
@@ -136,7 +136,7 @@ class FindYourCocktail extends React.Component {
             <ul className='d-flex flex-wrap list-unstyled justify-content-center'>
               {fruitsList.map(fruit =>
                 <li
-                  className={this.state.activeIngredientsList.includes(fruit.name) ? 'fruits status-active col-4 m-1 col-lg-2 p-2' : 'fruits status-inactive col-4 m-1 col-lg-2 p-2'}
+                  className={this.state.activeIngredientsList.includes(fruit.name) ? 'fruits status-active col-9 col-md-4 col-lg-2 m-1 p-2' : 'fruits status-inactive col-9 col-md-4 col-lg-2 m-1 p-2'}
                   key={fruit.name}
                   onClick={() => {
                     this.toggleSelectedItems(fruit.name);
@@ -152,7 +152,7 @@ class FindYourCocktail extends React.Component {
             <ul className='d-flex flex-wrap list-unstyled justify-content-center'>
               {othersList.map(other =>
                 <li
-                  className={this.state.activeIngredientsList.includes(other.name) ? 'others status-active col-4 m-1 col-lg-2 p-2' : 'others status-inactive col-4 m-1 col-lg-2 p-2'}
+                  className={this.state.activeIngredientsList.includes(other.name) ? 'others status-active col-9 col-md-4 col-lg-2 m-1 p-2' : 'others status-inactive col-9 col-md-4 col-lg-2 m-1 p-2'}
                   key={other.name}
                   onClick={() => {
                     this.toggleSelectedItems(other.name);
@@ -196,6 +196,7 @@ class FindYourCocktail extends React.Component {
                 </li>
               );
             })}
+            <li className='go-back-ing-list' onClick={this.handleBackButton}>Back to ingredients</li>
           </ul>
         </section>
 
@@ -206,7 +207,9 @@ class FindYourCocktail extends React.Component {
               : this.state.cocktailsResultsList.map(cocktail => {
                 return (
                   <li
-                    className='card col-6 m-1 col-lg-2 p-2'
+                    data-toggle='modal'
+                    data-target='#exampleModalCenter'
+                    className='card col-10 col-md-5 col-lg-3 m-1 p-2'
                     key={cocktail.idDrink}
                   >
                     <img className='card-img-top' src={cocktail.strDrinkThumb} alt={cocktail.idDrink} />
@@ -220,9 +223,10 @@ class FindYourCocktail extends React.Component {
         </section>
 
         <section className='d-flex flex-column'>
-          <p className='mx-auto text-center'>Go back to ingredients list to make a new search !</p>
+          <p className='text-center'>Go back to ingredients list to make a new search !</p>
           <button type='button' className='button' onClick={this.handleBackButton}>Back to ingredients</button>
         </section>
+
         <ScrollUpButton />
 
       </article>
@@ -237,10 +241,14 @@ class FindYourCocktail extends React.Component {
     this.setState({ activeResultTab: null });
   }
 
+  // componentDidUpdate () {
+  //   window.scrollTo(0, 0);
+  // }
+
   render () {
     return (
       <main className='d-flex'>
-        <img className='bar d-none p-0 col-4 d-lg-block' src={Bar} alt='bar' />
+        <aside className='bar d-none col-4 d-lg-block' />
         {this.state.toggleView ? this.showResults() : this.showIngredients()}
       </main>
     );
