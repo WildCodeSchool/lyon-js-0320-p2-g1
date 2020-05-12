@@ -71,13 +71,15 @@ class FindYourCocktail extends React.Component {
       this.state.cocktailsIdsByIngredients[ingredient].forEach(id => resultIds.push(id));
     });
     resultIds = _.uniq(resultIds);
-    resultIds.forEach(cocktailId => {
-      Axios
-        .get(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${cocktailId}`)
-        .then(response => {
-          this.setState({ cocktailsResultsList: this.state.cocktailsResultsList.concat(response.data.drinks) });
-        });
-    });
+    Promise.all(resultIds.map(cocktailId => {
+      return (
+        Axios
+          .get(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${cocktailId}`)
+          .then(response => {
+            this.setState({ cocktailsResultsList: this.state.cocktailsResultsList.concat(response.data.drinks) });
+          })
+      );
+    })).then(window.scrollTo(0, 0));
   }
 
   handleGetIngredientResults (selectedIngredient) {
@@ -240,10 +242,6 @@ class FindYourCocktail extends React.Component {
     this.setState({ cocktailsResultsList: null });
     this.setState({ activeResultTab: null });
   }
-
-  // componentDidUpdate () {
-  //   window.scrollTo(0, 0);
-  // }
 
   render () {
     return (
