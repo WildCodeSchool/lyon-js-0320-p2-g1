@@ -29,12 +29,6 @@ h1, h2, h3 {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  height: 160vh;
-}
-
-img{
-  height: 20rem;
-  width: auto;
 }
 
 .cocktailCard{
@@ -47,8 +41,8 @@ img{
 }
 
 .cocktail{
-  height: auto;
-  width: 100%;
+  background-image: url('../../images/allcocktails.jpg');
+  background-size: cover;
   margin-right: 50px;
 }
 
@@ -86,10 +80,6 @@ img{
 }
 
 @media screen and (max-width: 991px){
-
-  .globalContainer{
-    height: 200vh;
-  }
   
   .mainAllCocktails{
     background-color:black;

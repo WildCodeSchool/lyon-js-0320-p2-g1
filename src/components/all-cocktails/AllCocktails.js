@@ -1,6 +1,5 @@
 import React from 'react';
 import axios from 'axios';
-import Allcocktail2 from '../../images/allcocktail2.jpg';
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import ListGroupItem from 'react-bootstrap/ListGroupItem';
@@ -163,7 +162,7 @@ class AllCocktails extends React.Component {
       <main className='mainAllCocktails'>
         <div className='globalContainer'>
 
-          <img className='col-4 p-0 d-none d-lg-block cocktail' src={Allcocktail2} alt='cocktail' />
+          <aside className='cocktail d-none col-4 d-lg-block' />
           
             <section className='col-8'>
               
