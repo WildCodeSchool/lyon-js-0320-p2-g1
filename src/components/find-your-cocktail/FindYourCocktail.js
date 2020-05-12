@@ -1,6 +1,5 @@
 import React from 'react';
 import './FindYourCocktail.css';
-// import Bar from '../../images/bar-finder.png';
 import Banner from '../../images/banner-finder.jpg';
 import { alcoholsList, fruitsList, othersList } from '../../data/ingredients';
 import Axios from 'axios';
