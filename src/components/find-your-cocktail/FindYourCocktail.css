@@ -15,13 +15,6 @@ h1, h2, h3 {
   background-size: cover;
 }
 
-.results {
-  margin-left: 10%;
-  max-width: 80%;
-  height: 80vh;
-  overflow: auto;
-}
-
 .search {
   margin: 50px auto 50px;
   background-color: #373737;
@@ -116,6 +109,13 @@ li.result-ing-item.active {
   box-shadow: 0px 0px 0px 3px #DEDEDE;
 }
 
-.card {
+.results {
+  margin-left: 10%;
+  max-width: 80%;
+  height: 80vh;
+  overflow: auto;
+}
+
+.results .card {
   cursor: pointer;
 }

@@ -4,6 +4,36 @@ import Banner from '../../images/banner-finder.jpg';
 import { alcoholsList, fruitsList, othersList } from '../../data/ingredients';
 import Axios from 'axios';
 import { CircleArrow as ScrollUpButton } from 'react-scroll-up-button';
+import Modal from 'react-bootstrap/Modal';
+import Button from 'react-bootstrap/Button';
+
+function MyVerticallyCenteredModal (props) {
+  return (
+    <Modal
+      {...props}
+      size='lg'
+      aria-labelledby='contained-modal-title-vcenter'
+      centered
+    >
+      <Modal.Header closeButton>
+        <Modal.Title id='contained-modal-title-vcenter'>
+          Recipe details
+        </Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        {props.modalContent &&
+          <>
+            <h4>{props.modalContent.strDrink}</h4>
+            <p>{props.modalContent.strInstructions}</p>
+            <img src={props.modalContent.strDrinkThumb} alt={props.modalContent.strDrink} />
+          </>}
+      </Modal.Body>
+      <Modal.Footer>
+        <Button onClick={props.onHide}>Close</Button>
+      </Modal.Footer>
+    </Modal>
+  );
+}
 
 class FindYourCocktail extends React.Component {
   constructor (props) {
@@ -13,7 +43,9 @@ class FindYourCocktail extends React.Component {
       activeIngredientsList: [],
       cocktailsIdsByIngredients: {},
       cocktailsResultsList: null,
-      activeResultTab: null
+      activeResultTab: null,
+      modalShow: false,
+      modalContent: null
     };
     this.toggleSelectedItems = this.toggleSelectedItems.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -203,31 +235,34 @@ class FindYourCocktail extends React.Component {
 
         <section className='results'>
           <ul className='d-flex flex-wrap list-unstyled justify-content-center'>
-            {(!this.state.activeIngredientsList.length)
-              ? <p>No ingredient selected before !</p>
-              : this.state.cocktailsResultsList.map(cocktail => {
-                return (
-                  <li
-                    data-toggle='modal'
-                    data-target='#exampleModalCenter'
-                    className='card col-10 col-md-5 col-lg-3 m-1 p-2'
-                    key={cocktail.idDrink}
-                  >
-                    <img className='card-img-top' src={cocktail.strDrinkThumb} alt={cocktail.idDrink} />
-                    <div className='card-body'>
-                      <p className='card-title'>{cocktail.strDrink}</p>
-                    </div>
-                  </li>
-                );
+            {this.state.cocktailsResultsList.map(cocktail => {
+              return (
+                <li
+                  onClick={() => this.setState({ modalShow: true, modalContent: cocktail })}
+                  className='card col-10 col-md-5 col-lg-3 m-1 p-2'
+                  key={cocktail.idDrink}
+                >
+                  <img className='card-img-top' src={cocktail.strDrinkThumb} alt={cocktail.idDrink} />
+                  <div className='card-body'>
+                    <p className='card-title'>{cocktail.strDrink}</p>
+                  </div>
+                </li>
+              );
+            })}
+            <MyVerticallyCenteredModal
+              modalContent={this.state.modalContent}
+              show={this.state.modalShow}
+              onHide={() => this.setState({
+                modalShow: false
               })}
+            />
           </ul>
         </section>
 
         <section className='d-flex flex-column'>
-          <p className='text-center'>Go back to ingredients list to make a new search !</p>
+          <p className='mx-auto text-center'>Go back to ingredients list to make a new search !</p>
           <button type='button' className='button' onClick={this.handleBackButton}>Back to ingredients</button>
         </section>
-
         <ScrollUpButton />
 
       </article>
@@ -235,10 +270,11 @@ class FindYourCocktail extends React.Component {
   }
 
   handleBackButton () {
+    window.scrollTo(0, 0);
     this.setState({ toggleView: false });
     this.setState({ activeIngredientsList: [] });
     this.setState({ cocktailsIdsByIngredients: {} });
-    this.setState({ cocktailsResultsList: null });
+    this.setState({ cocktailsResultsList: [] });
     this.setState({ activeResultTab: null });
   }
 
