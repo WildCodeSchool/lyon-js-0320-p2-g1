@@ -133,17 +133,17 @@ class Home extends Component {
                   }
                 </div>
               </div>
-            </div>
-            <div className='cocktailDescription'>
-              <div id='recipe'>
-                <button className='btn btn-lg' type='button' onClick={this.handleClick}>Try another<br />cocktail</button>
-              </div>
-              <div className='instructions'>
-                {
-                  this.state.randomCocktail
-                    ? (<p className='text-cod'> {this.state.randomCocktail.strInstructions}</p>)
-                    : (<p className='load'>loading</p>)
-                }
+              <div className='cocktailDescription'>
+                <div id='recipe'>
+                  <button className='btn btn-lg' type='button' onClick={this.handleClick}>Try another<br />cocktail</button>
+                </div>
+                <div className='instructions'>
+                  {
+                    this.state.randomCocktail
+                      ? (<p className='text-cod'> {this.state.randomCocktail.strInstructions}</p>)
+                      : (<p className='load'>loading</p>)
+                  }
+                </div>
               </div>
             </div>
           </div>

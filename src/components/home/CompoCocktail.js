@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from '../../images/cocktail.png';
 import './Home.css';
+import { Link } from 'react-router-dom';
 
 const CompoCocktail = (props) => {
   return (
@@ -18,7 +19,7 @@ const CompoCocktail = (props) => {
               <p> {props.firstPanelParagraphe}</p>
             </div>
             <div className='panel-footer'>
-              <button className='btn btn-lg'>Chose my ingredients</button>
+              <Link exact to='/find-your-cocktail'><button className='btn btn-lg'>Chose my ingredients</button></Link>
             </div>
           </div>
         </div>
