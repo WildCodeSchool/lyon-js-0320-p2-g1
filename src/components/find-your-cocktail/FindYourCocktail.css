@@ -110,8 +110,6 @@ li.result-ing-item.active {
 }
 
 .results {
-  margin-left: 10%;
-  max-width: 80%;
   height: 80vh;
   overflow: auto;
 }
