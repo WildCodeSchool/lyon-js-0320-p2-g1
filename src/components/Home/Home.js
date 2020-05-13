@@ -9,7 +9,9 @@ class Home extends Component {
   constructor (props) {
     super(props);
     this.state = {
-      randomCocktail: null
+      randomCocktail: null,
+      id: null,
+      recipeIngredients: []
     };
     this.handleClick = this.handleClick.bind(this);
   }
@@ -23,7 +25,8 @@ class Home extends Component {
       .get('https://www.thecocktaildb.com/api/json/v1/1/random.php')
       .then(response => {
         this.setState({ randomCocktail: response.data.drinks[0] });
-        console.log(response);
+        this.setState({ recipeIngredients: Object.values(this.state.randomCocktail) });
+        console.log(this.state.recipeIngredients);
       })
       .catch(err => {
         console.error(err);
@@ -31,9 +34,9 @@ class Home extends Component {
   }
 
   handleClick () {
-    this.setState(prevState => ({
+    this.setState({
       randomCocktail: this.getNext()
-    }));
+    });
   }
 
   calendar () {
@@ -61,47 +64,85 @@ class Home extends Component {
     }
   }
 
+  ingredient () {
+    const cocktailIngredientList = [];
+    const cocktailMeasure = [];
+    const list = [];
+    for (let i = 21; i <= 35; i++) {
+      if (this.state.recipeIngredients[i] !== null) {
+        cocktailIngredientList.push(this.state.recipeIngredients[i]);
+      }
+    }
+    console.log(cocktailIngredientList);
+    for (let j = 36; j <= 50; j++) {
+      if (this.state.recipeIngredients[j] !== null) {
+        cocktailMeasure.push(this.state.recipeIngredients[j]);
+      }
+    }
+    console.log(cocktailMeasure);
+    for (let k = 0; k < cocktailIngredientList.length; k++) {
+      if (cocktailMeasure[k] !== undefined) {
+        list.push(cocktailMeasure[k] + ' ' + cocktailIngredientList[k]);
+      } else if (cocktailIngredientList[k] !== undefined) {
+        list.push(cocktailIngredientList[k]);
+      }
+    }
+    return list.map(cocktail =>
+      <li key={cocktail}>
+        {cocktail}
+      </li>);
+  }
+
   render () {
     return (
       <div className='HomeMain'>
-        <div className='Main'>
-          <div className='Video' height='auto'>
-            <video width='100%' height='auto' autoPlay muted loop>
-              <source src={video} type='video/mp4' />
-            </video>
-            <h1>Welcome to <br />Cocktail Finder</h1>
-            <h6>Need some inspiration to make a cocktail?<br />Go try our amazing tool!</h6>
-          </div>
-          <h2 className='cod'>Suggestions of the day!</h2>
-          <h5 className='date'>{this.calendar()}</h5>
-          {
-            this.state.randomCocktail
-              ? (<p className='title-cod'>{'Today, discover the ' + this.state.randomCocktail.strDrink}</p>)
-              : (<p>loading</p>)
-          }
-          <div className='CoktailDay'>
-            <div className='Main-image'>
-              {
-                this.state.randomCocktail
-                  ? (<img src={this.state.randomCocktail.strDrinkThumb} alt='cocktail of the day' />)
-                  : (<p>Not found</p>)
-              }
-              <div className='type'>
-                {
-                  this.drinkType()
-                }
+        <div className='Video' height='auto'>
+          <video width='100%' height='auto' autoPlay muted loop>
+            <source src={video} type='video/mp4' />
+          </video>
+          <h1>Welcome to <br />Cocktail Finder</h1>
+          <h6>Need some inspiration to make a cocktail?<br />Go try our amazing tool!</h6>
+        </div>
+
+        <div className='CoktailDay'>
+          <div className='Main'>
+            <h2 className='cod'>Suggestions of the day!</h2>
+            <h5 className='date'>{this.calendar()}</h5>
+            {
+              this.state.randomCocktail
+                ? (<p className='title-cod'>{'Today, discover the ' + this.state.randomCocktail.strDrink}</p>)
+                : (<p className='load'>loading</p>)
+            }
+            <div className='descriptifcocktail'>
+              <div className='ingredientcoktail'>
+                <div className='cocktailcompo'>
+                  <div className='Main-image'>
+                    {
+                      this.state.randomCocktail
+                        ? (<img src={this.state.randomCocktail.strDrinkThumb} alt='cocktail of the day' />)
+                        : (<p className='load'>Not found</p>)
+                    }
+                  </div>
+                  <ul>
+                    {this.ingredient()}
+                  </ul>
+                </div>
+                <div className='type'>
+                  {
+                    this.drinkType()
+                  }
+                </div>
               </div>
             </div>
             <div className='cocktailDescription'>
               <div id='recipe'>
-                <button className='btn btn-lg'>Recipe details</button>
-                <button className='btn btn-lg' type='button' onClick={this.handleClick}>Next</button>
+                <button className='btn btn-lg' type='button' onClick={this.handleClick}>Try another<br />cocktail</button>
               </div>
               <div className='instructions'>
                 {
                   this.state.randomCocktail
                     ? (<p className='text-cod'> {this.state.randomCocktail.strInstructions}</p>)
-                    : (<p>loading</p>)
+                    : (<p className='load'>loading</p>)
                 }
               </div>
             </div>

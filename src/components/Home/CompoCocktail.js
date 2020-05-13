@@ -5,7 +5,7 @@ import './Home.css';
 const CompoCocktail = (props) => {
   return (
     <>
-      <div className='row'>
+      <div className='section2 row'>
         <div className='col-md-12 '>
           <img className='imageIngredient' src={Image} alt='' />
         </div>
