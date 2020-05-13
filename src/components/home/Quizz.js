@@ -1,5 +1,6 @@
 import React from 'react';
 import './Home.css';
+import { Link } from 'react-router-dom';
 
 const Quizz = (props) => {
   return (
@@ -13,7 +14,7 @@ const Quizz = (props) => {
             <p>{props.firstPanelParagraphe}</p>
           </div>
           <div className='panel-footer'>
-            <button className='btn btn-lg'>Ingredients</button>
+            <Link to='/quizz'><button className='btn btn-lg'>Quizz</button></Link>
           </div>
         </div>
       </div>
@@ -26,7 +27,7 @@ const Quizz = (props) => {
             <p> {props.seconPanelParagraphe}</p>
           </div>
           <div className='panel-footer'>
-            <button className='btn btn-lg'>All cocktails</button>
+            <Link to='/all-cocktails'><button className='btn btn-lg'>All cocktails</button></Link>
           </div>
         </div>
       </div>

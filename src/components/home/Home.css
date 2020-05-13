@@ -6,15 +6,14 @@
 }
 
 .cod{
-    color:#CC2A49;
-    margin-top: 40px;
+    color:#fff;
     text-decoration: underline;
     text-align: center;
-    font-family: 'Lato', sans-serif;
-    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
     font-style: italic;
-    font-size: 30px;
+    font-size: 25px;
     text-transform: none;
+    padding-top: 40px;
 }
 
 .date{
@@ -28,18 +27,19 @@
 #recipe{
     margin-top: 40px;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 #recipe button{
     background-color: rgb(172, 9, 42);
     font-size: 17px;
     border-radius: 5px;
-    padding: 5px 25px;
+    padding: 5px 20px;
     margin-bottom: 5px;
     color: rgb(240, 235, 235);
     font-weight: bold;
-    width: 100px;
+    width: 240px;
+    height: 60px;
     text-align: center;
     
 }
@@ -50,12 +50,51 @@
     font-family: 'Lato', sans-serif;
     font-style: italic;
     margin-top: 30px;
+    margin-bottom: 40px;
     font-weight: 700;
+    text-align: center;
 }
 
 .Main-image img{
+    width: 120%;
+    border-radius: 10px;
+    margin: auto;
+    margin-left: 10%;
+    padding-right: -20%;    
+}
+
+.ingredientcoktail{
+    display: flex;
+    flex-direction: column;
+    height: 60%;
+    width: 95%;
+    background-color: #000;
     margin: 0 auto;
-    width: 65%;
+    border-radius: 15px;
+    margin-top: 35px;
+}
+
+.cocktailcompo{
+    display: flex;
+    margin: auto;
+    width: 80%;
+    height: auto;
+    background-color: #fff;
+    list-style: none;
+    padding: 10px;
+    border-radius: 15px;
+    margin-right: 5%;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    align-content: center;
+    align-items: center;
+}
+
+.Main{
+    width: 100%;
+    margin: 0 auto;
+    background: linear-gradient(#FF1A49, #F6895E, #F6895E, #fff);
+
 }
 
 .Video{
@@ -71,14 +110,14 @@
     top: 35%;
     right: 3%;
     transform: translateY(-50%);
-    margin-top: 30px;
     font-size: 25px;
     text-align: center;
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
+    font-family: 'lato', serif;
+    font-weight: 800;
     letter-spacing: 0.15rem;
-    animation-name: videotitle;
-    animation-duration: 1s;
+    animation: videotitle .3s cubic-bezier(0,1.07,.73,.45);
+    transition-delay: 2s;
+    transform-origin: center bottom;
     animation-fill-mode: both;
 }
 
@@ -88,14 +127,42 @@
     top: 60%;
     right: 4%;
     transform: translateY(-50%);
-    margin-top: 40px;
-    font-size: 12px;
+    margin-top: 30px;
+    font-size: 15px;
     text-align: right;
     font-family: 'Lato', sans-serif;
-    font-weight: 500;
+    font-weight: 700;
+    font-style: italic;
     animation-name: videotext;
-    animation-duration: 2s;
+    animation-duration: 3s;
+    transition-delay: 2s;
     animation-fill-mode: both;
+}
+
+.CoktailDay{
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.type{
+    width: 200px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+}
+
+.load{
+    width: 100%;
+    height: 100%;
+    text-align: center;
 }
 
 @keyframes videotext {
@@ -104,21 +171,170 @@
 }
 
 @keyframes videotitle {
-    from { transform: translateX(150%)}
-    to { transform: translateX(0%)}
+    from { opacity: 0;
+        transform: scale3d(.75, .75, 1);
+    }
+    to { opacity: 1;
+        transform: scale3d(1, 1, 1);}
 }
 
-.Main-image{
+@media only screen and (max-width: 450px){
+    .Video h1{
+        font-size: 25px;
+    } 
+    .Video h6{
+        font-size: 11px;
+    }
+    .cod{
+        font-size: 22px;
+    }
+    .cocktailcompo ul{
+        font-size: 15px;
+    }
+}
+
+@media only screen and (min-width: 450px){
+    .Video h1{
+        font-size: 30px;
+    } 
+    .Video h6{
+        font-size: 14px;
+    }
+    .cod{
+        font-size: 25px;
+    }
+    .cocktailcompo ul, .text-cod{
+        font-size: 20px;
+    }
+}
+
+@media only screen and (min-width: 600px){
+    .Video h1{
+        font-size: 32px;
+    } 
+    .Video h6{
+        font-size: 16px;
+    }
+}
+
+@media only screen and (min-width: 900px){
+    .Video h1{
+        font-size: 35px;
+    } 
+    .Video h6{
+        font-size: 25px;
+    }
+    .descriptifcocktail{
+        display: flex;
+        flex-direction: row;
+    }
+    .ingredientcoktail{
+        width: 50%;
+        margin: auto;
+        margin-left: 2%;
+        display: flex;
+    }
+    .cocktailDescription{
+        width: 50%;
+        display: flex;
+        flex-direction: column-reverse;
+    }
+}
+
+@media only screen and (min-width: 1100px){
+    .Video h1{
+        font-size: 40px;
+    } 
+    .Video h6{
+        font-size: 30px;
+    }
+    .descriptifcocktail{
+      display: flex;
+      flex-direction: row;
+  }
+    .ingredientcoktail{
+        width: 50%;
+        margin: auto;
+        margin-left: 2%;
+        display: flex;
+    }
+    .cocktailDescription{
+        width: 50%;
+        display: flex;
+        flex-direction: column-reverse;
+    }
+}
+
+.recipe{
+    margin-bottom: 80px;
+}
+.Main-image {
     display: flex;
-    
     height: auto;
-    margin: 0 auto;
-    margin-top: 60px;
+    width: 50%;
+    margin-left: -20%;
+}
+
+.cocktailcompo ul{
+    list-style: none;
+    margin-left: 10%;
+    height: auto;
 }
 
 .text-cod{
     margin: 60px;
-    text-align: justify;
+    text-align: center;
+}
+
+.signal{
+    display: flex;
+    height: 30px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    white-space: nowrap;
+}
+
+.Alcoholic{
+    font-weight: 500;
+    color: #FF1A49;
+    font-size: 20px;
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    text-shadow: 0 0 5px #FF1A49;
+    
+}
+
+.Alcoholic-signal{
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    margin-right: 6px;
+    line-height: 30px;
+    background-color: #FF1A49;
+    box-shadow: 0 0 5px #FF1A49;
+    transform: translateY(-70%);
+}
+
+.Soft{
+    text-align: center;
+    font-weight: 500;
+    font-family: 'Lato', sans-serif;
+    color: #00a6c0;
+    font-size: 20px;
+    text-shadow: 0 0 5px #00a6c0;
+}
+
+.Soft-signal{
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    margin-right: 6px;
+    line-height: 30px;
+    background-color: #00a6c0;
+    box-shadow: 0 0 5px #00a6c0;
+    transform: translateY(-70%);
 }
 
 .main1{
@@ -170,4 +386,3 @@
     color: rgb(240, 235, 235);
     transition-duration: 0.2s;
 }
-
