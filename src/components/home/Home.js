@@ -26,7 +26,6 @@ class Home extends Component {
       .then(response => {
         this.setState({ randomCocktail: response.data.drinks[0] });
         this.setState({ recipeIngredients: Object.values(this.state.randomCocktail) });
-        console.log(this.state.recipeIngredients);
       })
       .catch(err => {
         console.error(err);
@@ -134,15 +133,15 @@ class Home extends Component {
                 </div>
               </div>
               <div className='cocktailDescription'>
-                <div id='recipe'>
-                  <button className='btn btn-lg' type='button' onClick={this.handleClick}>Try another<br />cocktail</button>
-                </div>
                 <div className='instructions'>
                   {
                     this.state.randomCocktail
                       ? (<p className='text-cod'> {this.state.randomCocktail.strInstructions}</p>)
                       : (<p className='load'>loading</p>)
                   }
+                </div>
+                <div id='recipe'>
+                  <button className='btn btn-lg' type='button' onClick={this.handleClick}>Try another<br />cocktail</button>
                 </div>
               </div>
             </div>

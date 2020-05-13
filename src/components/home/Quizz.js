@@ -14,7 +14,7 @@ const Quizz = (props) => {
             <p>{props.firstPanelParagraphe}</p>
           </div>
           <div className='panel-footer'>
-            <Link exact to='/quizz'><button className='btn btn-lg'>Quizz</button></Link>
+            <Link to='/quizz'><button className='btn btn-lg'>Quizz</button></Link>
           </div>
         </div>
       </div>
@@ -27,7 +27,7 @@ const Quizz = (props) => {
             <p> {props.seconPanelParagraphe}</p>
           </div>
           <div className='panel-footer'>
-            <Link exact to='/all-cocktails'><button className='btn btn-lg'>All cocktails</button></Link>
+            <Link to='/all-cocktails'><button className='btn btn-lg'>All cocktails</button></Link>
           </div>
         </div>
       </div>
