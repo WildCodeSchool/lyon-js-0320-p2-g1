@@ -19,7 +19,7 @@ const CompoCocktail = (props) => {
               <p> {props.firstPanelParagraphe}</p>
             </div>
             <div className='panel-footer'>
-              <Link exact to='/find-your-cocktail'><button className='btn btn-lg'>Chose my ingredients</button></Link>
+              <Link to='/find-your-cocktail'><button className='btn btn-lg'>Chose my ingredients</button></Link>
             </div>
           </div>
         </div>
