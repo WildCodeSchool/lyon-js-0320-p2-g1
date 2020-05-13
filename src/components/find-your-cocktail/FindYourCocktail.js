@@ -5,7 +5,6 @@ import { alcoholsList, fruitsList, othersList } from '../../data/ingredients';
 import Axios from 'axios';
 import { CircleArrow as ScrollUpButton } from 'react-scroll-up-button';
 import Modal from 'react-bootstrap/Modal';
-import Button from 'react-bootstrap/Button';
 
 function MyVerticallyCenteredModal (props) {
   return (
@@ -17,19 +16,23 @@ function MyVerticallyCenteredModal (props) {
     >
       <Modal.Header closeButton>
         <Modal.Title id='contained-modal-title-vcenter'>
-          Recipe details
+          {props.modalContent && <h4>{props.modalContent.strDrink}</h4>}
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
         {props.modalContent &&
           <>
-            <h4>{props.modalContent.strDrink}</h4>
             <p>{props.modalContent.strInstructions}</p>
-            <img src={props.modalContent.strDrinkThumb} alt={props.modalContent.strDrink} />
+            <div className='d-flex justify-content-center align-items-center flex-wrap'>
+              <img className='col-10 col-md-5 col-lg-3 m-1 p-2 h-100' src={props.modalContent.strDrinkThumb} alt={props.modalContent.strDrink} />
+              <ul className='list-group-flush m-0 p-0'>
+                {props.modalContent.ingredients}
+              </ul>
+            </div>
           </>}
       </Modal.Body>
       <Modal.Footer>
-        <Button onClick={props.onHide}>Close</Button>
+        <button className='button' onClick={props.onHide}>Close</button>
       </Modal.Footer>
     </Modal>
   );
@@ -238,7 +241,9 @@ class FindYourCocktail extends React.Component {
             {this.state.cocktailsResultsList.map(cocktail => {
               return (
                 <li
-                  onClick={() => this.setState({ modalShow: true, modalContent: cocktail })}
+                  onClick={() => {
+                    this.setState({ modalShow: true, modalContent: this.convertModalContent(cocktail) });
+                  }}
                   className='card col-10 col-md-5 col-lg-3 m-1 p-2'
                   key={cocktail.idDrink}
                 >
@@ -267,6 +272,40 @@ class FindYourCocktail extends React.Component {
 
       </article>
     );
+  }
+
+  convertModalContent (cocktailClicked) {
+    const cocktail = cocktailClicked;
+    if (!cocktail) {
+      return '';
+    } else {
+      const cocktailIngredientList = [];
+      Object.keys(cocktail).forEach(key => {
+        const ingredient = {};
+        if (key.startsWith('strIngredient')) {
+          const ingredientNumber = key.split('strIngredient')[1];
+          ingredient.name = cocktail[key];
+          ingredient.measure = cocktail['strMeasure' + ingredientNumber];
+        }
+        cocktailIngredientList.push(ingredient);
+      });
+      return {
+        strDrink: cocktail.strDrink,
+        strDrinkThumb: cocktail.strDrinkThumb,
+        strInstructions: cocktail.strInstructions,
+        ingredients: cocktailIngredientList.map(el => {
+          if (el.name != null || el.measure != null) {
+            return (
+              <li className='list-group-item' key={el.name}>
+                {(el.name + ' - ' + el.measure).toString().replace('- null', '')}
+              </li>
+            );
+          } else {
+            return null;
+          }
+        })
+      };
+    }
   }
 
   handleBackButton () {
