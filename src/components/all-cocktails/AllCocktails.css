@@ -1,0 +1,136 @@
+
+/*
+font-family: 'Playfair Display', serif;
+font-family: 'Lato', sans-serif;
+*/
+
+main {
+  font-family: 'Lato', sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+}
+
+.search {
+  color: white;
+  background-color: #232323;
+}
+
+.sectionTitleContainer{
+  padding-right: 10px;
+}
+
+.section-title{
+  color:White;
+}
+
+.mainAllCocktails{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.col-8{
+  margin-right: 1em;
+}
+
+.cocktailCard{
+  margin-top: 3px;
+  background-color: transparent !important;
+  font-weight: bold;
+}
+
+.backgroundCard{
+  background-color: transparent !important;
+}
+
+.alphaButton{
+  margin-right: 1em;
+}
+
+.cocktail{
+  background-image: url('../../images/allcocktails.jpg');
+  background-size: cover;
+  margin-right: 50px;
+}
+
+.callApiContainer{
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+}
+
+.nameCardContainer{
+  display: flex;
+  flex-direction: row;
+}
+
+.askSelection{
+  font-weight: Bold;
+  font-size: 20px;
+}
+
+@media screen and (min-width: 1000px){
+  .cocktail-container{
+    margin-left:2em;
+    margin-top:2em;
+    
+  }
+}
+
+@media screen and (max-width: 1500px){
+  .alphaButton{
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 991px){
+  
+  .mainAllCocktails{
+    background-color:black;
+    background-image:url(https://i.imgur.com/VFZCckd.jpg);
+    background-size: cover;
+  }
+
+  .cocktailCard{
+    background-color: rgba(0, 0, 0, 0.50) !important;
+  }
+
+  .backgroundCard{
+    color: white;
+  }
+
+  .pageInfos{
+    color: white;
+  }
+
+  .cocktailCard{
+    color: white;
+  }
+
+  .askSelection{
+    color: white;
+    font-weight: Bold;
+    font-size: 20px;
+  }
+
+  .title{
+    color: white;
+  }
+
+  .alphaButton{
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 600px){
+  .nameCardContainer{
+    flex-direction: column-reverse;
+  }
+}
+
+

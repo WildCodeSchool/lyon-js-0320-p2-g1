@@ -1,0 +1,28 @@
+.bloc_page {
+    width: 100%;
+    background-color: #0f0f0f;
+    color: white;
+    font-family: 'Lato', sans-serif;
+    padding: 13px;
+}
+.warning {
+    font-family: 'Playfair Display SC Black Italic', arial;
+    font-size: 20px;
+    font-style: italic;
+    color: #edeae1;
+}
+
+.contactText{
+  font-family: 'Playfair Display SC Black Italic', arial;
+  font-size: 20px;
+}
+.lienFooter {
+  color: white;
+  text-decoration: none; 
+  font-weight: bold;
+}
+
+.lienFooter:hover {
+  color:grey;
+  text-decoration: none;
+}
