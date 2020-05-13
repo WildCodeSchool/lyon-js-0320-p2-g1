@@ -1,0 +1,101 @@
+.mainGuestbook{
+  background-image:url(https://i.imgur.com/J6kCYkO.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.allElementsContainer{
+  display: flex;
+  flex-direction: column;
+  margin-left: 45%;
+  font-family: 'Lato', sans-serif;
+  padding: 10px;
+  height: 1000px;
+}
+
+.mainGuestbook h1{
+  font-family: 'Playfair Display', serif;
+  color:rgb(152, 204, 134);
+  font-size: 35px;
+  margin: 30px 0;
+}
+
+.mainGuestbook h6{
+  text-align: center;
+  color:rgb(214, 214, 214);
+  font-size: 20px;
+  margin-bottom : 30px ;
+  font-style: italic;
+}
+
+.pageDescription{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.titleH5{
+  font-family: fantasy;
+  font-style: italic;
+  color:rgb(139, 207, 117);
+  font-size: 24px;
+}
+
+.form-group{
+  display: flex;
+  flex-direction: column;
+}
+
+.panel-footer{
+  display: flex;
+  justify-content: center;
+}
+
+.comments{
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 1px 3px #9c9c9c; 
+  color:rgb(214, 214, 214);
+  background-color: rgba(0, 0, 0, 0.26);
+  margin: 10px 0; 
+  border-radius:  5px 0 5px;
+  font-size: 20px;
+
+}
+
+.date p{
+  display: flex;
+  justify-content: flex-end;
+  margin: 0;
+  color: rgb(172, 172, 172);
+  font-size: 15px;
+}
+
+.form-group textarea, .form-group input{
+  border: none;
+  border-bottom:1px solid #9c9c9c; 
+  background-color:  rgba(0, 0, 0, 0.253);
+  color: rgb(214, 214, 214);
+  padding: 10px;
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+@media screen and (max-width: 991px){
+  .mainGuestbook{
+    justify-content: center;
+    background-image:url(https://i.imgur.com/UoBoHUo.jpg);
+  }  
+
+  .allElementsContainer{
+    margin-left: 0;
+  }
+
+
+  .date{
+    justify-content: center;
+    font-size: 13px;
+  } 
+}
+
