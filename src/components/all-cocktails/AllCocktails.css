@@ -25,37 +25,40 @@ h1, h2, h3 {
   color:White;
 }
 
-.globalContainer{
+.mainAllCocktails{
   display: flex;
   flex-direction: row;
   justify-content: center;
-  height: 160vh;
 }
 
-img{
-  height: 20rem;
-  width: auto;
+.col-8{
+  margin-right: 1em;
 }
 
 .cocktailCard{
   margin-top: 3px;
-  background: transparent !important;
+  background-color: transparent !important;
+  font-weight: bold;
 }
 
 .backgroundCard{
-  background: transparent !important;
+  background-color: transparent !important;
+}
+
+.alphaButton{
+  margin-right: 1em;
 }
 
 .cocktail{
-  height: auto;
-  width: 100%;
+  background-image: url('../../images/allcocktails.jpg');
+  background-size: cover;
   margin-right: 50px;
 }
 
 .callApiContainer{
   margin-bottom: 20px;
-  margin-left: 20px;
-  display: block;
+  display: flex;
+  flex-direction: column;
   justify-self: center;
 }
 
@@ -69,11 +72,10 @@ img{
   font-size: 20px;
 }
 
-
 @media screen and (min-width: 1000px){
   .cocktail-container{
-    margin-left:200px;
-    margin-top:50px;
+    margin-left:2em;
+    margin-top:2em;
     
   }
 }
@@ -86,10 +88,6 @@ img{
 }
 
 @media screen and (max-width: 991px){
-
-  .globalContainer{
-    height: 200vh;
-  }
   
   .mainAllCocktails{
     background-color:black;
@@ -97,11 +95,15 @@ img{
     background-size: cover;
   }
 
+  .cocktailCard{
+    background-color: rgba(0, 0, 0, 0.50) !important;
+  }
+
   .backgroundCard{
     color: white;
   }
 
-  .text-center{
+  .pageInfos{
     color: white;
   }
 
@@ -122,6 +124,12 @@ img{
   .alphaButton{
     display: flex;
     flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 600px){
+  .nameCardContainer{
+    flex-direction: column-reverse;
   }
 }
 
