@@ -40,7 +40,7 @@ function MyVerticallyCenteredModal (props) {
 }
 
 class FindYourCocktail extends React.Component {
-  constructor(props) {
+  constructor (props) {
     super(props);
     this.state = {
       toggleView: false,
