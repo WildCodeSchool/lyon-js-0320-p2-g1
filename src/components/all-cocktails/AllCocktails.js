@@ -133,8 +133,8 @@ class AllCocktails extends React.Component {
       if (this.state.filterIng.length > 0) {
         // console.log(this.state.filterIng[this.state.indexOfChoosenDrink].strDrink);
         return (
-          <Card style={{ width: '18m' }} className='cocktailCard'>
-            <Card.Img variant='top' alt={this.state.filterIng[this.state.indexOfChoosenDrink].strDrinkThumb} src={this.state.filterIng[this.state.indexOfChoosenDrink].strDrinkThumb} />
+          <Card style={{ width: '80%' }} className='cocktailCard'>
+            <Card.Img variant='top' className='cardImg' alt={this.state.filterIng[this.state.indexOfChoosenDrink].strDrinkThumb} src={this.state.filterIng[this.state.indexOfChoosenDrink].strDrinkThumb} />
             <Card.Body>
               <Card.Title>{this.state.filterIng[this.state.indexOfChoosenDrink].strDrink}</Card.Title>
             </Card.Body>
@@ -158,7 +158,7 @@ class AllCocktails extends React.Component {
 
         <aside className='cocktail d-none col-4 d-lg-block' />
 
-        <article className='col-8 '>
+        <article className='col-8 articleCocktail'>
 
           <section>
             <h1 className='text-center m-5 title pageInfos'>All our cocktails</h1>

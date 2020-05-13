@@ -248,6 +248,21 @@
     .Video h6{
         font-size: 30px;
     }
+    .descriptifcocktail{
+      display: flex;
+      flex-direction: row;
+  }
+    .ingredientcoktail{
+        width: 50%;
+        margin: auto;
+        margin-left: 2%;
+        display: flex;
+    }
+    .cocktailDescription{
+        width: 50%;
+        display: flex;
+        flex-direction: column-reverse;
+    }
 }
 
 .recipe{

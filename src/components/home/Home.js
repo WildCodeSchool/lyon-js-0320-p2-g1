@@ -72,13 +72,11 @@ class Home extends Component {
         cocktailIngredientList.push(this.state.recipeIngredients[i]);
       }
     }
-    console.log(cocktailIngredientList);
     for (let j = 36; j <= 50; j++) {
       if (this.state.recipeIngredients[j] !== null) {
         cocktailMeasure.push(this.state.recipeIngredients[j]);
       }
     }
-    console.log(cocktailMeasure);
     for (let k = 0; k < cocktailIngredientList.length; k++) {
       if (cocktailMeasure[k] !== undefined) {
         list.push(cocktailMeasure[k] + ' ' + cocktailIngredientList[k]);

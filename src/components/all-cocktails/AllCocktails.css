@@ -12,6 +12,9 @@ h1, h2, h3 {
   font-family: 'Playfair Display', serif;
 }
 
+.cardImg{
+  width: 100% !important;
+}
 .search {
   color: white;
   background-color: #232323;
@@ -31,7 +34,7 @@ h1, h2, h3 {
   justify-content: center;
 }
 
-.col-8{
+.articleCocktail{
   margin-right: 1em;
 }
 
@@ -39,6 +42,7 @@ h1, h2, h3 {
   margin-top: 3px;
   background-color: transparent !important;
   font-weight: bold;
+  margin: 0 auto;
 }
 
 .backgroundCard{
