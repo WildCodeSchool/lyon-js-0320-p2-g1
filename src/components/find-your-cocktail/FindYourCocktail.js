@@ -5,6 +5,7 @@ import { alcoholsList, fruitsList, othersList } from '../../data/ingredients';
 import Axios from 'axios';
 import { CircleArrow as ScrollUpButton } from 'react-scroll-up-button';
 import Modal from 'react-bootstrap/Modal';
+import { Scrollbars } from 'react-custom-scrollbars';
 
 function MyVerticallyCenteredModal (props) {
   return (
@@ -39,7 +40,7 @@ function MyVerticallyCenteredModal (props) {
 }
 
 class FindYourCocktail extends React.Component {
-  constructor (props) {
+  constructor(props) {
     super(props);
     this.state = {
       toggleView: false,
@@ -237,31 +238,33 @@ class FindYourCocktail extends React.Component {
         </section>
 
         <section className='results'>
-          <ul className='d-flex flex-wrap list-unstyled justify-content-center'>
-            {this.state.cocktailsResultsList.map(cocktail => {
-              return (
-                <li
-                  onClick={() => {
-                    this.setState({ modalShow: true, modalContent: this.convertModalContent(cocktail) });
-                  }}
-                  className='card col-10 col-md-5 col-lg-3 m-1 p-2'
-                  key={cocktail.idDrink}
-                >
-                  <img className='card-img-top' src={cocktail.strDrinkThumb} alt={cocktail.idDrink} />
-                  <div className='card-body'>
-                    <p className='card-title'>{cocktail.strDrink}</p>
-                  </div>
-                </li>
-              );
-            })}
-            <MyVerticallyCenteredModal
-              modalContent={this.state.modalContent}
-              show={this.state.modalShow}
-              onHide={() => this.setState({
-                modalShow: false
+          <Scrollbars>
+            <ul className='d-flex flex-wrap list-unstyled justify-content-center'>
+              {this.state.cocktailsResultsList.map(cocktail => {
+                return (
+                  <li
+                    onClick={() => {
+                      this.setState({ modalShow: true, modalContent: this.convertModalContent(cocktail) });
+                    }}
+                    className='card col-10 col-md-5 col-lg-3 m-1 p-2'
+                    key={cocktail.idDrink}
+                  >
+                    <img className='card-img-top' src={cocktail.strDrinkThumb} alt={cocktail.idDrink} />
+                    <div className='card-body'>
+                      <p className='card-title'>{cocktail.strDrink}</p>
+                    </div>
+                  </li>
+                );
               })}
-            />
-          </ul>
+              <MyVerticallyCenteredModal
+                modalContent={this.state.modalContent}
+                show={this.state.modalShow}
+                onHide={() => this.setState({
+                  modalShow: false
+                })}
+              />
+            </ul>
+          </Scrollbars>
         </section>
 
         <section className='d-flex flex-column'>
