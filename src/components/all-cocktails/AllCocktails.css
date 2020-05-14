@@ -20,10 +20,6 @@ h1, h2, h3 {
   background-color: #232323;
 }
 
-.sectionTitleContainer{
-  padding-right: 10px;
-}
-
 .section-title{
   color:White;
 }
@@ -32,10 +28,7 @@ h1, h2, h3 {
   display: flex;
   flex-direction: row;
   justify-content: center;
-}
-
-.articleCocktail{
-  margin-right: 1em;
+  /* height: 70vh; */
 }
 
 .cocktailCard{
@@ -43,6 +36,8 @@ h1, h2, h3 {
   background-color: transparent !important;
   font-weight: bold;
   margin: 0 auto;
+  width: 80% !important;
+
 }
 
 .backgroundCard{
@@ -56,7 +51,6 @@ h1, h2, h3 {
 .cocktail{
   background-image: url('../../images/allcocktails.jpg');
   background-size: cover;
-  margin-right: 50px;
 }
 
 .callApiContainer{
@@ -64,6 +58,7 @@ h1, h2, h3 {
   display: flex;
   flex-direction: column;
   justify-self: center;
+  /* height: 40vh; */
 }
 
 .nameCardContainer{
@@ -74,14 +69,6 @@ h1, h2, h3 {
 .askSelection{
   font-weight: Bold;
   font-size: 20px;
-}
-
-@media screen and (min-width: 1000px){
-  .cocktail-container{
-    margin-left:2em;
-    margin-top:2em;
-    
-  }
 }
 
 @media screen and (max-width: 1500px){

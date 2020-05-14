@@ -68,10 +68,10 @@ class AllCocktails extends React.Component {
           ingredients: cocktailIngredientList,
           strInstructions: c.strInstructions,
           listIngredients: function () {
-            const result = this.ingredients.map(el => {
+            const result = this.ingredients.map((el, index) => {
               if (el.name != null || el.measure != null) {
                 return (
-                  <div key={el.name}>
+                  <div key={index}>
                     {(el.name + ' - ' + el.measure).toString().replace('- null', '')}<br />
                   </div>
                 );
@@ -116,11 +116,16 @@ class AllCocktails extends React.Component {
     if (!cocktailList) {
       return <p>No cocktails yet</p>; // s'il n'y a pas de cocktail correspondant à la lettre selectionnée on renvoie la chaine de caractère renseignée.
     } else { // dans le cas où il y a bien un ou des cocktails existants, on utilise map.
-      return cocktailList.map(cocktail => // map nous permet de parcourir chaque objet du tableau cocktailList et pour chaque objet parcouru de créer un bouton.
+      return cocktailList.map((cocktail, index) => // map nous permet de parcourir chaque objet du tableau cocktailList et pour chaque objet parcouru de créer un bouton.
+
+      // return cocktailList.map((cocktail, index) => // map nous permet de parcourir chaque objet du tableau cocktailList et pour chaque objet parcouru de créer un bouton.
+
+
+
         <button
           type='button'
           className='btn btn-light'
-          key={cocktail.strDrink}
+          key={index}
           // onClick={(e) => { const selectedDrink = e.target.textContent; this.filterIngredients(selectedDrink); }}
           onClick={this.handleClick}
         >{cocktail.strDrink}
@@ -131,10 +136,9 @@ class AllCocktails extends React.Component {
   renderObject () {
     if (this.filterIng) {
       if (this.state.filterIng.length > 0) {
-        // console.log(this.state.filterIng[this.state.indexOfChoosenDrink].strDrink);
         return (
-          <Card style={{ width: '80%' }} className='cocktailCard'>
-            <Card.Img variant='top' className='cardImg' alt={this.state.filterIng[this.state.indexOfChoosenDrink].strDrinkThumb} src={this.state.filterIng[this.state.indexOfChoosenDrink].strDrinkThumb} />
+          <Card className='cocktailCard'>
+            <Card.Img variant='top' alt={this.state.filterIng[this.state.indexOfChoosenDrink].strDrinkThumb} src={this.state.filterIng[this.state.indexOfChoosenDrink].strDrinkThumb} />
             <Card.Body>
               <Card.Title>{this.state.filterIng[this.state.indexOfChoosenDrink].strDrink}</Card.Title>
             </Card.Body>
@@ -158,7 +162,7 @@ class AllCocktails extends React.Component {
 
         <aside className='cocktail d-none col-4 d-lg-block' />
 
-        <article className='col-8 articleCocktail'>
+        <article className='col-12 col-lg-8 articleCocktail'>
 
           <section>
             <h1 className='text-center m-5 title pageInfos'>All our cocktails</h1>
@@ -172,9 +176,9 @@ class AllCocktails extends React.Component {
 
           <section className='callApiContainer'>
             <div className='btn-group alphaButton'>
-              {letters.map(letter => {
+              {letters.map((letter, index)=> {
                 return (
-                  <button className='lettreClass btn btn-dark' onClick={this.changeFilterLetter.bind(this)} value={letter} key={letter}>{letter.toUpperCase()}</button>
+                  <button className='lettreClass btn btn-dark' onClick={this.changeFilterLetter.bind(this)} value={letter} key={index}>{letter.toUpperCase()}</button>
                 );
               })}
             </div><br />
