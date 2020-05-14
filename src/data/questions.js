@@ -13,13 +13,13 @@ export const quizData =
     answer: 'Egg white'
   },
   {
-    id: 3,
+    id: 2,
     question: 'Pick the ingredient you can find in a Daiquiri :',
     options: ['Cherry', 'Light rum', 'Champagne'],
     answer: 'Light rum'
   },
   {
-    id: 4,
+    id: 3,
     question: 'Pick the ingredient you can find in a Margarita :',
     options: ['Chocolate', 'Blueberry', 'Tequila'],
     answer: 'Tequila'
