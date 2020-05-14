@@ -237,7 +237,7 @@
     .cocktailDescription{
         width: 50%;
         display: flex;
-        flex-direction: column-reverse;
+        flex-direction: column;
     }
 }
 
@@ -360,7 +360,7 @@
 }
 
 .imageIngredient{
-    width: 40%;
+    width: 30%;
     height: auto;
 }
 

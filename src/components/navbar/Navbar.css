@@ -23,7 +23,7 @@
   background-color: black;
 }
 
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 875px) {
   .navbar{
     display:flex;
     flex-direction: row;
