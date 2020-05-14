@@ -7,15 +7,17 @@ export default function NavBar () {
   return (
     <div>
       <nav className='navbar navbar-expand-lg navbar-dark d-flex'>
-        <Link to='/' id='navbar-brand'><img src={Logo} id='logo' alt='logo' /></Link>
-        <h1 className='navbar-brand'>Cocktail Finder</h1>
+        <div className='logo-title'>
+          <Link to='/'><img src={Logo} id='logo' alt='logo' /></Link>
+          <Link to='/'><h1 className='navbar-brand d-none d-md-flex ml-0'>Cocktail Finder</h1></Link>
+        </div>
         {/* C'est le bouton burger (navbar-toggler) */}
         <button className='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarColor01' aria-controls='navbarColor01' aria-expanded='false' aria-label='Toggle navigation'>
           <span className='navbar-toggler-icon' />
         </button>
         <div className='collapse navbar-collapse justify-content-end' id='navbarColor01'>
           <ul className='navbar-nav text-right'>
-            <li className='nav-item active'>
+            <li className='nav-item'>
               <NavLink exact to='/' className='nav-link'>Home</NavLink>
             </li>
             <li className='nav-item'>

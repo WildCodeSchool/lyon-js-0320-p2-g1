@@ -4,7 +4,9 @@
     color: white;
     font-family: 'Lato', sans-serif;
     padding: 13px;
+    margin-top: auto;
 }
+
 .warning {
     font-family: 'Playfair Display', serif;
     font-size: 1em;
@@ -16,6 +18,7 @@
   font-family: 'Playfair Display', serif;
   font-size: 1em;
 }
+
 .lienFooter {
   color: white;
   text-decoration: none; 

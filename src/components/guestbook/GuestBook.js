@@ -39,7 +39,7 @@ class GuestBook extends Component {
     const { name, comment, dateobj } = this.state;
     const pad = n =>  n < 10 ? "0"+n : n;
     const date = `${pad(dateobj.getDate())}/${pad(dateobj.getMonth()+1)}/${dateobj.getFullYear()}`;
-    const newComment = { name, comment, date };
+    const newComment = { id: Math.random(), name, comment, date };
     const newComments = [...this.state.comments, newComment];
 
     this.setState({ comments: newComments }, () => {
@@ -52,7 +52,7 @@ class GuestBook extends Component {
   render() {
 
     const comments = this.state.comments.reverse().slice(0, 4).map(comment => (
-      <CSSTransition classNames='fade' timeout={600} key={comment.name}>
+      <CSSTransition classNames='fade' timeout={600} key={comment.id}>
         <div className='comments'>
           <p>{comment.comment}</p>
           <div className='date'>
