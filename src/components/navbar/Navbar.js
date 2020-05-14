@@ -1,12 +1,12 @@
 import React from 'react';
 import './Navbar.css';
-import Logo from '../../images/logo.jpg';
+import Logo from '../../images/logo-cocktail.png';
 import { NavLink, Link } from 'react-router-dom';
 
 export default function NavBar () {
   return (
     <div>
-      <nav className='navbar navbar-expand-lg navbar-dark'>
+      <nav className='navbar navbar-expand-lg navbar-dark d-flex'>
         <Link to='/' id='navbar-brand'><img src={Logo} id='logo' alt='logo' /></Link>
         <h1 className='navbar-brand'>Cocktail Finder</h1>
         {/* C'est le bouton burger (navbar-toggler) */}
@@ -14,7 +14,6 @@ export default function NavBar () {
           <span className='navbar-toggler-icon' />
         </button>
         <div className='collapse navbar-collapse justify-content-end' id='navbarColor01'>
-
           <ul className='navbar-nav text-right'>
             <li className='nav-item active'>
               <NavLink exact to='/' className='nav-link'>Home</NavLink>
@@ -32,7 +31,6 @@ export default function NavBar () {
               <NavLink exact to='/quizz' className='nav-link'>Quizz</NavLink>
             </li>
           </ul>
-
         </div>
       </nav>
     </div>
