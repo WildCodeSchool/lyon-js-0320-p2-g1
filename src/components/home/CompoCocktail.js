@@ -8,10 +8,10 @@ const CompoCocktail = (props) => {
     <>
       <div className='section2 row'>
         <div className='col-md-12 '>
-          <img className='imageIngredient' src={Image} alt='' />
-        </div>
-        <div className='col-md-12 '>
           <div className='panel panel-default text-center'>
+            <div className='col-md-12 '>
+              <img className='imageIngredient' src={Image} alt='' />
+            </div>
             <div className='panel-heading'>
               <h4> {props.firstPanelh4}</h4>
             </div>
