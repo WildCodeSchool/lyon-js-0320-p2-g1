@@ -13,6 +13,7 @@
 }
 
 .selected {
+  cursor: pointer;
   background: linear-gradient(to right, #828181, #b5b3b3) !important;
 }
 
@@ -26,15 +27,18 @@ ul {
   padding: 0.5em 1em;
   margin: 2em auto 2em;
   transition: box-shadow 0.2s;
+  cursor: pointer;
 }
 
 .button-question:hover, .button-question:focus, .button-question:active, .button.active {
   box-shadow: 0px 0px 0px 5px #373737;
+  cursor: pointer;
 }
 
 .ui {
   display: flex;
   justify-content: center;
+  cursor: pointer;
 }
 
 .banner {
