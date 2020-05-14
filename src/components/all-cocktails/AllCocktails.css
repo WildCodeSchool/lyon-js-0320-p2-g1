@@ -1,0 +1,127 @@
+
+/*
+font-family: 'Playfair Display', serif;
+font-family: 'Lato', sans-serif;
+*/
+
+main {
+  font-family: 'Lato', sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+}
+
+.cardImg{
+  width: 100% !important;
+}
+.search {
+  color: white;
+  background-color: #232323;
+}
+
+.section-title{
+  color:White;
+}
+
+.mainAllCocktails{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  /* height: 70vh; */
+}
+
+.cocktailCard{
+  margin-top: 3px;
+  background-color: transparent !important;
+  font-weight: bold;
+  margin: 0 auto;
+  width: 80% !important;
+
+}
+
+.backgroundCard{
+  background-color: transparent !important;
+}
+
+.alphaButton{
+  margin-right: 1em;
+}
+
+.cocktail{
+  background-image: url('../../images/allcocktails.jpg');
+  background-size: cover;
+}
+
+.callApiContainer{
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  /* height: 40vh; */
+}
+
+.nameCardContainer{
+  display: flex;
+  flex-direction: row;
+}
+
+.askSelection{
+  font-weight: Bold;
+  font-size: 20px;
+}
+
+@media screen and (max-width: 1500px){
+  .alphaButton{
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 991px){
+  
+  .mainAllCocktails{
+    background-color:black;
+    background-image:url(https://i.imgur.com/VFZCckd.jpg);
+    background-size: cover;
+  }
+
+  .cocktailCard{
+    background-color: rgba(0, 0, 0, 0.50) !important;
+  }
+
+  .backgroundCard{
+    color: white;
+  }
+
+  .pageInfos{
+    color: white;
+  }
+
+  .cocktailCard{
+    color: white;
+  }
+
+  .askSelection{
+    color: white;
+    font-weight: Bold;
+    font-size: 20px;
+  }
+
+  .title{
+    color: white;
+  }
+
+  .alphaButton{
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 600px){
+  .nameCardContainer{
+    flex-direction: column-reverse;
+  }
+}
+
+
