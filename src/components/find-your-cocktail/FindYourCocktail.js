@@ -4,6 +4,40 @@ import Banner from '../../images/banner-finder.jpg';
 import { alcoholsList, fruitsList, othersList } from '../../data/ingredients';
 import Axios from 'axios';
 import { CircleArrow as ScrollUpButton } from 'react-scroll-up-button';
+import Modal from 'react-bootstrap/Modal';
+import { Scrollbars } from 'react-custom-scrollbars';
+
+function MyVerticallyCenteredModal (props) {
+  return (
+    <Modal
+      {...props}
+      size='lg'
+      aria-labelledby='contained-modal-title-vcenter'
+      centered
+    >
+      <Modal.Header closeButton>
+        <Modal.Title id='contained-modal-title-vcenter'>
+          {props.modalContent && <h4>{props.modalContent.strDrink}</h4>}
+        </Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        {props.modalContent &&
+          <>
+            <p>{props.modalContent.strInstructions}</p>
+            <div className='d-flex justify-content-center align-items-center flex-wrap'>
+              <img className='col-10 col-md-5 col-lg-3 m-1 p-2 h-100' src={props.modalContent.strDrinkThumb} alt={props.modalContent.strDrink} />
+              <ul className='list-group-flush m-0 p-0'>
+                {props.modalContent.ingredients}
+              </ul>
+            </div>
+          </>}
+      </Modal.Body>
+      <Modal.Footer>
+        <button className='button' onClick={props.onHide}>Close</button>
+      </Modal.Footer>
+    </Modal>
+  );
+}
 
 class FindYourCocktail extends React.Component {
   constructor (props) {
@@ -13,7 +47,9 @@ class FindYourCocktail extends React.Component {
       activeIngredientsList: [],
       cocktailsIdsByIngredients: {},
       cocktailsResultsList: null,
-      activeResultTab: null
+      activeResultTab: null,
+      modalShow: false,
+      modalContent: null
     };
     this.toggleSelectedItems = this.toggleSelectedItems.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -202,14 +238,14 @@ class FindYourCocktail extends React.Component {
         </section>
 
         <section className='results'>
-          <ul className='d-flex flex-wrap list-unstyled justify-content-center'>
-            {(!this.state.activeIngredientsList.length)
-              ? <p>No ingredient selected before !</p>
-              : this.state.cocktailsResultsList.map(cocktail => {
+          <Scrollbars>
+            <ul className='d-flex flex-wrap list-unstyled justify-content-center'>
+              {this.state.cocktailsResultsList.map(cocktail => {
                 return (
                   <li
-                    data-toggle='modal'
-                    data-target='#exampleModalCenter'
+                    onClick={() => {
+                      this.setState({ modalShow: true, modalContent: this.convertModalContent(cocktail) });
+                    }}
                     className='card col-10 col-md-5 col-lg-3 m-1 p-2'
                     key={cocktail.idDrink}
                   >
@@ -220,25 +256,67 @@ class FindYourCocktail extends React.Component {
                   </li>
                 );
               })}
-          </ul>
+              <MyVerticallyCenteredModal
+                modalContent={this.state.modalContent}
+                show={this.state.modalShow}
+                onHide={() => this.setState({
+                  modalShow: false
+                })}
+              />
+            </ul>
+          </Scrollbars>
         </section>
 
         <section className='d-flex flex-column'>
-          <p className='text-center'>Go back to ingredients list to make a new search !</p>
+          <p className='mx-auto text-center'>Go back to ingredients list to make a new search !</p>
           <button type='button' className='button' onClick={this.handleBackButton}>Back to ingredients</button>
         </section>
-
         <ScrollUpButton />
 
       </article>
     );
   }
 
+  convertModalContent (cocktailClicked) {
+    const cocktail = cocktailClicked;
+    if (!cocktail) {
+      return '';
+    } else {
+      const cocktailIngredientList = [];
+      Object.keys(cocktail).forEach(key => {
+        const ingredient = {};
+        if (key.startsWith('strIngredient')) {
+          const ingredientNumber = key.split('strIngredient')[1];
+          ingredient.name = cocktail[key];
+          ingredient.measure = cocktail['strMeasure' + ingredientNumber];
+        }
+        cocktailIngredientList.push(ingredient);
+      });
+      return {
+        strDrink: cocktail.strDrink,
+        strDrinkThumb: cocktail.strDrinkThumb,
+        strInstructions: cocktail.strInstructions,
+        ingredients: cocktailIngredientList.map(el => {
+          if (el.name != null || el.measure != null) {
+            return (
+              <li className='list-group-item' key={el.name}>
+                {(el.name + ' - ' + el.measure).toString().replace('- null', '')}
+              </li>
+            );
+          } else {
+            return null;
+          }
+        })
+      };
+    }
+  }
+
   handleBackButton () {
+    window.scrollTo(0, 0);
     this.setState({ toggleView: false });
     this.setState({ activeIngredientsList: [] });
     this.setState({ cocktailsIdsByIngredients: {} });
-    this.setState({ cocktailsResultsList: null });
+    this.setState({ cocktailsResultsList: [] });
     this.setState({ activeResultTab: null });
   }
 
