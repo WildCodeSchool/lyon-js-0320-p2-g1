@@ -17,7 +17,7 @@ export default function NavBar () {
         </button>
         <div className='collapse navbar-collapse justify-content-end' id='navbarColor01'>
           <ul className='navbar-nav text-right'>
-            <li className='nav-item active'>
+            <li className='nav-item'>
               <NavLink exact to='/' className='nav-link'>Home</NavLink>
             </li>
             <li className='nav-item'>

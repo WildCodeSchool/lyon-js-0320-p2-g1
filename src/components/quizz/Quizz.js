@@ -99,7 +99,7 @@ class MainQuiz extends React.Component {
           <aside className='quizz d-none col-4 d-lg-block' />
           <article className='my-auto col-12 col-lg-8'>
             <h3 className='text-center'>{this.state.questions} </h3>
-            <span className='text-center'><p>{`Questions ${currentQuestion + 1}  out of ${quizData.length} remaining `}</p></span>
+            <span className='text-center'><p>{`Question ${currentQuestion + 1}  out of ${quizData.length} remaining `}</p></span>
             {options.map(option => (
               <p
                 key={option}
