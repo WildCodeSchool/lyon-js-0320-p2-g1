@@ -6,8 +6,12 @@
   border-radius: 20%;
 }
 
+a {
+  text-decoration: none !important;
+} 
+
 .navbar-collapse.collapse.in {
-  display: block!important;
+  display: block !important;
 }
 
 .navbar-brand{
