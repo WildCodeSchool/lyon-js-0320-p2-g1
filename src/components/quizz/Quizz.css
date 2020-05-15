@@ -7,13 +7,8 @@
 }
 
 .options {
-  border: 2px solid black;
-  padding: 10px;
-}
-
-.selected {
-  cursor: pointer;
-  background: linear-gradient(to right, #828181, #b5b3b3) !important;
+  border: 2px solid #373737;
+  padding: 0.5em 1em;
 }
 
 ul {
@@ -21,7 +16,7 @@ ul {
 }
 
 .button-question {
-  width: 200px;
+  width: 40%;
   border : 2px solid #373737;
   padding: 0.5em 1em;
   margin: 2em auto 2em;
@@ -30,8 +25,13 @@ ul {
 }
 
 .button-question:hover, .button-question:focus, .button-question:active, .button.active {
-  box-shadow: 0px 0px 0px 5px #373737;
+  box-shadow: 0px 0px 0px 5px #505050;
   cursor: pointer;
+}
+
+.selected {
+  cursor: pointer;
+  background: linear-gradient(to right, #828181, #b5b3b3) !important;
 }
 
 .ui {

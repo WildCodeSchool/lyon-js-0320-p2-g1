@@ -74,15 +74,15 @@ class MainQuiz extends React.Component {
     if (isEnd) {
       return (
         <main className="result">
-          <aside className='quizz col-4' />
+          <aside className='quizz d-none col-4 d-lg-block' />
           <article className='my-auto col-12 col-lg-8'>
             <h3 className='text-center'>Game Over your Final score is {this.state.score} points. </h3>
             <p className='text-center'>
               The correct answers for the questions were :
             </p>
-            <ul>
+            <ul className='ml-0 pl-0'>
               {quizData.map((item, index) => (
-                <li className="options m-2 w-75 mx-auto text-center" key={index}>
+                <li className="options w-75 mx-auto m-2 text-center" key={index}>
                   {item.question} {item.answer}
                 </li>
               ))}
