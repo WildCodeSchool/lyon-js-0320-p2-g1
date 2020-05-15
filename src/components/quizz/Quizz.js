@@ -59,9 +59,15 @@ class MainQuiz extends React.Component {
   };
 
   finishHandler = () => {
+    const { myAnswer, answer, score } = this.state;
       this.setState({
         isEnd: true
       });
+      if (myAnswer === answer) {
+        this.setState({
+          score: score + 1
+        });
+      }
   };
 
   refreshPage = () => {
@@ -82,7 +88,7 @@ class MainQuiz extends React.Component {
         <main className="result">
           <aside className='quizz d-none col-4 d-lg-block' />
           <article className='my-auto col-12 col-lg-8'>
-            <h3 className='text-center'>Game Over your Final score is {this.state.score} points. </h3>
+            <h3 className='text-center'>Your Final score is {this.state.score} points. </h3>
             <p className='text-center'>
               The correct answers for the questions were :
             </p>

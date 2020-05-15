@@ -51,7 +51,7 @@ class GuestBook extends Component {
 
   render() {
 
-    const comments = this.state.comments.reverse().slice(0, 4).map(comment => (
+    const comments = this.state.comments.reverse().slice(0, 3).map(comment => (
       <CSSTransition classNames='fade' timeout={600} key={comment.id}>
         <div className='comments'>
           <p>{comment.comment}</p>
