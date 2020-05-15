@@ -65,7 +65,13 @@ class MainQuiz extends React.Component {
   };
 
   refreshPage = () => {
-    window.location.reload(false);
+    this.loadQuizData();
+    this.setState({
+        isEnd: false,
+        score: 0,
+        disable: false,
+        currentQuestion: 0
+      });
   }
 
   render () {
